@@ -1,0 +1,11 @@
+### api ###
+build/
+.gradle
+gradle/wrapper/gradle-wrapper.jar
+
+
+### IntelliJ IDEA ###
+*.iws
+*.iml
+*.ipr
+
