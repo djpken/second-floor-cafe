@@ -10,4 +10,4 @@ CREATE TABLE MENU_DISH
     visible BOOLEAN DEFAULT false,
     deleteAt DATETIME DEFAULT NULL
 ) CHARACTER SET = utf8mb4
-  COLLATE = utf8mb4_general_ci COMMENT 'user'
+  COLLATE = utf8mb4_general_ci COMMENT 'MENU_DISH';

@@ -9,4 +9,4 @@ CREATE TABLE SYS_MENU
     UPDATE_AT DATETIME default NULL,
     DELETE_AT DATETIME default NULL
 ) CHARACTER SET = utf8mb4
-  COLLATE = utf8mb4_general_ci COMMENT 'user'
+  COLLATE = utf8mb4_general_ci COMMENT 'SYS_MENU';
