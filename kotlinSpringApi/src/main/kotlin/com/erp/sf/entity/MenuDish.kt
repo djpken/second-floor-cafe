@@ -8,7 +8,7 @@ import com.fasterxml.jackson.annotation.JsonIgnore
 import java.io.Serializable
 import java.time.LocalDateTime
 
-@TableName(value = "employee")
+@TableName(value = "MENU_DISH")
 data class MenuDish(
     @TableId(type = IdType.AUTO)
     var id: Long? = null,

@@ -1,0 +1,12 @@
+USE
+second_floor_cafe;
+DROP TABLE IF EXISTS SYS_MENU;
+CREATE TABLE SYS_MENU
+(
+    ID        BIGINT AUTO_INCREMENT PRIMARY KEY NOT NULL,
+    PERMS     VARCHAR(50) default '',
+    CREATE_AT DATETIME default NULL,
+    UPDATE_AT DATETIME default NULL,
+    DELETE_AT DATETIME default NULL
+) CHARACTER SET = utf8mb4
+  COLLATE = utf8mb4_general_ci COMMENT 'user'

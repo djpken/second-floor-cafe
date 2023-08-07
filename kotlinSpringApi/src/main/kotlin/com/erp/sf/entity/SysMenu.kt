@@ -7,11 +7,11 @@ import java.io.Serializable
 import java.sql.Date
 import java.time.LocalDateTime
 
-@TableName(value = "sys_menu")
+@TableName(value = "SYS_MENU")
 data class SysMenu(
-    @TableId(type = IdType.ASSIGN_ID)
-    var id: Long?,
-    var perms: String,
+    @TableId(type = IdType.AUTO)
+    var id: Long?=null,
+    var perms: String="",
     @TableField(fill = FieldFill.INSERT)
     @JsonFormat(pattern = "yyyy-MM-dd HH:mm:ss")
     var createAt: LocalDateTime? = null,

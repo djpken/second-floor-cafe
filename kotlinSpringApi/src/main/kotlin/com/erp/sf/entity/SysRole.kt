@@ -4,14 +4,13 @@ import com.baomidou.mybatisplus.annotation.*
 import com.fasterxml.jackson.annotation.JsonFormat
 import com.fasterxml.jackson.annotation.JsonIgnore
 import java.io.Serializable
-import java.sql.Date
 import java.time.LocalDateTime
 
-@TableName(value = "sys_role")
+@TableName(value = "SYS_ROLE")
 data class SysRole(
-    @TableId(type = IdType.ASSIGN_ID)
-    var id: Long?,
-    var name: String,
+    @TableId(type = IdType.AUTO)
+    var id: Long? = null,
+    var name: String = "",
     @TableField(fill = FieldFill.INSERT)
     @JsonFormat(pattern = "yyyy-MM-dd HH:mm:ss")
     var createAt: LocalDateTime? = null,

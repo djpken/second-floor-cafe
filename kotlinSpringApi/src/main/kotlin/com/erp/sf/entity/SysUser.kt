@@ -8,9 +8,9 @@ import java.sql.Date
 import java.time.LocalDateTime
 import java.util.UUID
 
-@TableName(value = "employee")
+@TableName(value = "SYS_USER")
 data class SysUser(
-    @TableId(type = IdType.ASSIGN_ID)
+    @TableId(type = IdType.AUTO)
     var id: Long? = null,
     var username: String = UUID.randomUUID().toString(),
     var password: String = UUID.randomUUID().toString(),
