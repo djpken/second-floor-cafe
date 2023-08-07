@@ -20,13 +20,30 @@ spring:
 mybatis-plus:
   global-config:
     banner: false
+    db-config:
+      logic-delete-field: deleteAt
   configuration:
     log-impl: org.apache.ibatis.logging.stdout.StdOutImpl
   check-config-location: true
   mapper-locations: classpath:/mapper/*.xml
+springdoc:
+  swagger-ui:
+    path: /su
+    tags-sorter: alpha
+    operations-sorter: alpha
+  api-docs:
+    path: /v3/api-docs
+  group-configs:
+    - group: 'default'
+      paths-to-match: '/**'
+      packages-to-scan: com.xiaominfo.knife4j.demo.web
 knife4j:
   enable: true
   setting:
-    language: zh-CN
+    language: EN
+    footerCustomContent: Copyright © 2020-2021 <a href="" target="_blank">Second Floor Cafe</a>
+    enable-footer-custom: true
 server:
   port: 8082
+  servlet:
+    context-path: /api

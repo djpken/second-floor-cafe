@@ -2,7 +2,6 @@ package com.erp.sf.util
 
 import org.springframework.stereotype.Component
 
-@Component
 interface RedisUtil {
     fun expire(key: String?, time: Long): Boolean
 

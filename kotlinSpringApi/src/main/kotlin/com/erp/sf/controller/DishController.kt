@@ -9,13 +9,14 @@ import org.springframework.web.bind.annotation.RequestMapping
 import org.springframework.web.bind.annotation.RestController
 
 @RestController
-@RequestMapping("api/dish")
+@RequestMapping("/dish")
 class DishController {
     @Autowired
     private lateinit var dishService: DishService
+
     @GetMapping
-    fun selectAllDish():ResponseEntity<ApiResponse<Any>>{
+    fun selectAllDish(): ResponseEntity<ApiResponse<Any>> {
         val selectAllDishWithVisible = dishService.selectAllDishWithVisible()
-        return ResponseEntity.ok(ApiResponse.success(selectAllDishWithVisible,""))
+        return ResponseEntity.ok(ApiResponse.success(selectAllDishWithVisible, ""))
     }
 }

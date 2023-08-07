@@ -1,0 +1,13 @@
+USE second_floor_cafe;
+DROP TABLE IF EXISTS MENUDISH;
+CREATE TABLE MENUDISH
+(
+    id BIGINT AUTO_INCREMENT PRIMARY KEY NOT NULL,
+    chineseName VARCHAR(50) DEFAULT '',
+    englishName VARCHAR(50) DEFAULT '',
+    price INT DEFAULT 0,
+    season INT DEFAULT 0,
+    visible BOOLEAN DEFAULT false,
+    deleteAt DATETIME DEFAULT NULL
+) CHARACTER SET = utf8mb4
+  COLLATE = utf8mb4_general_ci COMMENT 'user'

@@ -4,7 +4,7 @@
         "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="com.erp.sf.mapper.SysMenuMapper">
 
-    <resultMap id="BaseResultMap" type="com.erp.sf.model.SysMenu">
+    <resultMap id="BaseResultMap" type="com.erp.sf.entity.SysMenu">
             <id property="id" column="id" jdbcType="BIGINT"/>
             <result property="menu" column="menu" jdbcType="VARCHAR"/>
             <result property="perms" column="perms" jdbcType="VARCHAR"/>

@@ -1,9 +1,9 @@
 package com.erp.sf.mapper
 
 import com.baomidou.mybatisplus.core.mapper.BaseMapper
-import com.erp.sf.model.Dish
+import com.erp.sf.entity.MenuDish
 import org.apache.ibatis.annotations.Mapper
 
 @Mapper
-interface DishMapper :BaseMapper<Dish> {
+interface DishMapper :BaseMapper<MenuDish> {
 }

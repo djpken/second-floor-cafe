@@ -21,7 +21,6 @@ repositories {
 dependencies {
     implementation("org.springframework.boot:spring-boot-starter-web:$springBootVersion")
     implementation("org.springframework.boot:spring-boot-devtools:$springBootVersion")
-//    implementation("org.springframework.boot:spring-boot-starter-tomcat:$springBootVersion")
     implementation("com.baomidou:mybatis-plus-boot-starter:$myBatisPlusVersion")
     implementation("org.mariadb.jdbc:mariadb-java-client:3.1.0")
     implementation("com.baomidou:mybatis-plus-generator:$myBatisPlusVersion")

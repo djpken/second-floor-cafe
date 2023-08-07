@@ -1,12 +1,12 @@
 package com.erp.sf.service
 
-import com.erp.sf.model.Dish
+import com.erp.sf.entity.MenuDish
 
 interface DishService  {
-    fun selectAllDish(): List<Dish>
-    fun selectAllDishWithVisible(): List<Dish>
-    fun insertDish(dish: Dish): Boolean
-    fun deleteDish(dish: Dish): Boolean
-    fun updateDish(dish: Dish): Boolean
+    fun selectAllDish(): List<MenuDish>
+    fun selectAllDishWithVisible(): List<MenuDish>
+    fun insertDish(dish: MenuDish): Boolean
+    fun deleteDish(dish: MenuDish): Boolean
+    fun updateDish(dish: MenuDish): Boolean
 
 }

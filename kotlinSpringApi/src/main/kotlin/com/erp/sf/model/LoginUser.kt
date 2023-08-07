@@ -1,16 +1,17 @@
 package com.erp.sf.model
 
+import com.erp.sf.entity.SysUser
 import org.springframework.security.core.GrantedAuthority
 import org.springframework.security.core.authority.SimpleGrantedAuthority
 import org.springframework.security.core.userdetails.UserDetails
 import java.io.Serializable
 
 data class LoginUser(
-    var employee: Employee,
+    var employee: SysUser,
     var authorities : List<String>,
     var simpleAuthorities: List<SimpleGrantedAuthority>
 ):Serializable,UserDetails {
-    constructor(employee:Employee,authorities:List<String>):this(employee,authorities, emptyList())
+    constructor(employee: SysUser, authorities:List<String>):this(employee,authorities, emptyList())
     override fun getAuthorities(): Collection< GrantedAuthority> {
         simpleAuthorities=authorities.stream()
             .map { SimpleGrantedAuthority(it) }

@@ -1,4 +1,4 @@
-package com.erp.main.utils
+package com.erp.sf.util.impl
 
 import com.erp.sf.util.RedisUtil
 import org.springframework.beans.factory.annotation.Autowired

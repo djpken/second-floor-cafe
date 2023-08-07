@@ -1,10 +1,10 @@
 package com.erp.sf.service.security
 
-import com.erp.sf.model.Employee
+import com.erp.sf.entity.SysUser
 
 interface LoginService{
-    fun login(employee: Employee):Map<String, Any>
+    fun login(employee: SysUser):Map<String, Any>
     fun logout() :Map<String, Any>
-    fun register(employee: Employee):Map<String, Any>
+    fun register(employee: SysUser):Map<String, Any>
 
 }

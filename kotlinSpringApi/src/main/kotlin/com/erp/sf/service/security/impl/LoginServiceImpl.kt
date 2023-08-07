@@ -3,12 +3,10 @@ package com.erp.sf.service.security.impl
 import cn.hutool.jwt.JWTUtil
 import com.baomidou.mybatisplus.core.conditions.query.LambdaQueryWrapper
 import com.erp.sf.util.RedisUtil
-import com.erp.sf.mapper.EmployeeMapper
-import com.erp.sf.mapper.SysEmployeeRoleMapper
+import com.erp.sf.mapper.SysUserMapper
 import com.erp.sf.mapper.SysMenuMapper
-import com.erp.sf.model.Employee
+import com.erp.sf.entity.SysUser
 import com.erp.sf.model.LoginUser
-import com.erp.sf.model.SysEmployeeRole
 import com.erp.sf.service.security.LoginService
 import org.springframework.beans.factory.annotation.Autowired
 import org.springframework.security.authentication.AuthenticationManager
@@ -27,18 +25,16 @@ class LoginServiceImpl : LoginService {
     private lateinit var redisUtil: RedisUtil
 
     @Autowired
-    private lateinit var employeeMapper: EmployeeMapper
+    private lateinit var employeeMapper: SysUserMapper
 
     @Autowired
     private lateinit var sysMenuMapper: SysMenuMapper
 
-    @Autowired
-    private lateinit var sysEmployeeRoleMapper: SysEmployeeRoleMapper
 
     @Autowired
     private lateinit var passwordEncoder: PasswordEncoder
 
-    override fun login(employee: Employee): Map<String, Any> {
+    override fun login(employee: SysUser): Map<String, Any> {
         val usernamePasswordAuthenticationToken =
             UsernamePasswordAuthenticationToken(employee.username, employee.password)
         val authenticate = authenticationManager.authenticate(usernamePasswordAuthenticationToken)
@@ -63,8 +59,8 @@ class LoginServiceImpl : LoginService {
         return hashMapOf<String ,Any>("message" to "登出成功")
     }
 
-    override fun register(employee: Employee): Map<String, Any> {
-        val lambdaQueryWrapper = LambdaQueryWrapper<Employee>().eq(Employee::username, employee.username)
+    override fun register(employee: SysUser): Map<String, Any> {
+        val lambdaQueryWrapper = LambdaQueryWrapper<SysUser>().eq(SysUser::username, employee.username)
         if (employeeMapper.exists(lambdaQueryWrapper)) {
             return emptyMap()
         }

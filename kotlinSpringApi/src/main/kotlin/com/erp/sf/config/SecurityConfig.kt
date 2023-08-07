@@ -50,7 +50,6 @@ class SecurityConfig {
             .sessionManagement { it.sessionCreationPolicy(SessionCreationPolicy.STATELESS) }
             .authorizeHttpRequests {
                 it.requestMatchers("/security/**").permitAll()
-                    .requestMatchers("/su").permitAll()
                     .requestMatchers("/doc.html").permitAll()
                     .anyRequest().permitAll()
             }.addFilterBefore(jwtAuthenticationTokenFilter, UsernamePasswordAuthenticationFilter::class.java)
@@ -60,6 +59,7 @@ class SecurityConfig {
             }
         return http.build()
     }
+
     @Bean
     fun corsConfigurationSource(): CorsConfigurationSource {
         val list: List<String> = listOf("*")
