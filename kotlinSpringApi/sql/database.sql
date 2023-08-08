@@ -1,8 +1,8 @@
 -- 删除已存在的表
-DROP DATABASE IF EXISTS second_floor_cafe;
--- 创建名为 "second_floor_cafe" 的数据库
-CREATE DATABASE IF NOT EXISTS second_floor_cafe;
--- 切换到 "second_floor_cafe" 数据库
-USE second_floor_cafe;
--- 设置数据库的字符集和排序规则为 'utf8mb4_unicode_ci'
-ALTER DATABASE `second_floor_cafe` COLLATE 'utf8mb4_unicode_ci';
+DROP DATABASE IF EXISTS SECOND_FLOOR_CAFE;
+-- 创建名为 "SECOND_FLOOR_CAFE" 的数据库
+CREATE DATABASE IF NOT EXISTS SECOND_FLOOR_CAFE;
+-- 切换到 "SECOND_FLOOR_CAFE" 数据库
+USE SECOND_FLOOR_CAFE;
+-- 设置数据库的字符集和排序规则为 'UTF8MB4_UNICODE_CI'
+ALTER DATABASE `SECOND_FLOOR_CAFE` COLLATE 'UTF8MB4_UNICODE_CI';

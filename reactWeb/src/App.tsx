@@ -6,6 +6,8 @@ import {ReactQueryDevtools} from "@tanstack/react-query-devtools";
 import Theme from "./material/Theme";
 import Router from "./Router"
 import DomTitle from "./router/DomTitle";
+import React from "react";
+import "./i18n";
 
 const queryClient = new QueryClient({
     defaultOptions: {
@@ -17,8 +19,9 @@ const queryClient = new QueryClient({
 });
 
 
-export default function App() {
-    const location = useLocation();
+const App: React.FC = () => {
+    const location = useLocation()
+    const sectionRoute = Router.find(route => route.title === "Section")
     return (
         <QueryClientProvider client={queryClient}>
             <ThemeProvider theme={Theme}>
@@ -27,7 +30,7 @@ export default function App() {
                         timeout={2000}
                         classNames={"fade"}
                         key={
-                            location.pathname.includes("/main/section")
+                            location.pathname.includes(sectionRoute?.path || "")
                                 ? "section"
                                 : location.pathname
                         }
@@ -48,3 +51,4 @@ export default function App() {
         </QueryClientProvider>
     );
 }
+export default App

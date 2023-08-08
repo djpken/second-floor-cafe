@@ -1,7 +1,7 @@
 import styled from "@emotion/styled";
 import {useNavigate} from "react-router-dom";
 import {Box, Button, FormHelperText, InputAdornment, Stack, Tab, Tabs, TextField,} from "@mui/material";
-import React, {useState} from "react";
+import React, {useState, useTransition} from "react";
 import {Controller, useForm} from "react-hook-form";
 import {Visibility, VisibilityOff} from "@mui/icons-material";
 import IconButton from "@mui/material/IconButton";
@@ -9,9 +9,11 @@ import * as yup from "yup";
 import {yupResolver} from "@hookform/resolvers/yup";
 import {useMutation} from "@tanstack/react-query";
 import {apiSecurityLogin, apiSecurityRegister} from "../Api";
+import {useTranslation} from "react-i18next";
 
-export default function Login(): JSX.Element {
+const Login: React.FC = () => {
     const [value, setValue] = useState("LoginForm");
+    const {t} = useTranslation();
     const handleChange = (event: React.SyntheticEvent, newValue: string) => {
         setValue(newValue);
     };
@@ -26,8 +28,8 @@ export default function Login(): JSX.Element {
             >
                 <Box sx={{borderBottom: 1, borderColor: "divider"}}>
                     <Tabs value={value} onChange={handleChange}>
-                        <Tab label="ERP登入" sx={{width: 1 / 2}} value={"LoginForm"}/>
-                        <Tab label="ERP註冊" sx={{width: 1 / 2}} value={"RegisterForm"}/>
+                        <Tab label={t("ERPLogin")} sx={{width: 1 / 2}} value={"LoginForm"}/>
+                        <Tab label={t("ERPRegister")} sx={{width: 1 / 2}} value={"RegisterForm"}/>
                     </Tabs>
                 </Box>
                 <LoginForm value={value}/>
@@ -277,3 +279,4 @@ const Bgd = styled(Box)({
     justifyContent: "center",
     alignItems: "center",
 });
+export default Login;

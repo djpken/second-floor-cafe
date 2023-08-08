@@ -1,17 +1,17 @@
-USE second_floor_cafe;
+USE SECOND_FLOOR_CAFE;
 DROP TABLE IF EXISTS MENU_DISH;
 CREATE TABLE MENU_DISH
 (
-    id           BIGINT AUTO_INCREMENT PRIMARY KEY NOT NULL,
-    chinese_name VARCHAR(50) DEFAULT '',
-    english_name VARCHAR(50) DEFAULT '',
-    price        INT         DEFAULT 0,
-    season       INT         DEFAULT 0,
-    visible      TINYINT(1)  DEFAULT false,
-    delete_at    TIMESTAMP   DEFAULT NULL
-) CHARACTER SET = utf8mb4
-  COLLATE = utf8mb4_general_ci COMMENT 'MENU_DISH';
-INSERT INTO `menu_dish` (`id`, `chinese_name`, `season`)
+    ID           BIGINT AUTO_INCREMENT PRIMARY KEY NOT NULL,
+    CHINESE_NAME VARCHAR(50) DEFAULT '',
+    ENGLISH_NAME VARCHAR(50) DEFAULT '',
+    PRICE        INT         DEFAULT 0,
+    SEASON       INT         DEFAULT 0,
+    VISIBLE      TINYINT(1)  DEFAULT FALSE,
+    DELETE_AT    TIMESTAMP   DEFAULT NULL
+) CHARACTER SET = UTF8MB4
+  COLLATE = UTF8MB4_GENERAL_CI COMMENT 'MENU_DISH';
+INSERT INTO `MENU_DISH` (`ID`, `CHINESE_NAME`, `SEASON`)
 VALUES (1, '水牛城辣雞翅', 2022),
        (2, '蜜釀十三香雞翅', 2022),
        (3, '普丁肉醬薯條', 2022),

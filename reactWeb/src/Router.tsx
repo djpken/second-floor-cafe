@@ -23,7 +23,7 @@ const Router: RouterItem[] = [
     {
         title: "Init",
         path: "/",
-        component: Init,
+        component: () => <Init path="/main/login"/>,
     },
 ];
 export default Router
