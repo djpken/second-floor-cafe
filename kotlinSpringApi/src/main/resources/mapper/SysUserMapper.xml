@@ -22,14 +22,13 @@
        su.`chinese_name`,
        su.`english_name`,
        su.`email`,
-       su.`create_at`
+       su.`create_at`,
        su.`update_at`
-       su.`delete_at`
     </sql>
     <select id="selectOneByUsername" resultMap="BaseResultMap">
         select
         <include refid="Base_Column_List"/>
-        from employee
+        from SYS_USER su
         <where>
             <if test="username != null and username != ''">
                 username = #{username,jdbcType=VARCHAR}
