@@ -5,34 +5,27 @@
 <mapper namespace="com.erp.sf.mapper.SysMenuMapper">
 
     <resultMap id="BaseResultMap" type="com.erp.sf.entity.SysMenu">
-            <id property="id" column="id" jdbcType="BIGINT"/>
-            <result property="menu" column="menu" jdbcType="VARCHAR"/>
-            <result property="perms" column="perms" jdbcType="VARCHAR"/>
-            <result property="deleteAt" column="delete_at" jdbcType="TIMESTAMP"/>
+        <id property="id" column="id" jdbcType="BIGINT"/>
+        <result property="perms" column="perms" jdbcType="VARCHAR"/>
+        <result property="createAt" column="create_at" jdbcType="TIMESTAMP"/>
+        <result property="updateAt" column="update_at" jdbcType="TIMESTAMP"/>
+        <result property="deleteAt" column="delete_at" jdbcType="TIMESTAMP"/>
     </resultMap>
 
     <sql id="Base_Column_List">
-        id,menu,
-        perms,delete_at
+        sm.`id`,
+        sm.`perms`,
+        sm.`create_at`,
+        sm.`update_at`,
+        sm.`delete_at`
     </sql>
-    <select id="selectPermsById" resultMap="BaseResultMap">
-        select perms
-        from sys_menu
-        <where>
-            <if test="id != null">
-                id = #{id,jdbcType=NUMERIC}
-            </if>
-        </where>
-    </select>
     <select id="selectPermsByUserId" resultType="java.lang.String">
         SELECT
-            *
-        FROM
-            sys_employee_role er
-                LEFT JOIN `sys_role` r ON er.`employee_id` = r.`id`
-                LEFT JOIN `sys_role_menu` rm ON er.`role_id` = rm.`role_id`
-                LEFT JOIN `sys_menu` m ON m.`id` = rm.`menu_id`
-        where
-            r.id= #{id}
+        DISTINCT
+        <include refid="Base_Column_List"/>
+        FROM `sys_user_role` sur
+        LEFT JOIN `sys_role_menu` srm ON sur.`role_id` = srm.`role_id`
+        LEFT JOIN `sys_menu` sm ON srm.`MENU_ID` = sm.`ID`
+        where sur.USER_ID = #{id}
     </select>
 </mapper>

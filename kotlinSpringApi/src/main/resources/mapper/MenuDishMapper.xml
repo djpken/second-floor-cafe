@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.erp.sf.mapper.MenuDishMapper">
+
+    <resultMap type="com.erp.sf.entity.MenuDish" id="BaseResultMap">
+        <result property="id" column="id" jdbcType="INTEGER"/>
+        <result property="chineseName" column="chinese_name" jdbcType="VARCHAR"/>
+        <result property="englishName" column="english_name" jdbcType="VARCHAR"/>
+        <result property="price" column="price" jdbcType="INTEGER"/>
+        <result property="season" column="season" jdbcType="INTEGER"/>
+        <result property="visible" column="visible" jdbcType="INTEGER"/>
+        <result property="deleteAt" column="delete_at" jdbcType="TIMESTAMP"/>
+    </resultMap>
+    <sql id="Base_Column_List">
+        md.`id`,
+        md.chines_name,md.english_name,md.price,md.season,md.visible,md.delete_at
+    </sql>
+</mapper>
+

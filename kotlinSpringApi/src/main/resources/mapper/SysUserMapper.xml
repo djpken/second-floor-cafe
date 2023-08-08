@@ -2,25 +2,29 @@
 <!DOCTYPE mapper
         PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
         "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
-<mapper namespace="SysUserMapper">
+<mapper namespace="com.erp.sf.mapper.SysUserMapper">
     <resultMap id="BaseResultMap" type="com.erp.sf.entity.SysUser">
-            <id property="id" column="id" jdbcType="BIGINT"/>
-            <result property="username" column="username" jdbcType="VARCHAR"/>
-            <result property="password" column="password" jdbcType="VARCHAR"/>
-            <result property="name" column="name" jdbcType="VARCHAR"/>
-            <result property="email" column="email" jdbcType="VARCHAR"/>
-            <result property="admin" column="admin" jdbcType="TINYINT"/>
-            <result property="score" column="score" jdbcType="BIGINT"/>
-            <result property="createdAt" column="created_at" jdbcType="TIMESTAMP"/>
-            <result property="updatedAt" column="updated_at" jdbcType="TIMESTAMP"/>
-            <result property="deleteAt" column="delete_at" jdbcType="TIMESTAMP"/>
+        <id property="id" column="id" jdbcType="BIGINT"/>
+        <result property="username" column="username" jdbcType="VARCHAR"/>
+        <result property="password" column="password" jdbcType="VARCHAR"/>
+        <result property="chineseName" column="chinese_name" jdbcType="VARCHAR"/>
+        <result property="englishName" column="english_name" jdbcType="VARCHAR"/>
+        <result property="email" column="email" jdbcType="BIGINT"/>
+        <result property="createAt" column="create_at" jdbcType="TIMESTAMP"/>
+        <result property="updateAt" column="update_at" jdbcType="TIMESTAMP"/>
+        <result property="deleteAt" column="delete_at" jdbcType="TIMESTAMP"/>
     </resultMap>
 
     <sql id="Base_Column_List">
-        id,username,password,
-        name,email,admin,
-        score,created_at,updated_at,
-        delete_at
+       su.`id`,
+       su.`username`,
+       su.`password`,
+       su.`chinese_name`,
+       su.`english_name`,
+       su.`email`,
+       su.`create_at`
+       su.`update_at`
+       su.`delete_at`
     </sql>
     <select id="selectOneByUsername" resultMap="BaseResultMap">
         select

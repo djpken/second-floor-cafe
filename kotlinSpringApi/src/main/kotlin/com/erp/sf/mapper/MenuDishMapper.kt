@@ -5,5 +5,5 @@ import com.erp.sf.entity.MenuDish
 import org.apache.ibatis.annotations.Mapper
 
 @Mapper
-interface DishMapper :BaseMapper<MenuDish> {
+interface MenuDishMapper :BaseMapper<MenuDish> {
 }

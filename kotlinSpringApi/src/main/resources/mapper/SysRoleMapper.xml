@@ -5,12 +5,17 @@
 <mapper namespace="com.erp.sf.mapper.SysRoleMapper">
 
     <resultMap id="BaseResultMap" type="com.erp.sf.entity.SysRole">
-            <id property="id" column="id" jdbcType="BIGINT"/>
-            <result property="name" column="name" jdbcType="VARCHAR"/>
-            <result property="deleteAt" column="delete_at" jdbcType="TIMESTAMP"/>
+        <id property="id" column="id" jdbcType="BIGINT"/>
+        <result property="name" column="name" jdbcType="VARCHAR"/>
+        <result property="createAt" column="create_at" jdbcType="TIMESTAMP"/>
+        <result property="updateAt" column="update_at" jdbcType="TIMESTAMP"/>
+        <result property="deleteAt" column="delete_at" jdbcType="TIMESTAMP"/>
     </resultMap>
-
     <sql id="Base_Column_List">
-        id,name,delete_at
+        sr.`id`,
+        sr.`name`,
+        sr.`create_at`,
+        sr.`update_at`,
+        sr.`delete_at`
     </sql>
 </mapper>

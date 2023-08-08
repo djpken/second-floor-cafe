@@ -2,10 +2,14 @@ package com.erp.sf.service.security.impl
 
 import cn.hutool.jwt.JWTUtil
 import com.baomidou.mybatisplus.core.conditions.query.LambdaQueryWrapper
+import com.erp.sf.entity.SysRoleMenu
 import com.erp.sf.util.RedisUtil
 import com.erp.sf.mapper.SysUserMapper
 import com.erp.sf.mapper.SysMenuMapper
 import com.erp.sf.entity.SysUser
+import com.erp.sf.entity.SysUserRole
+import com.erp.sf.mapper.SysRoleMenuMapper
+import com.erp.sf.mapper.SysUserRoleMapper
 import com.erp.sf.model.LoginUser
 import com.erp.sf.service.security.LoginService
 import org.springframework.beans.factory.annotation.Autowired
@@ -30,9 +34,11 @@ class LoginServiceImpl : LoginService {
     @Autowired
     private lateinit var sysMenuMapper: SysMenuMapper
 
-
     @Autowired
     private lateinit var passwordEncoder: PasswordEncoder
+
+    @Autowired
+    private lateinit var sysUserRoleMapper: SysUserRoleMapper
 
     override fun login(employee: SysUser): Map<String, Any> {
         val usernamePasswordAuthenticationToken =
@@ -56,28 +62,28 @@ class LoginServiceImpl : LoginService {
             SecurityContextHolder.getContext().authentication as UsernamePasswordAuthenticationToken
         val loginUser = usernamePasswordAuthenticationToken.principal as LoginUser
         redisUtil.del("login:${loginUser.employee.id}")
-        return hashMapOf<String ,Any>("message" to "登出成功")
+        return hashMapOf<String, Any>("message" to "登出成功")
     }
 
-    override fun register(employee: SysUser): Map<String, Any> {
-        val lambdaQueryWrapper = LambdaQueryWrapper<SysUser>().eq(SysUser::username, employee.username)
+    override fun register(sysUser: SysUser): Map<String, Any> {
+        val lambdaQueryWrapper = LambdaQueryWrapper<SysUser>().eq(SysUser::username, sysUser.username)
         if (employeeMapper.exists(lambdaQueryWrapper)) {
             return emptyMap()
         }
-        employee.password = passwordEncoder.encode(employee.username)
-        employeeMapper.insert(employee)
-        employeeMapper.selectOneByUsername(employee.username)
+        sysUser.password = passwordEncoder.encode(sysUser.username)
+        employeeMapper.insert(sysUser)
+        employeeMapper.selectOneByUsername(sysUser.username)
 
-        val sysEmployeeRole = SysEmployeeRole(employee.id, 6L)
-        sysEmployeeRoleMapper.insert(sysEmployeeRole)
-        val userId = employee.id
+        val sysUserRole = SysUserRole(sysUser.id, 6L)
+        sysUserRoleMapper.insert(sysUserRole)
+        val userId = sysUser.id
         val auth = userId?.let { sysMenuMapper.selectPermsByUserId(it).toString() } ?: return emptyMap()
 
         redisUtil["login"] = auth
         val jwt = setJwt(userId.toString())
 
         val map = HashMap<String, Any>()
-        map["user"] = employee
+        map["user"] = sysUser
         map["authority"] = auth
         map["Authorization"] = "Bearer $jwt"
         return map

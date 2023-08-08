@@ -16,7 +16,6 @@ data class SysUser(
     var password: String = UUID.randomUUID().toString(),
     var chineseName: String = "",
     var englishName: String = "",
-    var age: Int = 0,
     var email: String = UUID.randomUUID().toString(),
     @TableField(fill = FieldFill.INSERT)
     @JsonFormat(pattern = "yyyy-MM-dd HH:mm:ss")

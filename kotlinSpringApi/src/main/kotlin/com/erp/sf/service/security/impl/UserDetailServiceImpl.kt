@@ -12,7 +12,7 @@ import org.springframework.security.core.userdetails.UsernameNotFoundException
 import org.springframework.stereotype.Service
 
 @Service
-class UserDetailService :UserDetailsService {
+class UserDetailServiceImpl :UserDetailsService {
     @Autowired
     private lateinit var employeeMapper: SysUserMapper
     @Autowired
