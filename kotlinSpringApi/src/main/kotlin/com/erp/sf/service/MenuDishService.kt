@@ -3,6 +3,6 @@ package com.erp.sf.service
 import com.erp.sf.entity.MenuDish
 
 interface MenuDishService  {
-    fun selectAllDish(): List<MenuDish>
-
+    fun selectAllMenuDish(): List<MenuDish>
+    fun selectMenuDishBySeason(season: Long): List<MenuDish>
 }

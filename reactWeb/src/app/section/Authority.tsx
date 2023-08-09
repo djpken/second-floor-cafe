@@ -16,7 +16,7 @@ import {
   TextField,
   Tooltip,
 } from "@mui/material";
-import { apiGetSysUser } from "../../api";
+import { apiGetSysUser } from "../../Api";
 import { useQuery } from "@tanstack/react-query";
 import RefreshIcon from "@mui/icons-material/Refresh";
 

@@ -8,7 +8,7 @@ import CustomDrawer from "./sectionBar/CustomDrawer";
 import Menu from "./Menu";
 import Home from "./section/Home";
 import { useMutation } from "@tanstack/react-query";
-import { apiSecurityLogout } from "../api";
+import { apiSecurityLogout } from "../Api";
 import { AxiosResponse } from "axios";
 import { useState } from "react";
 

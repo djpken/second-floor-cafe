@@ -8,15 +8,15 @@ import org.junit.jupiter.api.Assertions
 import org.junit.jupiter.api.BeforeEach
 import org.junit.jupiter.api.Test
 import org.springframework.beans.factory.annotation.Autowired
-import org.springframework.boot.test.context.SpringBootTest
 
-class MenuDishServiceImplTest : JunitService(){
+class MenuDishServiceImplTest : JunitService() {
     @Autowired
     private lateinit var menuDishService: MenuDishService
 
     @Autowired
     private lateinit var menuDishMapper: MenuDishMapper
     private lateinit var menuDishTest: MenuDishTest
+
     @BeforeEach
     override fun beforeEach() {
         menuDishTest = MenuDishTest(menuDishMapper, 5);
@@ -24,8 +24,14 @@ class MenuDishServiceImplTest : JunitService(){
 
     @Test
     fun selectAllDish() {
-        val size = menuDishService.selectAllDish().size.toLong()
+        val size = menuDishService.selectAllMenuDish().size.toLong()
         Assertions.assertEquals(menuDishTest.beforeCount, size - 5)
         Assertions.assertEquals(menuDishTest.afterCount, size)
+    }
+
+    @Test
+    fun selectAllMenuDish() {
+        val selectMenuDishBySeason = menuDishService.selectMenuDishBySeason(menuDishTest.list[0].season.toLong())
+        Assertions.assertFalse(selectMenuDishBySeason.isEmpty())
     }
 }

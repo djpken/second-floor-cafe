@@ -8,7 +8,7 @@ import IconButton from "@mui/material/IconButton";
 import * as yup from "yup";
 import {yupResolver} from "@hookform/resolvers/yup";
 import {useMutation} from "@tanstack/react-query";
-import {apiSecurityLogin, apiSecurityRegister} from "../api";
+import {apiSecurityLogin, apiSecurityRegister} from "../Api";
 
 export default function Login(): JSX.Element {
     const [value, setValue] = useState("LoginForm");
