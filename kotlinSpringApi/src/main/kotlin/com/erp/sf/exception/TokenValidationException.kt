@@ -1,4 +1,6 @@
 package com.erp.sf.exception
 
-class TokenValidationException (message:String) : RuntimeException(message){
+import com.erp.sf.model.SystemResponse
+
+class TokenValidationException (response: SystemResponse) : RuntimeException(response.message){
 }

@@ -3,8 +3,8 @@ DROP TABLE IF EXISTS SYS_USER;
 CREATE TABLE SYS_USER
 (
     ID           BIGINT AUTO_INCREMENT PRIMARY KEY NOT NULL,
-    USERNAME     VARCHAR(50) UNIQUE                NOT NULL,
-    PASSWORD     VARCHAR(50)                       NOT NULL,
+    USERNAME     VARCHAR(100) UNIQUE                NOT NULL,
+    PASSWORD     VARCHAR(255)                       NOT NULL,
     CHINESE_NAME VARCHAR(50) default '',
     ENGLISH_NAME VARCHAR(50) default '',
     EMAIL        VARCHAR(50) UNIQUE                NOT NULL,

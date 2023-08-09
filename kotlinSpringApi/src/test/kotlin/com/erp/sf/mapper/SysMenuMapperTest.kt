@@ -1,6 +1,6 @@
 package com.erp.sf.mapper
 
-import com.erp.sf.JunitBase
+import com.erp.sf.JunitMapper
 import com.erp.sf.entity.SysRoleMenu
 import com.erp.sf.entity.SysUserRole
 import com.erp.sf.entity.impl.SysMenuTest
@@ -11,7 +11,7 @@ import org.junit.jupiter.api.BeforeEach
 import org.junit.jupiter.api.Test
 import org.springframework.beans.factory.annotation.Autowired
 
-class SysMenuMapperTest : JunitBase() {
+class SysMenuMapperTest : JunitMapper(){
     @Autowired
     private lateinit var sysMenuMapper: SysMenuMapper
 
@@ -28,19 +28,19 @@ class SysMenuMapperTest : JunitBase() {
     private lateinit var sysRoleMenuMapper: SysRoleMenuMapper
 
 
-    private var sysMenuTest: SysMenuTest? = null;
-    private var sysUserTest: SysUserTest? = null;
-    private var sysRoleTest: SysRoleTest? = null;
+    private lateinit var sysMenuTest: SysMenuTest
+    private lateinit var sysUserTest: SysUserTest
+    private lateinit var sysRoleTest: SysRoleTest
     private val number = 3
 
     @BeforeEach
-    fun beforeEach() {
-        sysMenuTest = SysMenuTest(sysMenuMapper).init(number)
-        sysUserTest = SysUserTest(sysUserMapper).init(number)
-        sysRoleTest = SysRoleTest(sysRoleMapper).init(number)
+    override fun beforeEach() {
+        sysMenuTest = SysMenuTest(sysMenuMapper, number)
+        sysUserTest = SysUserTest(sysUserMapper, number)
+        sysRoleTest = SysRoleTest(sysRoleMapper, number)
         for (i in 0 until number) {
-            val sysRoleMenu = SysRoleMenu(0, sysRoleTest!!.list[i].id, sysMenuTest!!.list[i].id)
-            val sysUserRole = SysUserRole(0, sysUserTest!!.list[i].id, sysRoleTest!!.list[i].id)
+            val sysRoleMenu = SysRoleMenu(0, sysRoleTest.list[i].id, sysMenuTest.list[i].id)
+            val sysUserRole = SysUserRole(0, sysUserTest.list[i].id, sysRoleTest.list[i].id)
             sysRoleMenuMapper.insert(sysRoleMenu)
             sysUserRoleMapper.insert(sysUserRole)
         }
@@ -50,8 +50,8 @@ class SysMenuMapperTest : JunitBase() {
     fun selectPermsByUserId() {
         //case 1
         for (i in 0 until number) {
-            val selectPermsByUserId = sysMenuMapper.selectPermsByUserId(sysUserTest!!.list[i].id!!).get(0)
-            Assertions.assertEquals(sysMenuTest!!.list[i].perms, selectPermsByUserId)
+            val selectPermsByUserId = sysMenuMapper.selectPermsByUserId(sysUserTest.list[i].id!!)[0]
+            Assertions.assertEquals(sysMenuTest.list[i].perms, selectPermsByUserId)
         }
     }
 }

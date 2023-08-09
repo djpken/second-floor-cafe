@@ -6,7 +6,7 @@ import com.erp.sf.mapper.SysMenuMapper
 import com.erp.sf.mapper.SysRoleMapper
 import java.util.*
 
-class SysRoleTest(override val dao: SysRoleMapper) : BaseTestEntity<SysRole, SysRoleMapper>(dao) {
+class SysRoleTest(dao:SysRoleMapper,number: Int) : BaseTestEntity<SysRole, SysRoleMapper>(dao,number) {
     override fun toList(number: Int) {
         for (i in 0 until number) {
             val sysRole = SysRole(0, UUID.randomUUID().toString())
@@ -15,22 +15,6 @@ class SysRoleTest(override val dao: SysRoleMapper) : BaseTestEntity<SysRole, Sys
         }
     }
 
-    override fun before() {
-        beforeCount= dao.selectCount(null)
-    }
 
-
-    override fun after() {
-        afterCount= dao.selectCount(null)
-    }
-
-
-
-    override fun init(number: Int): SysRoleTest {
-        before()
-        toList(number)
-        after()
-        return this
-    }
 }
 

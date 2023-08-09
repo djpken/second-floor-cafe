@@ -1,4 +1,11 @@
 package com.erp.sf.service.impl
 
-class SysMenuServiceImplTest {
+import com.erp.sf.JunitService
+import org.junit.jupiter.api.BeforeEach
+
+class SysMenuServiceImplTest : JunitService() {
+    @BeforeEach
+    override fun beforeEach() {
+    }
+
 }

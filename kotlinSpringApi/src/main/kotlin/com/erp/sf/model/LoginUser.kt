@@ -7,7 +7,7 @@ import org.springframework.security.core.userdetails.UserDetails
 import java.io.Serializable
 
 data class LoginUser(
-    var employee: SysUser,
+    var sysUser: SysUser,
     var authorities : List<String>,
     var simpleAuthorities: List<SimpleGrantedAuthority>
 ):Serializable,UserDetails {
@@ -20,11 +20,11 @@ data class LoginUser(
     }
 
     override fun getPassword(): String {
-        return employee.password
+        return sysUser.password
     }
 
     override fun getUsername(): String {
-        return employee.username
+        return sysUser.username
     }
 
     override fun isAccountNonExpired(): Boolean {

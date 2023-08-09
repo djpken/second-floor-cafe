@@ -2,6 +2,7 @@ package com.erp.sf.config
 
 import com.erp.sf.fliter.JwtAuthenticationTokenFilter
 import com.erp.sf.handler.AuthenticationEntryPointImpl
+import com.erp.sf.util.PasswordParser
 import org.springframework.beans.factory.annotation.Autowired
 import org.springframework.context.annotation.Bean
 import org.springframework.context.annotation.Configuration
@@ -24,9 +25,12 @@ import org.springframework.web.cors.UrlBasedCorsConfigurationSource
 @EnableWebSecurity
 @EnableMethodSecurity
 class SecurityConfig {
+    @Autowired
+    private lateinit var passwordParser: PasswordParser
+
     @Bean
     fun passwordEncoder(): PasswordEncoder {
-        return BCryptPasswordEncoder(4)
+        return passwordParser.getPasswordEncode()
     }
 
     @Bean
