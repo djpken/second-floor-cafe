@@ -17,8 +17,8 @@ class SecurityController {
     @Autowired
     private lateinit var loginService: LoginService
     @PostMapping("/login")
-    fun login(@RequestBody employee: SysUser):ResponseEntity<ApiResponse<Any>>{
-        val map = loginService.login(employee) ?: return ResponseEntity.badRequest().body(ApiResponse.businessFailed("登入失敗"))
+    fun login(@RequestBody sysUser: SysUser):ResponseEntity<ApiResponse<Any>>{
+        val map = loginService.login(sysUser) ?: return ResponseEntity.badRequest().body(ApiResponse.businessFailed("登入失敗"))
         return ResponseEntity.ok(ApiResponse.success(map,""))
     }
     @PostMapping("/logout")
@@ -26,8 +26,8 @@ class SecurityController {
         return ResponseEntity.ok(ApiResponse.success(HashMap<String , Any>(), loginService.logout()["message"].toString()))
     }
     @PostMapping("/register")
-    fun register(@RequestBody employee: SysUser):ResponseEntity<ApiResponse<Any>>{
-        val register = loginService.register(employee)?:return ResponseEntity.badRequest().body(ApiResponse.businessFailed("註冊失敗"))
+    fun register(@RequestBody sysUser: SysUser):ResponseEntity<ApiResponse<Any>>{
+        val register = loginService.register(sysUser)?:return ResponseEntity.badRequest().body(ApiResponse.businessFailed("註冊失敗"))
         return ResponseEntity.ok(ApiResponse.success(register,""))
     }
 }
