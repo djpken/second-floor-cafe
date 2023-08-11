@@ -34,7 +34,7 @@ type Dish = {
 }
 
 async function getDish() {
-    const response = await apiGetDish(2022);
+    const response = await apiGetDish(2023);
     return response.data.data;
 }
 

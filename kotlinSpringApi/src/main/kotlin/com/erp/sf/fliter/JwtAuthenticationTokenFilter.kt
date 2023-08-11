@@ -28,7 +28,7 @@ class JwtAuthenticationTokenFilter : OncePerRequestFilter() {
         filterChain: FilterChain
     ) {
         val token = request.getHeader("Authorization") ?: ""
-        if (token.isBlank()) {
+        if (token=="undefined"||token.isBlank()) {
             filterChain.doFilter(request, response)
             return
         }

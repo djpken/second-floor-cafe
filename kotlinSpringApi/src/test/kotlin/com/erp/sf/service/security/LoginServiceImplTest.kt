@@ -104,7 +104,7 @@ class LoginServiceImplTest : JunitService() {
 
         //case 2
         for (i in 0 until number) {
-            val sample = SysUser(0, UUID.randomUUID().toString(), UUID.randomUUID().toString())
+            val sample = SysUser(0, UUID.randomUUID().toString(), "SF")
             val map = loginService.register(sample)
             val sysUser = map["user"] as SysUser
             Assertions.assertEquals(sample.username, sysUser.username)

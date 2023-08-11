@@ -33,6 +33,12 @@ dependencies {
     testImplementation("org.springframework.boot:spring-boot-starter-test:$springBootVersion")
     testImplementation("com.baomidou:mybatis-plus-boot-starter-test:$myBatisPlusVersion")
 }
+tasks.withType<JavaCompile> {
+    options.encoding = "UTF-8"
+}
+tasks.withType<JavaExec> {
+    systemProperty("file.encoding", "utf-8")
+}
 
 tasks.withType<KotlinCompile> {
     kotlinOptions {
@@ -40,7 +46,6 @@ tasks.withType<KotlinCompile> {
         jvmTarget = "18"
     }
 }
-
 tasks.withType<Test> {
     useJUnitPlatform()
 }

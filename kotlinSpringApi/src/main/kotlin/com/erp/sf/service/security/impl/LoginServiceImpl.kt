@@ -24,6 +24,7 @@ import kotlin.collections.HashMap
 
 @Service
 class LoginServiceImpl : LoginService {
+    @Autowired
     private lateinit var s: SettingComponent
 
     @Autowired
