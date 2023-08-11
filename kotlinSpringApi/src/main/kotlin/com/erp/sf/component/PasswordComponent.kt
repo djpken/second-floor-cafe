@@ -1,8 +1,8 @@
-package com.erp.sf.util
+package com.erp.sf.component
 
 import org.springframework.security.crypto.password.PasswordEncoder
 
-interface PasswordParser {
+interface PasswordComponent {
     fun encode(password: String): String
     fun check(password: String): Boolean
     fun getPasswordEncode(): PasswordEncoder

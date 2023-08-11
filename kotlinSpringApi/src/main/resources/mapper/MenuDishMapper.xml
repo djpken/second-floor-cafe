@@ -3,7 +3,7 @@
 <mapper namespace="com.erp.sf.mapper.MenuDishMapper">
 
     <resultMap type="com.erp.sf.entity.MenuDish" id="BaseResultMap">
-        <result property="id" column="id" jdbcType="INTEGER"/>
+        <id property="id" column="id" jdbcType="INTEGER"/>
         <result property="chineseName" column="chinese_name" jdbcType="VARCHAR"/>
         <result property="englishName" column="english_name" jdbcType="VARCHAR"/>
         <result property="price" column="price" jdbcType="INTEGER"/>

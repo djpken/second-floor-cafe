@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.erp.sf.mapper.SettingMapper">
+
+    <resultMap type="com.erp.sf.entity.Setting" id="BaseResultMap">
+        <result property="key" column="key" jdbcType="VARCHAR"/>
+        <result property="value" column="value" jdbcType="VARCHAR"/>
+    </resultMap>
+    <select id="selectAllSetting" resultMap="BaseResultMap">
+        SELECT s.key, s.value
+        FROM setting s
+    </select>
+    <select id="selectValueByKey" resultType="java.lang.String">
+        SELECT s.value
+        FROM setting s
+        where s.key = #{key}
+    </select>
+
+</mapper>
+

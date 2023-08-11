@@ -7,25 +7,30 @@ import {useMutation} from "@tanstack/react-query";
 import {Button, FormHelperText, Stack} from "@mui/material";
 import React from "react";
 import ControllerFullWidthField from "./ControllerFullWidthField/ControllerFullWidthField";
+import {InferType} from "yup";
 
-const securityRegister = async (data: { username: string; chineseName: string }) => {
-    return await apiSecurityRegister({
-        username: data.username,
-        chineseName: data.chineseName,
-    });
-}
-
-const register = yup.object().shape({
-    chineseName: yup.string().required("請輸入名子"),
-    username: yup.string().required("請輸入工號"),
-    registerCode: yup.string().required("請輸入註冊碼"),
-});
-
-interface RegisterFormProps {
+interface registerFormProps {
     value: string;
 }
 
-const RegisterForm: React.FC<RegisterFormProps> = ({value}) => {
+interface registerProps extends InferType<typeof register> {
+}
+
+const securityRegister = async (data: registerProps) => {
+    return await apiSecurityRegister({
+        username: data.username,
+        chineseName: data.chineseName,
+        password: data.inviteCode
+    });
+}
+const register = yup.object().shape({
+    chineseName: yup.string().required("請輸入名子"),
+    username: yup.string().required("請輸入工號"),
+    inviteCode: yup.string().required("請輸入註冊碼"),
+});
+
+
+const RegisterForm: React.FC<registerFormProps> = ({value}) => {
     const navigate = useNavigate();
     const {
         handleSubmit,
@@ -37,7 +42,7 @@ const RegisterForm: React.FC<RegisterFormProps> = ({value}) => {
         defaultValues: {
             chineseName: "",
             username: "",
-            registerCode: "",
+            inviteCode: "",
         },
     });
     const registerMutation = useMutation({
@@ -54,18 +59,7 @@ const RegisterForm: React.FC<RegisterFormProps> = ({value}) => {
             });
         },
     });
-    const onSubmit = (data: {
-        chineseName: string;
-        username: string;
-        registerCode: string;
-    }) => {
-        console.log(data);
-        if (data.registerCode !== "SF") {
-            setError("root", {
-                message: "註冊碼輸入錯誤",
-            });
-            return;
-        }
+    const onSubmit = (data: registerProps) => {
         registerMutation.mutate(data);
     };
     return (
@@ -92,8 +86,8 @@ const RegisterForm: React.FC<RegisterFormProps> = ({value}) => {
                 <Stack direction={"row"}>
                     <ControllerFullWidthField
                         control={control}
-                        name={"registerCode"}
-                        error={errors.registerCode}
+                        name={"inviteCode"}
+                        error={errors.inviteCode}
                         label={"註冊碼"}
                         sx={{width: "0.5"}}
                     />
@@ -105,7 +99,7 @@ const RegisterForm: React.FC<RegisterFormProps> = ({value}) => {
                     children={
                         errors.chineseName?.message ||
                         errors.username?.message ||
-                        errors.registerCode?.message ||
+                        errors.inviteCode?.message ||
                         errors.root?.message
                     }
                     error

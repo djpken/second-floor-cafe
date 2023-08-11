@@ -1,6 +1,7 @@
-package com.erp.sf.util.impl
+package com.erp.sf.component.impl
 
-import com.erp.sf.util.RedisUtil
+import com.erp.sf.component.RedisComponent
+import org.slf4j.LoggerFactory
 import org.springframework.beans.factory.annotation.Autowired
 import org.springframework.data.redis.core.RedisTemplate
 import org.springframework.stereotype.Component
@@ -8,7 +9,7 @@ import org.springframework.util.CollectionUtils
 import java.util.concurrent.TimeUnit
 
 @Component
-class RedisUtilImpl: RedisUtil {
+class RedisComponentImpl: RedisComponent {
     @Autowired
     private val redisTemplate: RedisTemplate<String, Any>? = null
     override fun expire(key: String?, time: Long): Boolean {
@@ -67,6 +68,10 @@ class RedisUtilImpl: RedisUtil {
      */
     override operator fun get(key: String?): Any? {
         return if (key == null) null else redisTemplate!!.opsForValue()[key]
+    }
+
+    override fun cleanRedis() {
+        redisTemplate?.connectionFactory?.connection?.flushDb()
     }
 
     /**

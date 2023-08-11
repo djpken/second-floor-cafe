@@ -1,13 +1,14 @@
 package com.erp.sf.mapper
 
 import com.erp.sf.JunitMapper
+import com.erp.sf.JunitService
 import com.erp.sf.entity.impl.SysUserTest
 import org.junit.jupiter.api.Assertions
 import org.junit.jupiter.api.BeforeEach
 import org.junit.jupiter.api.Test
 import org.springframework.beans.factory.annotation.Autowired
 
-class SysUserMapperTest : JunitMapper() {
+class SysUserMapperTest : JunitService() {
     @Autowired
     private lateinit var sysUserMapper: SysUserMapper
     private lateinit var sysUserTest: SysUserTest

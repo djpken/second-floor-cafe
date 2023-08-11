@@ -1,7 +1,7 @@
-package com.erp.sf.util.impl
+package com.erp.sf.component.impl
 
 import com.erp.sf.mapper.SysUserMapper
-import com.erp.sf.util.PasswordParser
+import com.erp.sf.component.PasswordComponent
 import org.junit.jupiter.api.Assertions
 import org.junit.jupiter.api.BeforeEach
 import org.junit.jupiter.api.Test
@@ -15,7 +15,7 @@ class PasswordParserTest {
     private lateinit var sysUserMapper: SysUserMapper
 
     @Autowired
-    private lateinit var passwordParser: PasswordParser
+    private lateinit var passwordParser: PasswordComponent
 
     @BeforeEach
     fun beforeEach() {

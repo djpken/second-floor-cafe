@@ -1,17 +1,13 @@
 package com.erp.sf.service.security
 
-import com.baomidou.mybatisplus.core.conditions.query.LambdaQueryWrapper
-import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper
-import com.baomidou.mybatisplus.core.toolkit.Wrappers
 import com.erp.sf.JunitService
 import com.erp.sf.entity.SysRoleMenu
-import com.erp.sf.entity.SysUser
 import com.erp.sf.entity.SysUserRole
 import com.erp.sf.entity.impl.SysMenuTest
 import com.erp.sf.entity.impl.SysRoleTest
 import com.erp.sf.entity.impl.SysUserTest
 import com.erp.sf.mapper.*
-import com.erp.sf.util.PasswordParser
+import com.erp.sf.component.PasswordComponent
 import org.junit.jupiter.api.Assertions
 import org.junit.jupiter.api.BeforeEach
 import org.junit.jupiter.api.Test
@@ -23,7 +19,7 @@ import java.util.*
 
 class UserDetailServiceImplTest : JunitService() {
     @Autowired
-    private lateinit var passwordParser: PasswordParser
+    private lateinit var passwordParser: PasswordComponent
 
     @Autowired
     private lateinit var userDetailService: UserDetailsService

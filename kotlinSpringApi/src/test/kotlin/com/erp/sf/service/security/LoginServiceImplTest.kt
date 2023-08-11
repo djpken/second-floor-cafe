@@ -10,7 +10,7 @@ import com.erp.sf.entity.impl.SysRoleTest
 import com.erp.sf.entity.impl.SysUserTest
 import com.erp.sf.exception.DataException
 import com.erp.sf.mapper.*
-import com.erp.sf.util.RedisUtil
+import com.erp.sf.component.RedisComponent
 import org.junit.jupiter.api.Assertions
 import org.junit.jupiter.api.BeforeEach
 import org.junit.jupiter.api.Test
@@ -20,7 +20,7 @@ import java.util.*
 
 class LoginServiceImplTest : JunitService() {
     @Autowired
-    private lateinit var redisUtil: RedisUtil
+    private lateinit var redisUtil: RedisComponent
 
     @Autowired
     private lateinit var loginService: LoginService

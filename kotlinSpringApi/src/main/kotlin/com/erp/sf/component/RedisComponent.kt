@@ -1,8 +1,6 @@
-package com.erp.sf.util
+package com.erp.sf.component
 
-import org.springframework.stereotype.Component
-
-interface RedisUtil {
+interface RedisComponent {
     fun expire(key: String?, time: Long): Boolean
 
     /**
@@ -258,4 +256,5 @@ interface RedisUtil {
 
     fun lRemove(key: String?, count: Long, value: Any?): Long
     fun fuzzyQueryKeys(key: String): Set<String?>
+    fun cleanRedis()
 }

@@ -1,6 +1,6 @@
 package com.erp.sf.exception
 
-import com.erp.sf.model.SystemResponse
+import com.erp.sf.model.SysResponse
 
-class DataException (response : SystemResponse) : RuntimeException(response.message){
+class DataException (response : SysResponse<Any>) : RuntimeException(response.message.message){
 }

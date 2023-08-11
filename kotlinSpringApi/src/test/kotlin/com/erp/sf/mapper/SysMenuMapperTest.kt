@@ -1,6 +1,7 @@
 package com.erp.sf.mapper
 
 import com.erp.sf.JunitMapper
+import com.erp.sf.JunitService
 import com.erp.sf.entity.SysRoleMenu
 import com.erp.sf.entity.SysUserRole
 import com.erp.sf.entity.impl.SysMenuTest
@@ -11,7 +12,7 @@ import org.junit.jupiter.api.BeforeEach
 import org.junit.jupiter.api.Test
 import org.springframework.beans.factory.annotation.Autowired
 
-class SysMenuMapperTest : JunitMapper(){
+class SysMenuMapperTest : JunitService(){
     @Autowired
     private lateinit var sysMenuMapper: SysMenuMapper
 

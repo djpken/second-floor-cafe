@@ -1,13 +1,12 @@
-package com.erp.sf.util.impl
+package com.erp.sf.component.impl
 
-import com.erp.sf.util.PasswordParser
-import org.springframework.beans.factory.annotation.Autowired
+import com.erp.sf.component.PasswordComponent
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder
 import org.springframework.security.crypto.password.PasswordEncoder
 import org.springframework.stereotype.Component
 
 @Component
-class PasswordParserImpl : PasswordParser {
+class PasswordComponentImpl : PasswordComponent {
     private val passwordParserTime = 10
     private val match: Regex = Regex("\\\$2a\\\$${Regex.escape(passwordParserTime.toString())}\\\$.*")
     override fun encode(password: String): String {

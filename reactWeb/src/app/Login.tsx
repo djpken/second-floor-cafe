@@ -22,8 +22,8 @@ const Login: React.FC = () => {
             >
                 <Box sx={{borderBottom: 1, borderColor: "divider"}}>
                     <Tabs value={value} onChange={handleChange}>
-                        <Tab label={t("Login")} sx={{width: 1 / 2}} value={"LoginForm"}/>
-                        <Tab label={t("Register")} sx={{width: 1 / 2}} value={"RegisterForm"}/>
+                        <Tab label={t("login")} sx={{width: 1 / 2}} value={"LoginForm"}/>
+                        <Tab label={t("register")} sx={{width: 1 / 2}} value={"RegisterForm"}/>
                     </Tabs>
                 </Box>
                 <LoginForm value={value}/>

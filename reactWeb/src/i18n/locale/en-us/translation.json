@@ -1,7 +1,7 @@
 {
   "hello": "hello!",
-  "ERPLogin": "Login",
-  "ERPRegister": "Register",
+  "login": "Login",
+  "register": "Register",
   "pleaseEnterYourUsername": "Please enter your username",
   "pleaseEnterYourPassword": "Please enter your password"
 }

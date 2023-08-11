@@ -1,25 +1,16 @@
 package com.erp.sf.model
 
+import com.erp.sf.constant.C
+import com.erp.sf.constant.M
 import java.io.Serializable
 
-data class ApiResponse<T>(val code:Int , val data:T?,val message:String?):Serializable{
-    companion object{
-        private fun <T> failed(code:Int,message:String):ApiResponse<T>{
-            return ApiResponse(code,null,message)
-        }
-        fun <T> success(data:T,message:String):ApiResponse<T>{
-            return ApiResponse(200,data,null)
-        }
-        fun <T> tokenFailed (message: String):ApiResponse<T>{
-            return failed(401,message)
-        }
-        fun <T> businessFailed (message: String):ApiResponse<T>{
-            return failed(501,message)
-        }
-        fun <T> validateFailed (message: String):ApiResponse<T>{
-            return failed(400,message)
-        }
 
+data class ApiResponse<T>(val code: Int, val data: T?, val message: String) : Serializable {
+    //Fail
+    constructor(code: C, data: T, message: M) : this(code.code, data, message.message)
+    constructor(code: C, message: M) : this(code.code, null, message.message)
 
-    }
+    //Success
+    constructor(data: T, message: M) : this(C.SUCCESS.code, data, message.message)
+    constructor(data: T) : this(C.SUCCESS.code, data, "")
 }
