@@ -28,18 +28,21 @@ dependencies {
     implementation("org.springframework.boot:spring-boot-starter-data-redis:$springBootVersion")
     implementation("com.github.xiaoymin:knife4j-openapi3-jakarta-spring-boot-starter:4.1.0")
     implementation("cn.hutool:hutool-all:5.8.20")
+    implementation("p6spy:p6spy:3.9.1")
     runtimeOnly("org.jetbrains.kotlin:kotlin-reflect:1.9.0")
     compileOnly("org.projectlombok:lombok:1.18.24")
     testImplementation("org.springframework.boot:spring-boot-starter-test:$springBootVersion")
     testImplementation("com.baomidou:mybatis-plus-boot-starter-test:$myBatisPlusVersion")
 }
-tasks.withType<JavaCompile> {
+tasks.withType(JavaCompile::class.java) {
     options.encoding = "UTF-8"
 }
-tasks.withType<JavaExec> {
-    systemProperty("file.encoding", "utf-8")
+tasks.withType(JavaExec::class.java) {
+    systemProperty("file.encoding", "UTF-8")
 }
-
+tasks.withType(Javadoc::class.java) {
+    options.encoding = "UTF-8"
+}
 tasks.withType<KotlinCompile> {
     kotlinOptions {
         freeCompilerArgs += "-Xjsr305=strict"

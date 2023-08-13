@@ -16,3 +16,4 @@ CREATE TABLE SYS_USER
 INSERT INTO SYS_USER(ID, USERNAME, PASSWORD, CHINESE_NAME, ENGLISH_NAME, EMAIL, CREATE_AT, UPDATE_AT)
 values (1, '003958', '003958', '許正坤', 'Kun', 'djpkendjpken@gmail.com', now(), now()),
        (2, '004015', '004015', '林郁晴', 'Melody', 'ching@gmail.com', now(), now());
+

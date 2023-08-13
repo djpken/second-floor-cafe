@@ -1,5 +1,6 @@
 package com.erp.sf.controller
 
+import com.erp.sf.model.ResponseEntity
 import com.erp.sf.service.MenuDishService
 import org.springframework.beans.factory.annotation.Autowired
 import org.springframework.web.bind.annotation.GetMapping
@@ -14,7 +15,8 @@ class DishController {
     private lateinit var menuDishService: MenuDishService
 
     @GetMapping("{season}")
-    public fun selectMenuDishBySeason(@PathVariable season: Long) {
-        menuDishService.selectMenuDishBySeason(season);
+    public fun selectMenuDishBySeason(@PathVariable season: Long): ResponseEntity<Any> {
+        val selectMenuDishBySeason = menuDishService.selectMenuDishBySeason(season);
+        return ResponseEntity.ok(selectMenuDishBySeason)
     }
 }

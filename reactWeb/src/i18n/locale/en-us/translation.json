@@ -1,7 +1,7 @@
 {
   "hello": "hello!",
-  "login": "Login",
-  "register": "Register",
+  "LoginForm": "Login",
+  "RegisterForm": "Register",
   "pleaseEnterYourUsername": "Please enter your username",
   "pleaseEnterYourPassword": "Please enter your password"
 }

@@ -9,12 +9,25 @@ import {Visibility, VisibilityOff} from "@mui/icons-material";
 import * as yup from "yup";
 import {apiSecurityLogin} from "../../Api";
 import ControllerFullWidthField from "./ControllerFullWidthField/ControllerFullWidthField";
+import {FormProps} from "./Login";
+import SysUser from "../../entity/SysUser";
+import {AxiosError} from "axios";
+import TokenResponse from "../../model/TokenResponse";
+import {ApiResponse} from "../../model/PromiseApi";
 
-interface LoginFormProps {
-    value: string
+
+const user = yup.object().shape({
+    username: yup.string().required("請輸入工號"),
+    password: yup.string().required("請輸入密碼"),
+});
+
+const securityLogin = async (sysUser: SysUser) => {
+    const response = await apiSecurityLogin(sysUser);
+    return response.data
 }
 
-const LoginForm: React.FC<LoginFormProps> = ({value}) => {
+
+const LoginForm = ({display, path}: FormProps) => {
     const navigate = useNavigate();
     const [showPassword, setShowPassword] = useState(false);
     const {
@@ -23,28 +36,23 @@ const LoginForm: React.FC<LoginFormProps> = ({value}) => {
         setError,
         formState: {errors},
     } = useForm({
-        resolver: yupResolver(user),
-        defaultValues: {
-            username: "",
-            password: "",
-        },
+        resolver: yupResolver(user)
     });
     const loginMutation = useMutation({
         mutationFn: securityLogin,
-        onSuccess: (response) => {
-            localStorage.setItem("token", response.data.Authorization);
-            localStorage.setItem("auth", response.data.authority);
-            localStorage.setItem("user", JSON.stringify(response.data.user));
-            navigate("/main/section");
+        onSuccess: (tokenResponse) => {
+            localStorage.setItem("Authorization", tokenResponse.authorization);
+            localStorage.setItem("authority", tokenResponse.authority);
+            localStorage.setItem("user", JSON.stringify(tokenResponse.sysUser));
+            navigate(path);
         },
-        onError: (error: any) => {
+        onError: (error: AxiosError<ApiResponse<TokenResponse>>) => {
             setError("root", {
-                message: error.response.data.message || error.message,
+                message: error.response?.data.message || error.message,
             });
         },
     });
-    const onSubmit = (data: { username: string; password: string }) => {
-        console.log(data);
+    const onSubmit = (data: SysUser) => {
         loginMutation.mutate(data);
     };
     const handleClickShowPassword = () => setShowPassword((show) => !show);
@@ -53,7 +61,7 @@ const LoginForm: React.FC<LoginFormProps> = ({value}) => {
     };
     return (
         <Stack
-            display={value === "LoginForm" ? "block" : "none"}
+            display={display ? "block" : "none"}
             component={"form"}
             onSubmit={handleSubmit(onSubmit)}
             padding={3}
@@ -101,18 +109,6 @@ const LoginForm: React.FC<LoginFormProps> = ({value}) => {
             </Stack>
         </Stack>
     );
-}
-
-const user = yup.object().shape({
-    username: yup.string().required("請輸入工號"),
-    password: yup.string().required("請輸入密碼"),
-});
-
-async function securityLogin(data: { username: string; password: string }) {
-    return await apiSecurityLogin({
-        username: data.username,
-        password: data.password,
-    });
 }
 
 export default LoginForm

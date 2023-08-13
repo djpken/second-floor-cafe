@@ -2,12 +2,23 @@ import styled from "@emotion/styled";
 import {Box, Tab, Tabs,} from "@mui/material";
 import React, {useState} from "react";
 import {useTranslation} from "react-i18next";
-import LoginForm from "./login/LoginForm";
-import RegisterForm from "./login/RegisterForm";
+import LoginForm from "./LoginForm";
+import RegisterForm from "./RegisterForm";
+import {routesPathMap} from "../../Router";
 
-const Login: React.FC = () => {
-    const [value, setValue] = useState("LoginForm");
+export interface FormProps {
+    display: boolean,
+    path: string
+}
+
+const form: Function[] = [
+    LoginForm,
+    RegisterForm
+]
+const Login = () => {
+    const [value, setValue] = useState<string>(form[0].name);
     const {t} = useTranslation();
+    const [sectionPath] = useState<string>(routesPathMap("Section"))
     const handleChange = (event: React.SyntheticEvent, newValue: string) => {
         setValue(newValue);
     };
@@ -22,12 +33,13 @@ const Login: React.FC = () => {
             >
                 <Box sx={{borderBottom: 1, borderColor: "divider"}}>
                     <Tabs value={value} onChange={handleChange}>
-                        <Tab label={t("login")} sx={{width: 1 / 2}} value={"LoginForm"}/>
-                        <Tab label={t("register")} sx={{width: 1 / 2}} value={"RegisterForm"}/>
+                        {form.map((item, index) =>
+                            <Tab key={index} label={t(item.name)} sx={{width: 1 / 2}} value={item.name}/>
+                        )}
                     </Tabs>
                 </Box>
-                <LoginForm value={value}/>
-                <RegisterForm value={value}/>
+                <LoginForm display={value === LoginForm.name} path={sectionPath}/>
+                <RegisterForm display={value === RegisterForm.name} path={sectionPath}/>
             </Box>
         </Bgd>
     );

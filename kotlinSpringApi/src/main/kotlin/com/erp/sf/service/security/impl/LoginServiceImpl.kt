@@ -2,25 +2,28 @@ package com.erp.sf.service.security.impl
 
 import cn.hutool.jwt.JWTUtil
 import com.baomidou.mybatisplus.extension.kotlin.KtQueryWrapper
+import com.erp.sf.component.PasswordComponent
+import com.erp.sf.component.RedisComponent
+import com.erp.sf.component.SettingComponent
+import com.erp.sf.constant.M
 import com.erp.sf.constant.S
 import com.erp.sf.entity.SysRole
-import com.erp.sf.component.RedisComponent
 import com.erp.sf.entity.SysUser
 import com.erp.sf.entity.SysUserRole
 import com.erp.sf.exception.DataException
-import com.erp.sf.mapper.*
+import com.erp.sf.mapper.SysMenuMapper
+import com.erp.sf.mapper.SysRoleMapper
+import com.erp.sf.mapper.SysUserMapper
+import com.erp.sf.mapper.SysUserRoleMapper
 import com.erp.sf.model.LoginUser
-import com.erp.sf.service.security.LoginService
-import com.erp.sf.component.PasswordComponent
-import com.erp.sf.component.SettingComponent
-import com.erp.sf.constant.M
 import com.erp.sf.model.SysResponse
+import com.erp.sf.model.TokenResponse
+import com.erp.sf.service.security.LoginService
 import org.springframework.beans.factory.annotation.Autowired
 import org.springframework.security.authentication.AuthenticationManager
 import org.springframework.security.authentication.UsernamePasswordAuthenticationToken
 import org.springframework.security.core.context.SecurityContextHolder
 import org.springframework.stereotype.Service
-import kotlin.collections.HashMap
 
 @Service
 class LoginServiceImpl : LoginService {
@@ -48,7 +51,7 @@ class LoginServiceImpl : LoginService {
     @Autowired
     private lateinit var sysUserRoleMapper: SysUserRoleMapper
 
-    override fun login(sysUser: SysUser): Map<String, Any> {
+    override fun login(sysUser: SysUser): TokenResponse {
         val authenticate =
             authenticationManager.authenticate(UsernamePasswordAuthenticationToken(sysUser.username, sysUser.password))
         val loginUser = authenticate.principal as LoginUser
@@ -56,19 +59,19 @@ class LoginServiceImpl : LoginService {
         val auth = loginUser.authorities.toString()
         redisUtil["login:$userId"] = auth
         val jwt = setJwt(userId)
-        return getMap(loginUser.sysUser, auth, jwt)
+        return TokenResponse("Bearer $jwt", auth, loginUser.sysUser)
 
     }
 
-    override fun logout(): Map<String, Any> {
+    override fun logout(): TokenResponse {
         val usernamePasswordAuthenticationToken =
             SecurityContextHolder.getContext().authentication as UsernamePasswordAuthenticationToken
         val loginUser = usernamePasswordAuthenticationToken.principal as LoginUser
         redisUtil.del("login:${loginUser.sysUser.id}")
-        return getMap(SysUser(), "", "")
+        return TokenResponse("", "", loginUser.sysUser)
     }
 
-    override fun register(sysUser: SysUser): Map<String, Any> {
+    override fun register(sysUser: SysUser): TokenResponse {
         if (sysUser.password != s.get(S.INVITE_CODE)) {
             throw DataException(SysResponse(M.INVITE_CODE_ERROR))
         }
@@ -79,10 +82,10 @@ class LoginServiceImpl : LoginService {
         sysUserMapper.insert(sysUser)
         sysUserRoleMapper.insert(SysUserRole(0, sysUser.id, getInitRoleId()))
 
-        val auth = sysUser.id?.let { sysMenuMapper.selectPermsByUserId(it).toString() } ?: return emptyMap()
+        val auth = sysUser.id?.let { sysMenuMapper.selectPermsByUserId(it).toString() } ?: ""
         val jwt = setJwt(sysUser.id.toString())
         redisUtil["login"] = auth
-        return getMap(sysUser, auth, jwt)
+        return TokenResponse("Bearer $jwt", auth, sysUser)
     }
 
     fun setJwt(id: String): String {
@@ -92,14 +95,6 @@ class LoginServiceImpl : LoginService {
         return JWTUtil.createToken(map, "123".toByteArray())
     }
 
-    fun getMap(sysUser: SysUser, auth: String, jwt: String): HashMap<String, Any> {
-        val map = HashMap<String, Any>()
-        sysUser.password = ""
-        map["user"] = sysUser
-        map["authority"] = auth
-        map["authorization"] = "Bearer $jwt"
-        return map
-    }
 
     fun getInitRoleId(): Long {
         return sysRoleMapper.selectOne(KtQueryWrapper(SysRole::class.java).eq(SysRole::name, s.get(S.INIT_ROLE))).id

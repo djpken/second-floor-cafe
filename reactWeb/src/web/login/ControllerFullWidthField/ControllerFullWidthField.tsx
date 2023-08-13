@@ -2,12 +2,12 @@ import React from "react";
 import {Controller} from "react-hook-form";
 import {TextField} from "@mui/material";
 
-const ControllerFullWidthField: React.FC<FieldProps> = ({
-                                                            control,
-                                                            name,
-                                                            error,
-                                                            ...props
-                                                        }) => {
+const ControllerFullWidthField = ({
+                                      control,
+                                      name,
+                                      error,
+                                      ...props
+                                  }: FieldProps) => {
     return (
         <Controller
             control={control}
@@ -22,7 +22,7 @@ const ControllerFullWidthField: React.FC<FieldProps> = ({
 interface FieldProps {
     control: any;
     name: string;
-    error: any;
+    error: any | undefined;
 
     [key: string]: any;
 }

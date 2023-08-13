@@ -1,6 +1,6 @@
 import {createTheme} from "@mui/material";
 
-const Theme = () =>
+const Theme =
     createTheme({
         palette: {
             primary: {

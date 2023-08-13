@@ -23,7 +23,8 @@
        su.`english_name`,
        su.`email`,
        su.`create_at`,
-       su.`update_at`
+       su.`update_at`,
+       su.`delete_at`
     </sql>
     <select id="selectOneByUsername" resultMap="BaseResultMap">
         select

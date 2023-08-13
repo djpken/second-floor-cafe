@@ -1,7 +1,7 @@
 {
   "hello": "你好!",
-  "login": "登入",
-  "register": "註冊",
+  "LoginForm": "登入",
+  "RegisterForm": "註冊",
   "pleaseEnterYourUsername": "請輸入工號",
   "pleaseEnterYourPassword": "請輸入密碼"
 }

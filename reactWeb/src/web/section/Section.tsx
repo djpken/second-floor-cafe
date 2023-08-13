@@ -2,21 +2,22 @@ import {Route, Routes, useLocation, useNavigate} from "react-router-dom";
 import {Box, Theme, useTheme} from "@mui/material";
 import styled from "@emotion/styled";
 import {CSSTransition, TransitionGroup} from "react-transition-group";
-import Authority from "./section/Authority";
-import CustomAppBar from "./sectionBar/CustomAppBar";
-import CustomDrawer from "./sectionBar/CustomDrawer";
-import Menu from "./Menu";
-import Home from "./section/Home";
+import Authority from "./Authority";
+import CustomAppBar from "../sectionBar/CustomAppBar";
+import CustomDrawer from "../sectionBar/CustomDrawer";
+import Menu from "../menu/Menu";
+import Home from "./Home";
 import {useMutation} from "@tanstack/react-query";
-import {apiSecurityLogout} from "../Api";
-import {AxiosResponse} from "axios";
+import {apiSecurityLogout} from "../../Api";
 import {useState} from "react";
+import {routesPathMap} from "../../Router";
 
-function securityLogout(): Promise<AxiosResponse> {
-    return apiSecurityLogout();
+const securityLogout = async () => {
+    const response = await apiSecurityLogout();
+    return response.data
 }
 
-export default function Section(): JSX.Element {
+const Section = () => {
     const theme = useTheme();
     const location = useLocation();
     const navigate = useNavigate();
@@ -68,7 +69,8 @@ export default function Section(): JSX.Element {
             </Main>
         </Bgd>
     );
-}
+};
+export default Section
 type MainProps = {
     open: boolean;
     theme: Theme;
@@ -117,14 +119,14 @@ const menus: MenuGroup[] = [
     {
         title: "Admin",
         items: [
-            {to: "authority", h: "人員權限"},
-            {to: "role", h: "身分權限"},
+            {to: routesPathMap("Authority"), h: "人員權限"},
+            {to: routesPathMap("Role"), h: "身分權限"},
         ],
     },
     {
         title: "Employee",
         items: [
-            {to: "/main/menutest", h: "Menu Test"},
+            {to: routesPathMap("Menu"), h: "Menu Test"},
         ],
     },
 ];

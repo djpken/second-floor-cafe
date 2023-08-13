@@ -66,10 +66,10 @@ function Table() {
     const handleCreateNewRow = (values: User) => {
     };
     const queryFn = async () => {
-        const response = await apiGetDish(
-            pagination.pageIndex,
+        const season:number = 2023;
+        const response = await apiGetDish({season}
         );
-        return response.data;
+        return response.data as any;
     };
     const {data, isError, isFetching, isLoading, error, refetch} =
         useQuery<UserApiResponse>({

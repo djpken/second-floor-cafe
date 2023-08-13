@@ -4,7 +4,6 @@ import com.erp.sf.component.RedisComponent
 import org.slf4j.Logger
 import org.slf4j.LoggerFactory
 import org.springframework.beans.factory.annotation.Autowired
-import org.springframework.boot.ApplicationRunner
 import org.springframework.boot.CommandLineRunner
 import org.springframework.boot.autoconfigure.SpringBootApplication
 import org.springframework.boot.runApplication
@@ -17,15 +16,18 @@ class SfApplication {
     @Autowired
     private lateinit var redisComponent: RedisComponent
     val logger: Logger = LoggerFactory.getLogger(javaClass)
+
     @Bean
     fun initConnection(): CommandLineRunner {
         return CommandLineRunner {
             redisComponent.cleanRedis()
-            logger.info("Cleaned the redis db")
+            logger.info("Redis status : cleaned")
+            logger.info("File encoding : " + System.getProperty("file.encoding"))
         }
     }
 }
 
 fun main(args: Array<String>) {
+    System.setProperty("console.encoding", "UTF-8")
     runApplication<SfApplication>(*args)
 }

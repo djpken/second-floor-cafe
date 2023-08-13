@@ -23,13 +23,11 @@ mybatis-plus:
     banner: false
     db-config:
       logic-delete-field: deleteAt
-  configuration:
-    log-impl: org.apache.ibatis.logging.stdout.StdOutImpl
   check-config-location: true
   mapper-locations: classpath:/mapper/*.xml
 springdoc:
   swagger-ui:
-    path: /su
+    path: /swagger-ui.html
     tags-sorter: alpha
     operations-sorter: alpha
   api-docs:
@@ -37,7 +35,7 @@ springdoc:
   group-configs:
     - group: 'default'
       paths-to-match: '/**'
-      packages-to-scan: com.xiaominfo.knife4j.demo.web
+      packages-to-scan: com.erp.sf.controller
 knife4j:
   enable: true
   setting:
@@ -48,16 +46,16 @@ server:
   port: 8082
   servlet:
     context-path: /api
-    encoding:
-      charset: utf-8
 logging:
   pattern:
     console: "%d{hh:mm:ss} [%thread] %-5level %logger{50} - %msg%n"
     file: "%d{yyyy-MM-dd hh:mm:ss} === [%thread] === %-5level === %logger{50} === - %msg%n"
   file:
     path: logs/apiLog
-  level:
     net:
       biancheng:
         www: trace
+  level:
+    com.erp.sf.mapper": debug
+
 

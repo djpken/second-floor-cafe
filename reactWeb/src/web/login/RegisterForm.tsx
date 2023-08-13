@@ -7,22 +7,13 @@ import {useMutation} from "@tanstack/react-query";
 import {Button, FormHelperText, Stack} from "@mui/material";
 import React from "react";
 import ControllerFullWidthField from "./ControllerFullWidthField/ControllerFullWidthField";
-import {InferType} from "yup";
+import {FormProps} from "./Login";
+import SysUser from "../../entity/SysUser";
+import {AxiosError} from "axios";
+import {ApiResponse} from "../../model/PromiseApi";
+import TokenResponse from "../../model/TokenResponse";
 
-interface registerFormProps {
-    value: string;
-}
 
-interface registerProps extends InferType<typeof register> {
-}
-
-const securityRegister = async (data: registerProps) => {
-    return await apiSecurityRegister({
-        username: data.username,
-        chineseName: data.chineseName,
-        password: data.inviteCode
-    });
-}
 const register = yup.object().shape({
     chineseName: yup.string().required("請輸入名子"),
     username: yup.string().required("請輸入工號"),
@@ -30,7 +21,11 @@ const register = yup.object().shape({
 });
 
 
-const RegisterForm: React.FC<registerFormProps> = ({value}) => {
+const securityRegister = async (sysUser: SysUser) => {
+    const response = await apiSecurityRegister(sysUser);
+    return response.data
+}
+const RegisterForm = ({display, path}: FormProps) => {
     const navigate = useNavigate();
     const {
         handleSubmit,
@@ -39,32 +34,27 @@ const RegisterForm: React.FC<registerFormProps> = ({value}) => {
         formState: {errors},
     } = useForm({
         resolver: yupResolver(register),
-        defaultValues: {
-            chineseName: "",
-            username: "",
-            inviteCode: "",
-        },
     });
     const registerMutation = useMutation({
         mutationFn: securityRegister,
         onSuccess: (response) => {
-            localStorage.setItem("token", response.data.Authorization);
-            localStorage.setItem("auth", response.data.authority);
-            localStorage.setItem("user", JSON.stringify(response.data.user));
-            navigate("/main/section");
+            localStorage.setItem("authorization", response.authorization);
+            localStorage.setItem("authority", response.authority);
+            localStorage.setItem("user", JSON.stringify(response.sysUser));
+            navigate(path);
         },
-        onError: (error: any) => {
+        onError: (error: AxiosError<ApiResponse<TokenResponse>>) => {
             setError("root.message", {
                 message: error.response?.data.message || error.message,
             });
         },
     });
-    const onSubmit = (data: registerProps) => {
+    const onSubmit = (data: SysUser) => {
         registerMutation.mutate(data);
     };
     return (
         <Stack
-            display={value === "RegisterForm" ? "block" : "none"}
+            display={display ? "block" : "none"}
             component={"form"}
             padding={3}
             spacing={2}
@@ -86,7 +76,7 @@ const RegisterForm: React.FC<registerFormProps> = ({value}) => {
                 <Stack direction={"row"}>
                     <ControllerFullWidthField
                         control={control}
-                        name={"inviteCode"}
+                        name={"password"}
                         error={errors.inviteCode}
                         label={"註冊碼"}
                         sx={{width: "0.5"}}

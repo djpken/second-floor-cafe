@@ -2,6 +2,7 @@ package com.erp.sf.service.security
 
 import cn.hutool.jwt.JWTUtil
 import com.erp.sf.JunitService
+import com.erp.sf.component.RedisComponent
 import com.erp.sf.entity.SysRoleMenu
 import com.erp.sf.entity.SysUser
 import com.erp.sf.entity.SysUserRole
@@ -10,12 +11,10 @@ import com.erp.sf.entity.impl.SysRoleTest
 import com.erp.sf.entity.impl.SysUserTest
 import com.erp.sf.exception.DataException
 import com.erp.sf.mapper.*
-import com.erp.sf.component.RedisComponent
 import org.junit.jupiter.api.Assertions
 import org.junit.jupiter.api.BeforeEach
 import org.junit.jupiter.api.Test
 import org.springframework.beans.factory.annotation.Autowired
-import java.lang.NullPointerException
 import java.util.*
 
 class LoginServiceImplTest : JunitService() {
@@ -65,17 +64,18 @@ class LoginServiceImplTest : JunitService() {
             val sysUser = sysUserTest.list[i]
             val login = loginService.login(sysUser)
             //case 1
-            Assertions.assertEquals(sysUser.id, (login["user"] as SysUser).id)
+            Assertions.assertEquals(sysUser.id, login.sysUser.id)
 
             //case 2
-            Assertions.assertEquals(sysMenuMapper.selectPermsByUserId(sysUser.id!!).toString(), login["authority"])
+            Assertions.assertEquals(sysMenuMapper.selectPermsByUserId(sysUser.id!!).toString(), login.authority)
 
             //case 3
             val s = redisUtil["login:${sysUser.id}"]
             Assertions.assertEquals(sysMenuMapper.selectPermsByUserId(sysUser.id!!).toString(), s)
 
             //case 4
-            val authorization = login["authorization"].toString()
+            val authorization = login.authorization
+            println(authorization)
             val parseToken = JWTUtil.parseToken(authorization.substring(7))
             val id: Long = parseToken.getPayload("id").toString().toLong()
             Assertions.assertEquals(sysUser.id, id)
@@ -106,7 +106,7 @@ class LoginServiceImplTest : JunitService() {
         for (i in 0 until number) {
             val sample = SysUser(0, UUID.randomUUID().toString(), "SF")
             val map = loginService.register(sample)
-            val sysUser = map["user"] as SysUser
+            val sysUser = map.sysUser
             Assertions.assertEquals(sample.username, sysUser.username)
 
         }
