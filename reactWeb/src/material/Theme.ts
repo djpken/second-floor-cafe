@@ -6,6 +6,10 @@ const Theme =
             primary: {
                 main: "#6C757D",
             },
+            secondary: {
+                main: "#cea583",
+            },
+
             info: {
                 main: "#FFFFFF",
             },
@@ -27,9 +31,9 @@ const Theme =
             },
             MuiDrawer: {
                 styleOverrides: {
-                    paper: {
-                        backgroundColor: "#6C757D",
-                    },
+                    paper: ({theme}) => ({
+                        backgroundColor: theme.palette.primary.main,
+                    }),
                 },
             },
             MuiListItemText: {

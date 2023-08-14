@@ -1,5 +1,5 @@
 import {Route, Routes, useLocation, useNavigate} from "react-router-dom";
-import {Box, Theme, useTheme} from "@mui/material";
+import {Box, Stack, Theme, useTheme} from "@mui/material";
 import styled from "@emotion/styled";
 import Authority from "./sectionPage/Authority";
 import CustomAppBar from "./section/CustomAppBar";
@@ -9,7 +9,7 @@ import {useMutation} from "@tanstack/react-query";
 import React, {useState} from "react";
 import {apiSecurityLogout} from "../api";
 import MenuManager from "./sectionPage/MenuManager";
-import {initPath, routes} from "../Router";
+import {initPath} from "../Router";
 
 const securityLogout = async () => {
     const response = await apiSecurityLogout();
@@ -47,39 +47,47 @@ const Section = () => {
                 menus={menus}
                 handleLogout={handleLogout}
             />
-            <Main theme={theme} open={openNav}>
-                <Box sx={{width: 1}}>
-                    <Routes location={location}>
-                        <Route path={"home"} element={<Home/>}/>
-                        <Route path={"authority"} element={<Authority/>}/>
-                        <Route path={"menuManager"} element={<MenuManager/>}/>
-                    </Routes>
-                </Box>
-            </Main>
+            <Stack direction={'row'} spacing={2}>
+                <Main theme={theme} openNav={openNav}>
+                    <Box sx={{width: 1}}>
+                        <Routes location={location}>
+                            <Route path={"home"} element={<Home/>}/>
+                            <Route path={"authority"} element={<Authority/>}/>
+                            <Route path={"menuManager"} element={<MenuManager/>}/>
+                        </Routes>
+                    </Box>
+                </Main>
+            </Stack>
         </Bgd>
     );
 };
 export default Section
-type MainProps = {
-    open: boolean;
+
+interface MainProps {
+    openNav: boolean;
     theme: Theme;
-};
-const Main = styled("main", {shouldForwardProp: (prop) => prop !== "open"})(
-    ({theme, open}: MainProps) => ({
-        overflow: "auto",
-        flexGrow: 1,
-        transition: theme.transitions.create("margin", {
-            easing: theme.transitions.easing.sharp,
-            duration: theme.transitions.duration.leavingScreen,
-        }),
-        ...(open && {
-            marginLeft: 240,
-            transition: theme.transitions.create("margin", {
-                easing: theme.transitions.easing.easeOut,
-                duration: theme.transitions.duration.enteringScreen,
-            }),
-        }),
-    })
+    children?: React.ReactNode;
+}
+
+const mainStyles = ({ theme, openNav }:MainProps) => ({
+    overflow: "auto",
+    transition: theme.transitions.create("margin", {
+        easing: theme.transitions.easing.sharp,
+        duration: openNav
+            ? theme.transitions.duration.enteringScreen
+            : theme.transitions.duration.leavingScreen,
+    }),
+});;
+
+const MainContainer = styled(Box, {shouldForwardProp: (prop) => prop !== "open"})(
+    ({theme, openNav}: MainProps) => mainStyles({theme, openNav})
+);
+
+const Main = ({theme, children, openNav}: MainProps) => (
+    <MainContainer theme={theme} openNav={openNav}
+                   sx={{paddingLeft: {md: -180, lg: -240, xl: -300}}}>
+        {children}
+    </MainContainer>
 );
 
 const Bgd = styled(Box)({
