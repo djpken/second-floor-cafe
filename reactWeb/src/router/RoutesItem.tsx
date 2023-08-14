@@ -8,12 +8,12 @@ export interface InitProps {
 export interface DomTitleProps {
     name: string;
     element: React.ReactNode;
-    nodeRef?: RefObject<any>
+    nodeRef: RefObject<any>
 }
 
 export interface RoutesItem extends DomTitleProps, InitProps {
     extended: boolean
-    transition?: boolean
+    transition: boolean
 }
 
 

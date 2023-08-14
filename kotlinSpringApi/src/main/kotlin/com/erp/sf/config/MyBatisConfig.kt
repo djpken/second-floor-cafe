@@ -11,9 +11,14 @@ import org.springframework.context.annotation.Configuration
 @MapperScan("com.erp.sf.mapper")
 class MyBatisConfig {
     @Bean
-    fun  mybatisPlusInterceptor(): MybatisPlusInterceptor {
-        val interceptor:MybatisPlusInterceptor = MybatisPlusInterceptor()
+    fun mybatisPlusInterceptor(): MybatisPlusInterceptor {
+        val interceptor: MybatisPlusInterceptor = MybatisPlusInterceptor()
         interceptor.addInnerInterceptor(PaginationInnerInterceptor(DbType.MARIADB))
         return interceptor
+    }
+
+    @Bean
+    fun insertBatchSqlInjector(): InsertBatchSqlInjector {
+        return InsertBatchSqlInjector()
     }
 }

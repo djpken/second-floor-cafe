@@ -3,7 +3,7 @@ package com.erp.sf.service.impl
 import com.baomidou.mybatisplus.extension.kotlin.KtQueryWrapper
 import com.erp.sf.entity.Score
 import com.erp.sf.mapper.ScoreMapper
-import com.erp.sf.service.security.ScoreService
+import com.erp.sf.service.ScoreService
 import org.springframework.beans.factory.annotation.Autowired
 import org.springframework.stereotype.Service
 

@@ -7,13 +7,13 @@ import {Button, FormHelperText, InputAdornment, Stack} from "@mui/material";
 import IconButton from "@mui/material/IconButton";
 import {Visibility, VisibilityOff} from "@mui/icons-material";
 import * as yup from "yup";
-import {apiSecurityLogin} from "../../Api";
 import ControllerFullWidthField from "./ControllerFullWidthField/ControllerFullWidthField";
-import {FormProps} from "./Login";
-import SysUser from "../../entity/SysUser";
+import {FormProps} from "../Login";
 import {AxiosError} from "axios";
-import TokenResponse from "../../model/TokenResponse";
+import TokenModel from "../../model/TokenModel";
 import {ApiResponse} from "../../model/PromiseApi";
+import {apiSecurityLogin} from "../../api";
+import SysUser from "../../entity/SysUser";
 
 
 const user = yup.object().shape({
@@ -41,19 +41,19 @@ const LoginForm = ({display, path}: FormProps) => {
     const loginMutation = useMutation({
         mutationFn: securityLogin,
         onSuccess: (tokenResponse) => {
-            localStorage.setItem("Authorization", tokenResponse.authorization);
+            localStorage.setItem("authorization", tokenResponse.authorization);
             localStorage.setItem("authority", tokenResponse.authority);
             localStorage.setItem("user", JSON.stringify(tokenResponse.sysUser));
             navigate(path);
         },
-        onError: (error: AxiosError<ApiResponse<TokenResponse>>) => {
+        onError: (error: AxiosError<ApiResponse<TokenModel>>) => {
             setError("root", {
                 message: error.response?.data.message || error.message,
             });
         },
     });
-    const onSubmit = (data: SysUser) => {
-        loginMutation.mutate(data);
+    const onSubmit = (data: { username: string, password: string }) => {
+        loginMutation.mutate({id:0,...data});
     };
     const handleClickShowPassword = () => setShowPassword((show) => !show);
     const handleMouseDownPassword = (event: React.MouseEvent) => {

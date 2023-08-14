@@ -1,12 +1,29 @@
-import Login from "./web/login/Login";
-import Section from "./web/section/Section";
-import Menu from "./web/menu/Menu";
+import Login from "./web/Login";
+import Section from "./web/Section";
+import Menu from "./web/Menu";
+import MenuManager from "./web/sectionPage/MenuManager";
 import {DomTitle, Init, RoutesItem} from "./router/RoutesItem";
-import React, {createRef} from "react";
+import React, {createRef, useEffect} from "react";
 import {createBrowserRouter, Outlet, useLocation} from "react-router-dom";
 
 export const initPath: string = "/web/login"
 export const routes: RoutesItem[] = [
+    {
+        name: "Init",
+        path: "/",
+        transition: false,
+        extended: false,
+        element: <Init path={initPath}/>,
+        nodeRef: createRef()
+    },
+    {
+        name: "Init",
+        path: "/web",
+        transition: false,
+        extended: false,
+        element: <Init path={initPath}/>,
+        nodeRef: createRef()
+    },
     {
         name: "Login",
         path: initPath,
@@ -25,26 +42,10 @@ export const routes: RoutesItem[] = [
     },
     {
         name: "Menu",
-        path: "/web/test/menu",
+        path: "/web/section/employee/menu",
         transition: true,
         extended: true,
         element: <Menu/>,
-        nodeRef: createRef()
-    },
-    {
-        name: "Init",
-        path: "/",
-        transition: false,
-        extended: false,
-        element: <Init path={initPath}/>,
-        nodeRef: createRef()
-    },
-    {
-        name: "Init",
-        path: "/web",
-        transition: false,
-        extended: false,
-        element: <Init path={initPath}/>,
         nodeRef: createRef()
     },
 ];
@@ -53,7 +54,7 @@ export const routesPathMap: (name: string) => string = (name: string) => (routes
 
 const Root = () => {
     const location = useLocation();
-    const {nodeRef, name, transition} = routes.find((route) => route.path === location.pathname) ?? {};
+    const {nodeRef, name, transition} = routes.find((route) => route.path === location.pathname) ?? routes[0];
     return (
         // <SwitchTransition>
         //     <CSSTransition
@@ -63,7 +64,7 @@ const Root = () => {
         //         classNames={"fade"}
         //         unmountOnExit
         //     >
-        <DomTitle nodeRef={nodeRef} name={name ?? ""} element={<Outlet/>}/>
+        <DomTitle nodeRef={nodeRef} name={name} element={<Outlet/>}/>
         //     </CSSTransition>
         // </SwitchTransition>
     )

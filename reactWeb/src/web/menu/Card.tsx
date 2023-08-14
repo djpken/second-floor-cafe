@@ -2,7 +2,7 @@ import React, {useEffect, useState} from "react";
 import useInput from "./card/useInput";
 import {Box, InputBase, Stack} from "@mui/material";
 import styled from "@emotion/styled";
-import {CardProps} from "./Menu";
+import {CardProps} from "../Menu";
 
 
 const Card = ({
@@ -29,7 +29,7 @@ const Card = ({
         }
     }, [check, chineseName, handleResult, id, value]);
     useEffect(() => {
-        handleResult(result, id ?? 0);
+        handleResult(result, id );
     }, [handleResult, id, result]);
     return (
         <CardBody

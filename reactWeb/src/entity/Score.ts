@@ -1,7 +1,6 @@
-export default interface Score {
-    id?: number
-    userId?: number
-    score?: number
-    createAt?: Date
-    updateAt?: Date
+import IBaseTime from "./IBaseTime";
+
+export default interface Score extends IBaseTime{
+    userId: number
+    score: number
 }

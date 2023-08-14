@@ -1,4 +1,3 @@
-import {apiSecurityRegister} from "../../Api";
 import * as yup from "yup";
 import {useNavigate} from "react-router-dom";
 import {useForm} from "react-hook-form";
@@ -7,11 +6,12 @@ import {useMutation} from "@tanstack/react-query";
 import {Button, FormHelperText, Stack} from "@mui/material";
 import React from "react";
 import ControllerFullWidthField from "./ControllerFullWidthField/ControllerFullWidthField";
-import {FormProps} from "./Login";
-import SysUser from "../../entity/SysUser";
+import {FormProps} from "../Login";
 import {AxiosError} from "axios";
 import {ApiResponse} from "../../model/PromiseApi";
-import TokenResponse from "../../model/TokenResponse";
+import TokenModel from "../../model/TokenModel";
+import {apiSecurityRegister} from "../../api";
+import SysUser from "../../entity/SysUser";
 
 
 const register = yup.object().shape({
@@ -43,14 +43,14 @@ const RegisterForm = ({display, path}: FormProps) => {
             localStorage.setItem("user", JSON.stringify(response.sysUser));
             navigate(path);
         },
-        onError: (error: AxiosError<ApiResponse<TokenResponse>>) => {
+        onError: (error: AxiosError<ApiResponse<TokenModel>>) => {
             setError("root.message", {
                 message: error.response?.data.message || error.message,
             });
         },
     });
-    const onSubmit = (data: SysUser) => {
-        registerMutation.mutate(data);
+    const onSubmit = (data: { chineseName: string, username: string, inviteCode: string }) => {
+        registerMutation.mutate({id: 0, password: data.inviteCode, ...data});
     };
     return (
         <Stack

@@ -2,6 +2,7 @@ package com.erp.sf.entity
 
 import com.baomidou.mybatisplus.annotation.*
 import com.fasterxml.jackson.annotation.JsonFormat
+import java.io.Serializable
 import java.time.LocalDateTime
 
 @TableName(value = "score")
@@ -16,4 +17,4 @@ data class Score(
     @TableField(fill = FieldFill.INSERT_UPDATE)
     @JsonFormat(pattern = "yyyy-MM-dd HH:mm:ss")
     var updateAt: LocalDateTime? = null,
-)
+): Serializable

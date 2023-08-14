@@ -1,10 +1,9 @@
-export default interface SysUser {
-    id?: number
-    username?: string
+import IBaseTime from "./IBaseTime";
+
+export default interface SysUser extends IBaseTime {
+    username: string
     password?: string
     chineseName?: string
     englishName?: string
     email?: string
-    createAt?: string
-    updateAt?: string
 }

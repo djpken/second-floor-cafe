@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.erp.sf.mapper.MenuDishPhotoMapper">
+    <resultMap id="BaseResultMap" type="com.erp.sf.entity.MenuDishPhoto">
+        <id property="id" column="id" jdbcType="BIGINT"/>
+        <result property="menuDIshId" column="menu_dish_id" jdbcType="BIGINT"/>
+        <result property="data" column="data" jdbcType="BLOB"/>
+        <result property="createAt" column="create_at" jdbcType="TIMESTAMP"/>
+        <result property="updateAt" column="update_at" jdbcType="TIMESTAMP"/>
+    </resultMap>
+    <sql id="Base_Column_List">
+        su.`id`,
+        su.`menu_DISH_Id`,
+        su.`data`,
+        su.`create_at`,
+        su.`update_at`
+    </sql>
+</mapper>

@@ -17,7 +17,7 @@ import com.erp.sf.mapper.SysUserMapper
 import com.erp.sf.mapper.SysUserRoleMapper
 import com.erp.sf.model.LoginUser
 import com.erp.sf.model.SysResponse
-import com.erp.sf.model.TokenResponse
+import com.erp.sf.model.responseEntity.apiResposne.TokenModel
 import com.erp.sf.service.security.LoginService
 import org.springframework.beans.factory.annotation.Autowired
 import org.springframework.security.authentication.AuthenticationManager
@@ -51,7 +51,7 @@ class LoginServiceImpl : LoginService {
     @Autowired
     private lateinit var sysUserRoleMapper: SysUserRoleMapper
 
-    override fun login(sysUser: SysUser): TokenResponse {
+    override fun login(sysUser: SysUser): TokenModel {
         val authenticate =
             authenticationManager.authenticate(UsernamePasswordAuthenticationToken(sysUser.username, sysUser.password))
         val loginUser = authenticate.principal as LoginUser
@@ -59,19 +59,19 @@ class LoginServiceImpl : LoginService {
         val auth = loginUser.authorities.toString()
         redisUtil["login:$userId"] = auth
         val jwt = setJwt(userId)
-        return TokenResponse("Bearer $jwt", auth, loginUser.sysUser)
+        return TokenModel("Bearer $jwt", auth, loginUser.sysUser)
 
     }
 
-    override fun logout(): TokenResponse {
+    override fun logout(): TokenModel {
         val usernamePasswordAuthenticationToken =
             SecurityContextHolder.getContext().authentication as UsernamePasswordAuthenticationToken
         val loginUser = usernamePasswordAuthenticationToken.principal as LoginUser
         redisUtil.del("login:${loginUser.sysUser.id}")
-        return TokenResponse("", "", loginUser.sysUser)
+        return TokenModel("", "", loginUser.sysUser)
     }
 
-    override fun register(sysUser: SysUser): TokenResponse {
+    override fun register(sysUser: SysUser): TokenModel {
         if (sysUser.password != s.get(S.INVITE_CODE)) {
             throw DataException(SysResponse(M.INVITE_CODE_ERROR))
         }
@@ -85,7 +85,7 @@ class LoginServiceImpl : LoginService {
         val auth = sysUser.id?.let { sysMenuMapper.selectPermsByUserId(it).toString() } ?: ""
         val jwt = setJwt(sysUser.id.toString())
         redisUtil["login"] = auth
-        return TokenResponse("Bearer $jwt", auth, sysUser)
+        return TokenModel("Bearer $jwt", auth, sysUser)
     }
 
     fun setJwt(id: String): String {

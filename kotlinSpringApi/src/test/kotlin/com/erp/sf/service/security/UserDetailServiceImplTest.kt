@@ -50,12 +50,14 @@ class UserDetailServiceImplTest : JunitService() {
         sysMenuTest = SysMenuTest(sysMenuMapper, number)
         sysUserTest = SysUserTest(sysUserMapper, number)
         sysRoleTest = SysRoleTest(sysRoleMapper, number)
+        val listSysRoleMenu = mutableListOf<SysRoleMenu>()
+        val listSysUserRole = mutableListOf<SysUserRole>()
         for (i in 0 until number) {
-            val sysRoleMenu = SysRoleMenu(0, sysRoleTest.list[i].id, sysMenuTest.list[i].id)
-            val sysUserRole = SysUserRole(0, sysUserTest.list[i].id, sysRoleTest.list[i].id)
-            sysRoleMenuMapper.insert(sysRoleMenu)
-            sysUserRoleMapper.insert(sysUserRole)
+            listSysRoleMenu.add(SysRoleMenu(0, sysRoleTest.list[i].id, sysMenuTest.list[i].id))
+            listSysUserRole.add(SysUserRole(0, sysUserTest.list[i].id, sysRoleTest.list[i].id))
         }
+        sysRoleMenuMapper.insertBatch(listSysRoleMenu)
+        sysUserRoleMapper.insertBatch(listSysUserRole)
     }
 
     @Test

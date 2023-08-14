@@ -5,7 +5,7 @@ import com.erp.sf.entity.Score
 import com.erp.sf.entity.impl.SysUserTest
 import com.erp.sf.mapper.ScoreMapper
 import com.erp.sf.mapper.SysUserMapper
-import com.erp.sf.service.security.ScoreService
+import com.erp.sf.service.ScoreService
 import org.junit.jupiter.api.Assertions
 import org.junit.jupiter.api.BeforeEach
 import org.junit.jupiter.api.Test
@@ -27,11 +27,14 @@ class ScoreServiceImplTest : JunitService() {
     @BeforeEach
     override fun beforeEach() {
         sysUserTest = SysUserTest(sysUserMapper, 5)
+        val list = mutableListOf<Score>()
         for (i in 0 until 5) {
             val score = Score(0, sysUserTest.list[i].id, Math.random().toInt())
             scoreMapper.insert(score)
+            list.add(score)
         }
         beforeCount = scoreMapper.selectCount(null).toInt()
+
     }
 
     @Test

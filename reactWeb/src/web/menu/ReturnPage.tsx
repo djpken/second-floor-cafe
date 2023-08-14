@@ -2,9 +2,9 @@ import {useNavigate} from "react-router-dom";
 import React, {useEffect, useState} from "react";
 import {Button} from "@mui/material";
 import {useMutation} from "@tanstack/react-query";
-import {apiPostScore} from "../../Api";
 import SysUser from "../../entity/SysUser";
 import Score from "../../entity/Score";
+import {apiPostScore} from "../../api";
 
 interface ReturnPageProps {
     children: React.ReactNode
@@ -22,7 +22,7 @@ export default function ReturnPage({children, score}: ReturnPageProps) {
     })
     useEffect(() => {
         const user = JSON.parse(localStorage.getItem("user") ?? "") as SysUser
-        postScoreMutation.mutate({userId: user.id, score: score})
+        postScoreMutation.mutate({id: 0, userId: user.id, score: score})
         console.log("request")
     }, []);
     return (

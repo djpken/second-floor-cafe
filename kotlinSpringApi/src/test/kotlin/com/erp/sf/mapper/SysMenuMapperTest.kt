@@ -12,7 +12,7 @@ import org.junit.jupiter.api.BeforeEach
 import org.junit.jupiter.api.Test
 import org.springframework.beans.factory.annotation.Autowired
 
-class SysMenuMapperTest : JunitService(){
+class SysMenuMapperTest : JunitService() {
     @Autowired
     private lateinit var sysMenuMapper: SysMenuMapper
 
@@ -40,10 +40,8 @@ class SysMenuMapperTest : JunitService(){
         sysUserTest = SysUserTest(sysUserMapper, number)
         sysRoleTest = SysRoleTest(sysRoleMapper, number)
         for (i in 0 until number) {
-            val sysRoleMenu = SysRoleMenu(0, sysRoleTest.list[i].id, sysMenuTest.list[i].id)
-            val sysUserRole = SysUserRole(0, sysUserTest.list[i].id, sysRoleTest.list[i].id)
-            sysRoleMenuMapper.insert(sysRoleMenu)
-            sysUserRoleMapper.insert(sysUserRole)
+            sysRoleMenuMapper.insert(SysRoleMenu(0, sysRoleTest.list[i].id, sysMenuTest.list[i].id))
+            sysUserRoleMapper.insert(SysUserRole(0, sysUserTest.list[i].id, sysRoleTest.list[i].id))
         }
     }
 
