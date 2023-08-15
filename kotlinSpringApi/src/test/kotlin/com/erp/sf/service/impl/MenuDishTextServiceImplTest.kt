@@ -9,9 +9,9 @@ import org.junit.jupiter.api.BeforeEach
 import org.junit.jupiter.api.Test
 import org.springframework.beans.factory.annotation.Autowired
 
-class MenuDishServiceImplTest : JunitService() {
+class MenuDishTextServiceImplTest : JunitService() {
     @Autowired
-    private lateinit var menuDishService: MenuDishTextService
+    private lateinit var menuDishTextService: MenuDishTextService
 
     @Autowired
     private lateinit var menuDishMapper: MenuDishTextMapper

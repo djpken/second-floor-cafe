@@ -4,8 +4,8 @@ import cn.hutool.json.JSONUtil
 import cn.hutool.jwt.JWTUtil
 import com.erp.sf.entity.SysUser
 import com.erp.sf.exception.TokenValidationException
-import com.erp.sf.model.LoginUser
-import com.erp.sf.model.SysResponse
+import com.erp.sf.model.entity.LoginUser
+import com.erp.sf.model.sys.SysResponse
 import com.erp.sf.component.RedisComponent
 import com.erp.sf.constant.M
 import jakarta.servlet.FilterChain

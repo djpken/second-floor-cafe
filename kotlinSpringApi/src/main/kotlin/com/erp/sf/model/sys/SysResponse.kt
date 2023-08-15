@@ -1,4 +1,4 @@
-package com.erp.sf.model
+package com.erp.sf.model.sys
 
 import com.erp.sf.constant.M
 import java.io.Serializable

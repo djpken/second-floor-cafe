@@ -1,4 +1,4 @@
-package com.erp.sf.model
+package com.erp.sf.model.entity
 
 import com.erp.sf.entity.SysUser
 import org.springframework.security.core.GrantedAuthority

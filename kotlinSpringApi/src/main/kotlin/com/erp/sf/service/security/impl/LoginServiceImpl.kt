@@ -15,8 +15,8 @@ import com.erp.sf.mapper.SysMenuMapper
 import com.erp.sf.mapper.SysRoleMapper
 import com.erp.sf.mapper.SysUserMapper
 import com.erp.sf.mapper.SysUserRoleMapper
-import com.erp.sf.model.LoginUser
-import com.erp.sf.model.SysResponse
+import com.erp.sf.model.entity.LoginUser
+import com.erp.sf.model.sys.SysResponse
 import com.erp.sf.model.responseEntity.apiResposne.TokenModel
 import com.erp.sf.service.security.LoginService
 import org.springframework.beans.factory.annotation.Autowired

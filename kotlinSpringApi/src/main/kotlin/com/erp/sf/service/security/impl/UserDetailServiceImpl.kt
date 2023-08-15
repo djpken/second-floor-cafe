@@ -1,12 +1,10 @@
 package com.erp.sf.service.security.impl
 
-import com.baomidou.mybatisplus.core.conditions.query.LambdaQueryWrapper
-import com.baomidou.mybatisplus.extension.kotlin.KtQueryChainWrapper
 import com.baomidou.mybatisplus.extension.kotlin.KtQueryWrapper
 import com.erp.sf.mapper.SysUserMapper
 import com.erp.sf.mapper.SysMenuMapper
 import com.erp.sf.entity.SysUser
-import com.erp.sf.model.LoginUser
+import com.erp.sf.model.entity.LoginUser
 import org.springframework.beans.factory.annotation.Autowired
 import org.springframework.security.core.userdetails.UserDetails
 import org.springframework.security.core.userdetails.UserDetailsService

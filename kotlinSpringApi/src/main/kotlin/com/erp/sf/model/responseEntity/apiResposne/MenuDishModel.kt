@@ -1,11 +1,10 @@
 package com.erp.sf.model.responseEntity.apiResposne
 
 import com.erp.sf.entity.MenuDishText
-import com.erp.sf.entity.MenuDishPhoto
-import org.springframework.web.multipart.MultipartFile
+import com.erp.sf.model.json.PhotoFile
 import java.io.Serializable
 
-data class MenuDishModel(val textArray: List<MenuDishText>, val photoMap: Map<Long, MultipartFile>) :
+data class MenuDishModel(val textArray: List<MenuDishText>, val photoArray: List<PhotoFile>) :
     Serializable {
-    constructor(menuDishText: List<MenuDishText>) : this(menuDishText, emptyMap<Long, MultipartFile>())
+    constructor(menuDishText: List<MenuDishText>) : this(menuDishText, emptyList())
 }
