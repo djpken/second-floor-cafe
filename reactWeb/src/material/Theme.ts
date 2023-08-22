@@ -1,7 +1,17 @@
 import {createTheme} from "@mui/material";
 
+const breakpoints = {
+    values: {
+        xs: 0,
+        sm: 600, // Phone
+        md: 900, // Tablet/Laptop
+        lg: 1200, // Desktop
+        xl: 1536
+    }
+};
 const Theme =
     createTheme({
+        breakpoints,
         palette: {
             primary: {
                 main: "#6C757D",
@@ -15,7 +25,15 @@ const Theme =
             },
         },
         typography: {
-            fontSize: 14,
+            h1: {
+                fontSize: 24
+            },
+            subtitle1: {
+                fontSize: 14
+            },
+            body1: {
+                fontSize: 14
+            },
             fontFamily: "Alibaba,Arial",
         },
         components: {

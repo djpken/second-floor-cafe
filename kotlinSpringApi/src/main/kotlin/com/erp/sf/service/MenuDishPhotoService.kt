@@ -1,9 +1,8 @@
 package com.erp.sf.service
 
-import com.erp.sf.model.json.PhotoFile
-import org.springframework.web.multipart.MultipartFile
+import com.baomidou.mybatisplus.extension.service.IService
+import com.erp.sf.entity.MenuDishPhoto
 
-interface MenuDishPhotoService {
-    fun selectMenuDishPhotoByListMenuDishId(number: Int): List<MultipartFile>
-    fun insertMapMenuDishPhoto(photoArray: List<PhotoFile>): Boolean
+interface MenuDishPhotoService:IService<MenuDishPhoto> {
+    fun selectMenuDishPhotoBySeason(season: Int): List<MenuDishPhoto>
 }

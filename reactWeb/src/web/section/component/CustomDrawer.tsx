@@ -24,7 +24,7 @@ export default function CustomDrawer({
         <Drawer
             sx={{
                 "& .MuiDrawer-paper": {
-                    width: {md: 180, lg: 240, xl: 300},
+                    width: {xs: 140, lg: 220, xl: 300},
                     boxSizing: "border-box",
                 },
             }}
@@ -34,7 +34,7 @@ export default function CustomDrawer({
         >
             <DrawerHeader>
                 <Typography
-                    fontSize={"20px"}
+                    variant={'h6'}
                     component={Link}
                     to={"home"}
                     sx={{

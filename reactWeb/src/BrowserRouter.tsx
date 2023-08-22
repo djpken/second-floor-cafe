@@ -1,10 +1,7 @@
-import Login from "./web/Login";
-import Section from "./web/Section";
-import Menu from "./web/Menu";
-import MenuManager from "./web/sectionPage/MenuManager";
-import {DomTitle, Init, RoutesItem} from "./router/RoutesItem";
-import React, {createRef, useEffect} from "react";
+import React, {createRef} from "react";
 import {createBrowserRouter, Outlet, useLocation} from "react-router-dom";
+import {Init, RoutesItem, TitleRouter} from "./router";
+import {Menu, Section, Login} from "./web";
 
 export const initPath: string = "/web/login"
 export const routes: RoutesItem[] = [
@@ -49,9 +46,7 @@ export const routes: RoutesItem[] = [
         nodeRef: createRef()
     },
 ];
-
 export const routesPathMap: (name: string) => string = (name: string) => (routes.find(route => route.name === name)?.path) ?? ""
-
 const Root = () => {
     const location = useLocation();
     const {nodeRef, name, transition} = routes.find((route) => route.path === location.pathname) ?? routes[0];
@@ -64,13 +59,13 @@ const Root = () => {
         //         classNames={"fade"}
         //         unmountOnExit
         //     >
-        <DomTitle nodeRef={nodeRef} name={name} element={<Outlet/>}/>
+        <TitleRouter nodeRef={nodeRef} name={name} element={<Outlet/>}/>
         //     </CSSTransition>
         // </SwitchTransition>
     )
 }
 
-const router = createBrowserRouter([
+const BrowserRouter = createBrowserRouter([
     {
         path: "/",
         element: <Root/>,
@@ -82,4 +77,4 @@ const router = createBrowserRouter([
     }
 ])
 
-export default router
+export default BrowserRouter

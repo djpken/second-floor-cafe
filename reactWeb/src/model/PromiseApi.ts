@@ -4,5 +4,5 @@ export interface ApiResponse<T> {
     message: string
 }
 
-export default interface PromiseApi<T> extends Promise<ApiResponse<T>> {
+export interface PromiseApi<T> extends Promise<ApiResponse<T>> {
 }

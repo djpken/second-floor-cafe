@@ -18,7 +18,7 @@ import {
 } from "@mui/material";
 import {useQuery} from "@tanstack/react-query";
 import RefreshIcon from "@mui/icons-material/Refresh";
-import {apiGetDish} from "../../api";
+import {apiGetDish} from "../../../api";
 
 const Authority = () => {
     return <Table/>;

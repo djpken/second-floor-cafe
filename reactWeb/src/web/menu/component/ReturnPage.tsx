@@ -1,10 +1,9 @@
 import {useNavigate} from "react-router-dom";
-import React, {useEffect, useState} from "react";
+import React, {useEffect} from "react";
 import {Button} from "@mui/material";
 import {useMutation} from "@tanstack/react-query";
-import SysUser from "../../entity/SysUser";
-import Score from "../../entity/Score";
-import {apiPostScore} from "../../api";
+import {Score, SysUser} from "../../../entity";
+import {apiPostScore} from "../../../api";
 
 interface ReturnPageProps {
     children: React.ReactNode

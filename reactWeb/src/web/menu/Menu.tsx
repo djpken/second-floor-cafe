@@ -1,11 +1,11 @@
 import React, {useState} from "react";
-import Card from "./menu/Card";
-import ReturnPage from "./menu/ReturnPage";
+import Card from "./component/Card";
+import ReturnPage from "./component/ReturnPage";
 import {useQuery} from "@tanstack/react-query";
 import {Button, Skeleton, Stack} from "@mui/material";
 import styled from "@emotion/styled";
-import {apiGetDish} from "../api";
-import MenuDishText from "../entity/MenuDishText";
+import {apiGetDish} from "../../api";
+import {MenuDishText} from "../../entity";
 
 export interface CardProps {
     id: number;

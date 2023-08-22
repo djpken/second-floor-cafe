@@ -13,7 +13,7 @@ class MenuDishTextServiceImpl : ServiceImpl<MenuDishTextMapper, MenuDishText>(),
     @Autowired
     private lateinit var menuDishTextMapper: MenuDishTextMapper
     override fun selectAllMenuDishText(): List<MenuDishText> = menuDishTextMapper.selectList(null)
-    override fun selectMenuDishTextBySeason(season: Long): List<MenuDishText> {
+    override fun selectMenuDishTextBySeason(season: Int): List<MenuDishText> {
         val eq = KtQueryWrapper(MenuDishText::class.java).eq(MenuDishText::season, season)
         return menuDishTextMapper.selectList(eq) ?: emptyList()
     }

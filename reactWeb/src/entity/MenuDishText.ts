@@ -1,6 +1,6 @@
-import IBaseId from "./IBaseId";
+import {IBaseId} from "./base";
 
-export default interface MenuDishText extends IBaseId{
+export  interface MenuDishText extends IBaseId{
     chineseName: string;
     englishName?: string;
     price?: number;

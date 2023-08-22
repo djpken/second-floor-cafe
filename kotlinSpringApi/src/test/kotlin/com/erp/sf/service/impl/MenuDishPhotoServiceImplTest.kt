@@ -13,13 +13,13 @@ import org.springframework.beans.factory.annotation.Autowired
 class MenuDishPhotoServiceImplTest : JunitService() {
     @Autowired
     private lateinit var menuDishPhotoService: MenuDishPhotoService
+
     @BeforeEach
     override fun beforeEach() {
     }
 
     @Test
     fun selectAllDish() {
-        menuDishPhotoService.insertMapMenuDishPhoto()
     }
 
     @Test

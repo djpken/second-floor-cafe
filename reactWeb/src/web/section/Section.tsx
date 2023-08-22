@@ -1,15 +1,14 @@
 import {Route, Routes, useLocation, useNavigate} from "react-router-dom";
 import {Box, Stack, Theme, useTheme} from "@mui/material";
 import styled from "@emotion/styled";
-import Authority from "./sectionPage/Authority";
-import CustomAppBar from "./section/CustomAppBar";
-import CustomDrawer from "./section/CustomDrawer";
-import Home from "./sectionPage/Home";
+import Authority from "./page/Authority";
+import Home from "./page/Home";
 import {useMutation} from "@tanstack/react-query";
 import React, {useState} from "react";
-import {apiSecurityLogout} from "../api";
-import MenuManager from "./sectionPage/MenuManager";
-import {initPath} from "../Router";
+import {apiSecurityLogout} from "../../api";
+import TestManager from "./page/TestManager";
+import {initPath} from "../../BrowserRouter";
+import {CustomAppBar, CustomDrawer} from "./component";
 
 const securityLogout = async () => {
     const response = await apiSecurityLogout();
@@ -47,13 +46,14 @@ const Section = () => {
                 menus={menus}
                 handleLogout={handleLogout}
             />
-            <Stack direction={'row'} spacing={2}>
+            <Stack direction={'row'}>
+                <Box width={{sx: '140px', lg: '220px', xl: '300px'}}/>
                 <Main theme={theme} openNav={openNav}>
                     <Box sx={{width: 1}}>
                         <Routes location={location}>
                             <Route path={"home"} element={<Home/>}/>
                             <Route path={"authority"} element={<Authority/>}/>
-                            <Route path={"menuManager"} element={<MenuManager/>}/>
+                            <Route path={"menuManager"} element={<TestManager/>}/>
                         </Routes>
                     </Box>
                 </Main>
@@ -69,7 +69,7 @@ interface MainProps {
     children?: React.ReactNode;
 }
 
-const mainStyles = ({ theme, openNav }:MainProps) => ({
+const mainStyles = ({theme, openNav}: MainProps) => ({
     overflow: "auto",
     transition: theme.transitions.create("margin", {
         easing: theme.transitions.easing.sharp,
@@ -77,15 +77,14 @@ const mainStyles = ({ theme, openNav }:MainProps) => ({
             ? theme.transitions.duration.enteringScreen
             : theme.transitions.duration.leavingScreen,
     }),
-});;
+});
 
 const MainContainer = styled(Box, {shouldForwardProp: (prop) => prop !== "open"})(
     ({theme, openNav}: MainProps) => mainStyles({theme, openNav})
 );
 
 const Main = ({theme, children, openNav}: MainProps) => (
-    <MainContainer theme={theme} openNav={openNav}
-                   sx={{paddingLeft: {md: -180, lg: -240, xl: -300}}}>
+    <MainContainer theme={theme} openNav={openNav}>
         {children}
     </MainContainer>
 );
@@ -116,7 +115,7 @@ const menus: MenuGroup[] = [
         items: [
             {to: 'Authority', h: "人員權限"},
             {to: 'role', h: "身分權限"},
-            {to: 'menuManager', h: "考試管理"},
+            {to: 'testManager', h: "考試管理"},
         ],
     },
     {

@@ -5,13 +5,12 @@ import {yupResolver} from "@hookform/resolvers/yup";
 import {useMutation} from "@tanstack/react-query";
 import {Button, FormHelperText, Stack} from "@mui/material";
 import React from "react";
-import ControllerFullWidthField from "./ControllerFullWidthField/ControllerFullWidthField";
+import ControllerFullWidthField from "../component/ControllerFullWidthField";
 import {FormProps} from "../Login";
 import {AxiosError} from "axios";
-import {ApiResponse} from "../../model/PromiseApi";
-import TokenModel from "../../model/TokenModel";
-import {apiSecurityRegister} from "../../api";
-import SysUser from "../../entity/SysUser";
+import {apiSecurityRegister} from "../../../api";
+import {ApiResponse, TokenModel} from "../../../model";
+import {SysUser} from "../../../entity";
 
 
 const register = yup.object().shape({

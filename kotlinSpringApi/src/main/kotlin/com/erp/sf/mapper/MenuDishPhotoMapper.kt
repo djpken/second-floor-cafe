@@ -6,4 +6,5 @@ import org.apache.ibatis.annotations.Mapper
 
 @Mapper
 interface MenuDishPhotoMapper : MyBaseMapper<MenuDishPhoto> {
+    fun selectMenuDishPhotoBySeason(season: Int) : List<MenuDishPhoto>
 }

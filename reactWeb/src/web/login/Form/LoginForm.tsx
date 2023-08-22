@@ -7,13 +7,12 @@ import {Button, FormHelperText, InputAdornment, Stack} from "@mui/material";
 import IconButton from "@mui/material/IconButton";
 import {Visibility, VisibilityOff} from "@mui/icons-material";
 import * as yup from "yup";
-import ControllerFullWidthField from "./ControllerFullWidthField/ControllerFullWidthField";
+import ControllerFullWidthField from "../component/ControllerFullWidthField";
 import {FormProps} from "../Login";
 import {AxiosError} from "axios";
-import TokenModel from "../../model/TokenModel";
-import {ApiResponse} from "../../model/PromiseApi";
-import {apiSecurityLogin} from "../../api";
-import SysUser from "../../entity/SysUser";
+import {apiSecurityLogin} from "../../../api";
+import {SysUser} from "../../../entity";
+import {ApiResponse, TokenModel} from "../../../model";
 
 
 const user = yup.object().shape({
@@ -52,8 +51,11 @@ const LoginForm = ({display, path}: FormProps) => {
             });
         },
     });
-    const onSubmit = (data: { username: string, password: string }) => {
-        loginMutation.mutate({id:0,...data});
+    const onSubmit = (data: {
+        username: string,
+        password: string
+    }) => {
+        loginMutation.mutate({id: 0, ...data});
     };
     const handleClickShowPassword = () => setShowPassword((show) => !show);
     const handleMouseDownPassword = (event: React.MouseEvent) => {

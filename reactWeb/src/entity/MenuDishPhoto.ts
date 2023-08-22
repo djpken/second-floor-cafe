@@ -1,6 +1,6 @@
-import IBaseId from "./IBaseId";
+import {IBaseId} from "./base";
 
-export default interface MenuDishPhoto extends IBaseId{
+export  interface MenuDishPhoto extends IBaseId{
     menuDishId: number
     data: number
 }

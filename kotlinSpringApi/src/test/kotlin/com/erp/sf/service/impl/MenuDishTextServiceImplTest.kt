@@ -24,14 +24,14 @@ class MenuDishTextServiceImplTest : JunitService() {
 
     @Test
     fun selectAllDish() {
-        val size = menuDishService.selectAllMenuDishText().size.toLong()
+        val size = menuDishTextService.selectAllMenuDishText().size.toLong()
         Assertions.assertEquals(menuDishTest.beforeCount, size - 5)
         Assertions.assertEquals(menuDishTest.afterCount, size)
     }
 
     @Test
     fun selectAllMenuDish() {
-        val selectMenuDishBySeason = menuDishService.selectMenuDishTextBySeason(menuDishTest.list[0].season.toLong())
+        val selectMenuDishBySeason = menuDishTextService.selectMenuDishTextBySeason(menuDishTest.list[0].season.toLong())
         Assertions.assertFalse(selectMenuDishBySeason.isEmpty())
     }
 }

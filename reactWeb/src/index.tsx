@@ -3,6 +3,7 @@ import App from "./App";
 import React from "react"
 import "./i18n";
 
+
 const root = ReactDOM.createRoot(document.getElementById("root") as HTMLElement);
 root.render(
     <App/>

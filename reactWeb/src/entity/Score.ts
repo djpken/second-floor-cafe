@@ -1,6 +1,6 @@
-import IBaseTime from "./IBaseTime";
+import {IBaseTime} from "./base";
 
-export default interface Score extends IBaseTime{
+export  interface Score extends IBaseTime{
     userId: number
     score: number
 }

@@ -1,6 +1,6 @@
-import SysUser from "../entity/SysUser";
+import {SysUser} from "../entity";
 
-export default interface TokenModel {
+export interface TokenModel {
     authorization: string
     authority: string
     sysUser: SysUser

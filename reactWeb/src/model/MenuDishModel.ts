@@ -1,8 +1,6 @@
-import SysUser from "../entity/SysUser";
-import MenuDishText from "../entity/MenuDishText";
-import MenuDishPhoto from "../entity/MenuDishPhoto";
+import {MenuDishText} from "../entity";
 
-export default interface MenuDishModel {
+export interface MenuDishModel {
     textArray: MenuDishText[]
     photoArray: Record<number, any>
 }

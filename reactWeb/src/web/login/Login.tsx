@@ -2,9 +2,9 @@ import styled from "@emotion/styled";
 import {Box, Tab, Tabs,} from "@mui/material";
 import React, {useState} from "react";
 import {useTranslation} from "react-i18next";
-import LoginForm from "./login/LoginForm";
-import RegisterForm from "./login/RegisterForm";
-import {routesPathMap} from "../Router";
+import LoginForm from "./Form/LoginForm";
+import RegisterForm from "./Form/RegisterForm";
+import {routesPathMap} from "../../BrowserRouter";
 
 export interface FormProps {
     display: boolean,

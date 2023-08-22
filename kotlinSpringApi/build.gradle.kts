@@ -30,6 +30,7 @@ dependencies {
     implementation("com.github.xiaoymin:knife4j-openapi3-jakarta-spring-boot-starter:4.1.0")
     implementation("cn.hutool:hutool-all:5.8.20")
     implementation("p6spy:p6spy:3.9.1")
+    implementation("org.springframework:spring-test:6.0.11")
     runtimeOnly("org.jetbrains.kotlin:kotlin-reflect:1.9.0")
     compileOnly("org.projectlombok:lombok:1.18.24")
     testImplementation("org.springframework.boot:spring-boot-starter-test:$springBootVersion")

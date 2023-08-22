@@ -1,5 +1,5 @@
 import React, {useEffect, useState} from "react";
-import useInput from "./card/useInput";
+import useInput from "./useInput/useInput";
 import {Box, InputBase, Stack} from "@mui/material";
 import styled from "@emotion/styled";
 import {CardProps} from "../Menu";

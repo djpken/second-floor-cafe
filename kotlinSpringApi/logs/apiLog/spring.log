@@ -1,19 +1,683 @@
-2023-08-15 09:47:04 === [restartedMain] === INFO  === com.erp.sf.SfApplicationKt === - Starting SfApplicationKt using Java 18.0.2.1 with PID 10052 (C:\Users\djpke\IdeaProjects\SecondFloorCafe\kotlinSpringApi\build\classes\kotlin\main started by ken in C:\Users\djpke\IdeaProjects\SecondFloorCafe\kotlinSpringApi)
-2023-08-15 09:47:04 === [restartedMain] === INFO  === com.erp.sf.SfApplicationKt === - No active profile set, falling back to 1 default profile: "default"
-2023-08-15 09:47:04 === [restartedMain] === INFO  === o.s.b.d.env.DevToolsPropertyDefaultsPostProcessor === - Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
-2023-08-15 09:47:04 === [restartedMain] === INFO  === o.s.b.d.env.DevToolsPropertyDefaultsPostProcessor === - For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
-2023-08-15 09:47:05 === [restartedMain] === INFO  === o.s.d.r.config.RepositoryConfigurationDelegate === - Multiple Spring Data modules found, entering strict repository configuration mode
-2023-08-15 09:47:05 === [restartedMain] === INFO  === o.s.d.r.config.RepositoryConfigurationDelegate === - Bootstrapping Spring Data Redis repositories in DEFAULT mode.
-2023-08-15 09:47:05 === [restartedMain] === INFO  === o.s.d.r.config.RepositoryConfigurationDelegate === - Finished Spring Data repository scanning in 30 ms. Found 0 Redis repository interfaces.
-2023-08-15 09:47:07 === [restartedMain] === INFO  === o.s.boot.web.embedded.tomcat.TomcatWebServer === - Tomcat initialized with port(s): 8082 (http)
-2023-08-15 09:47:07 === [restartedMain] === INFO  === org.apache.catalina.core.StandardService === - Starting service [Tomcat]
-2023-08-15 09:47:07 === [restartedMain] === INFO  === org.apache.catalina.core.StandardEngine === - Starting Servlet engine: [Apache Tomcat/10.1.8]
-2023-08-15 09:47:08 === [restartedMain] === INFO  === o.a.c.c.ContainerBase.[Tomcat].[localhost].[/api] === - Initializing Spring embedded WebApplicationContext
-2023-08-15 09:47:08 === [restartedMain] === INFO  === o.s.b.w.s.c.ServletWebServerApplicationContext === - Root WebApplicationContext: initialization completed in 3713 ms
-2023-08-15 09:47:11 === [restartedMain] === WARN  === c.b.mybatisplus.core.metadata.TableInfoHelper === - Can not find table primary key in Class: "cn.hutool.setting.Setting".
-2023-08-15 09:47:11 === [restartedMain] === WARN  === com.erp.sf.config.InsertBatchSqlInjector === - class cn.hutool.setting.Setting ,Not found @TableId annotation, Cannot use Mybatis-Plus 'xxById' Method.
-2023-08-15 09:47:11 === [restartedMain] === INFO  === o.s.boot.web.embedded.tomcat.TomcatWebServer === - Tomcat started on port(s): 8082 (http) with context path '/api'
-2023-08-15 09:47:11 === [restartedMain] === INFO  === o.s.b.d.autoconfigure.OptionalLiveReloadServer === - LiveReload server is running on port 35729
-2023-08-15 09:47:11 === [restartedMain] === INFO  === com.erp.sf.SfApplicationKt === - Started SfApplicationKt in 8.024 seconds (process running for 8.514)
-2023-08-15 09:47:12 === [restartedMain] === INFO  === com.erp.sf.SfApplication$$SpringCGLIB$$0 === - Redis status : cleaned
-2023-08-15 09:47:12 === [restartedMain] === INFO  === com.erp.sf.SfApplication$$SpringCGLIB$$0 === - File encoding : UTF-8
+2023-08-22 03:31:47 === [Test worker] === INFO  === com.erp.sf.ByteTest === - Starting ByteTest using Java 18.0.2.1 with PID 18788 (started by ken in C:\Users\djpke\IdeaProjects\SecondFloorCafe\kotlinSpringApi)
+2023-08-22 03:31:47 === [Test worker] === INFO  === com.erp.sf.ByteTest === - No active profile set, falling back to 1 default profile: "default"
+2023-08-22 03:31:49 === [Test worker] === INFO  === o.s.d.r.config.RepositoryConfigurationDelegate === - Multiple Spring Data modules found, entering strict repository configuration mode
+2023-08-22 03:31:49 === [Test worker] === INFO  === o.s.d.r.config.RepositoryConfigurationDelegate === - Bootstrapping Spring Data Redis repositories in DEFAULT mode.
+2023-08-22 03:31:50 === [Test worker] === INFO  === o.s.d.r.config.RepositoryConfigurationDelegate === - Finished Spring Data repository scanning in 50 ms. Found 0 Redis repository interfaces.
+2023-08-22 03:31:52 === [Test worker] === WARN  === c.b.mybatisplus.core.metadata.TableInfoHelper === - Can not find table primary key in Class: "cn.hutool.setting.Setting".
+2023-08-22 03:31:52 === [Test worker] === WARN  === com.erp.sf.config.InsertBatchSqlInjector === - class cn.hutool.setting.Setting ,Not found @TableId annotation, Cannot use Mybatis-Plus 'xxById' Method.
+2023-08-22 03:31:52 === [Test worker] === INFO  === com.erp.sf.ByteTest === - Started ByteTest in 5.688 seconds (process running for 8.323)
+2023-08-22 03:31:54 === [Test worker] === INFO  === com.erp.sf.SfApplication$$SpringCGLIB$$0 === - Redis status : cleaned
+2023-08-22 03:31:54 === [Test worker] === INFO  === com.erp.sf.SfApplication$$SpringCGLIB$$0 === - File encoding : x-windows-950
+2023-08-22 03:31:54 === [Test worker] === INFO  === com.zaxxer.hikari.HikariDataSource === - HikariPool-1 - Starting...
+2023-08-22 03:31:54 === [Test worker] === INFO  === com.zaxxer.hikari.pool.HikariPool === - HikariPool-1 - Added connection org.mariadb.jdbc.Connection@1d7f0cd0
+2023-08-22 03:31:54 === [Test worker] === INFO  === com.zaxxer.hikari.HikariDataSource === - HikariPool-1 - Start completed.
+2023-08-22 03:31:55 === [Test worker] === INFO  === o.s.t.c.support.AnnotationConfigContextLoaderUtils === - Could not detect default configuration classes for test class [com.erp.sf.MybatisTest]: MybatisTest does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
+2023-08-22 03:31:55 === [Test worker] === INFO  === o.s.b.t.context.SpringBootTestContextBootstrapper === - Found @SpringBootConfiguration com.erp.sf.SfApplication for test class com.erp.sf.MybatisTest
+2023-08-22 03:31:56 === [Test worker] === DEBUG === com.erp.sf.mapper.ScoreMapper.insertBatch === - ==>  Preparing: INSERT INTO score (user_id,score,create_at,update_at) VALUES (?,?,?,?) , (?,?,?,?) , (?,?,?,?)
+2023-08-22 03:31:56 === [Test worker] === DEBUG === com.erp.sf.mapper.ScoreMapper.insertBatch === - ==> Parameters: 2(Long), 3(Integer), null, null, 2(Long), 3(Integer), null, null, 2(Long), 3(Integer), null, null
+2023-08-22 03:31:56 === [Test worker] === DEBUG === com.erp.sf.mapper.ScoreMapper.insertBatch === - <==    Updates: 3
+2023-08-22 03:31:56 === [Test worker] === INFO  === o.s.t.c.support.AnnotationConfigContextLoaderUtils === - Could not detect default configuration classes for test class [com.erp.sf.SfApplicationTests]: SfApplicationTests does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
+2023-08-22 03:31:56 === [Test worker] === INFO  === o.s.b.t.context.SpringBootTestContextBootstrapper === - Found @SpringBootConfiguration com.erp.sf.SfApplication for test class com.erp.sf.SfApplicationTests
+2023-08-22 03:31:56 === [Test worker] === INFO  === com.erp.sf.SfApplicationTests === - Starting SfApplicationTests using Java 18.0.2.1 with PID 18788 (started by ken in C:\Users\djpke\IdeaProjects\SecondFloorCafe\kotlinSpringApi)
+2023-08-22 03:31:56 === [Test worker] === INFO  === com.erp.sf.SfApplicationTests === - No active profile set, falling back to 1 default profile: "default"
+2023-08-22 03:31:56 === [Test worker] === INFO  === o.s.d.r.config.RepositoryConfigurationDelegate === - Multiple Spring Data modules found, entering strict repository configuration mode
+2023-08-22 03:31:56 === [Test worker] === INFO  === o.s.d.r.config.RepositoryConfigurationDelegate === - Bootstrapping Spring Data Redis repositories in DEFAULT mode.
+2023-08-22 03:31:56 === [Test worker] === INFO  === o.s.d.r.config.RepositoryConfigurationDelegate === - Finished Spring Data repository scanning in 29 ms. Found 0 Redis repository interfaces.
+2023-08-22 03:31:57 === [Test worker] === WARN  === c.b.mybatisplus.core.metadata.TableInfoHelper === - Can not find table primary key in Class: "cn.hutool.setting.Setting".
+2023-08-22 03:31:57 === [Test worker] === WARN  === com.erp.sf.config.InsertBatchSqlInjector === - class cn.hutool.setting.Setting ,Not found @TableId annotation, Cannot use Mybatis-Plus 'xxById' Method.
+2023-08-22 03:31:57 === [Test worker] === INFO  === com.erp.sf.SfApplicationTests === - Started SfApplicationTests in 1.24 seconds (process running for 12.823)
+2023-08-22 03:31:57 === [Test worker] === INFO  === com.erp.sf.SfApplication$$SpringCGLIB$$0 === - Redis status : cleaned
+2023-08-22 03:31:57 === [Test worker] === INFO  === com.erp.sf.SfApplication$$SpringCGLIB$$0 === - File encoding : x-windows-950
+2023-08-22 03:31:57 === [Test worker] === INFO  === o.s.t.c.support.AnnotationConfigContextLoaderUtils === - Could not detect default configuration classes for test class [com.erp.sf.component.impl.PasswordParserTest]: PasswordParserTest does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
+2023-08-22 03:31:57 === [Test worker] === INFO  === o.s.b.t.context.SpringBootTestContextBootstrapper === - Found @SpringBootConfiguration com.erp.sf.SfApplication for test class com.erp.sf.component.impl.PasswordParserTest
+2023-08-22 03:31:57 === [Test worker] === INFO  === com.zaxxer.hikari.HikariDataSource === - HikariPool-2 - Starting...
+2023-08-22 03:31:57 === [Test worker] === INFO  === com.zaxxer.hikari.pool.HikariPool === - HikariPool-2 - Added connection org.mariadb.jdbc.Connection@1915879c
+2023-08-22 03:31:57 === [Test worker] === INFO  === com.zaxxer.hikari.HikariDataSource === - HikariPool-2 - Start completed.
+2023-08-22 03:31:57 === [Test worker] === DEBUG === com.erp.sf.mapper.SysUserMapper.selectList === - ==>  Preparing: SELECT id,username,password,chinese_name,english_name,email,create_at,update_at,delete_at FROM SYS_USER WHERE delete_at IS NULL
+2023-08-22 03:31:57 === [Test worker] === DEBUG === com.erp.sf.mapper.SysUserMapper.selectList === - ==> Parameters: 
+2023-08-22 03:31:57 === [Test worker] === DEBUG === com.erp.sf.mapper.SysUserMapper.selectList === - <==      Total: 2
+2023-08-22 03:31:57 === [Test worker] === DEBUG === com.erp.sf.mapper.SysUserMapper.updateById === - ==>  Preparing: UPDATE SYS_USER SET username=?, password=?, chinese_name=?, english_name=?, email=?, create_at=?, update_at=? WHERE id=? AND delete_at IS NULL
+2023-08-22 03:31:57 === [Test worker] === DEBUG === com.erp.sf.mapper.SysUserMapper.updateById === - ==> Parameters: 003958(String), $2a$10$r0BgOG0aWGR3FZtDrDo7V.nVm/995FUlHlMCcSX3V9lIlclfsHEWq(String), ³\¥¿©[(String), Kun(String), djpkendjpken@gmail.com(String), 2023-08-22T15:31:20(LocalDateTime), 2023-08-22T15:31:20(LocalDateTime), 1(Long)
+2023-08-22 03:31:57 === [Test worker] === DEBUG === com.erp.sf.mapper.SysUserMapper.updateById === - <==    Updates: 1
+2023-08-22 03:31:57 === [Test worker] === DEBUG === com.erp.sf.mapper.SysUserMapper.updateById === - ==>  Preparing: UPDATE SYS_USER SET username=?, password=?, chinese_name=?, english_name=?, email=?, create_at=?, update_at=? WHERE id=? AND delete_at IS NULL
+2023-08-22 03:31:57 === [Test worker] === DEBUG === com.erp.sf.mapper.SysUserMapper.updateById === - ==> Parameters: 004015(String), $2a$10$Q8nrLhoEsB0GUDxPiXbaFey4SWZjtlbBMnoNCfAZEI6EiIdQ77ipG(String), ªL­§´¸(String), Melody(String), ching@gmail.com(String), 2023-08-22T15:31:20(LocalDateTime), 2023-08-22T15:31:20(LocalDateTime), 2(Long)
+2023-08-22 03:31:57 === [Test worker] === DEBUG === com.erp.sf.mapper.SysUserMapper.updateById === - <==    Updates: 1
+2023-08-22 03:31:58 === [Test worker] === DEBUG === com.erp.sf.mapper.SysUserMapper.selectList === - ==>  Preparing: SELECT id,username,password,chinese_name,english_name,email,create_at,update_at,delete_at FROM SYS_USER WHERE delete_at IS NULL
+2023-08-22 03:31:58 === [Test worker] === DEBUG === com.erp.sf.mapper.SysUserMapper.selectList === - ==> Parameters: 
+2023-08-22 03:31:58 === [Test worker] === DEBUG === com.erp.sf.mapper.SysUserMapper.selectList === - <==      Total: 2
+2023-08-22 03:31:58 === [Test worker] === DEBUG === com.erp.sf.mapper.SysUserMapper.selectList === - ==>  Preparing: SELECT id,username,password,chinese_name,english_name,email,create_at,update_at,delete_at FROM SYS_USER WHERE delete_at IS NULL
+2023-08-22 03:31:58 === [Test worker] === DEBUG === com.erp.sf.mapper.SysUserMapper.selectList === - ==> Parameters: 
+2023-08-22 03:31:58 === [Test worker] === DEBUG === com.erp.sf.mapper.SysUserMapper.selectList === - <==      Total: 2
+2023-08-22 03:31:58 === [Test worker] === DEBUG === com.erp.sf.mapper.SysUserMapper.selectList === - ==>  Preparing: SELECT id,username,password,chinese_name,english_name,email,create_at,update_at,delete_at FROM SYS_USER WHERE delete_at IS NULL
+2023-08-22 03:31:58 === [Test worker] === DEBUG === com.erp.sf.mapper.SysUserMapper.selectList === - ==> Parameters: 
+2023-08-22 03:31:58 === [Test worker] === DEBUG === com.erp.sf.mapper.SysUserMapper.selectList === - <==      Total: 2
+2023-08-22 03:31:58 === [Test worker] === INFO  === o.s.t.c.support.AnnotationConfigContextLoaderUtils === - Could not detect default configuration classes for test class [com.erp.sf.component.impl.RedisUtilImplTest]: RedisUtilImplTest does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
+2023-08-22 03:31:58 === [Test worker] === INFO  === o.s.b.t.context.SpringBootTestContextBootstrapper === - Found @SpringBootConfiguration com.erp.sf.SfApplication for test class com.erp.sf.component.impl.RedisUtilImplTest
+2023-08-22 03:31:58 === [Test worker] === INFO  === o.s.t.c.support.AnnotationConfigContextLoaderUtils === - Could not detect default configuration classes for test class [com.erp.sf.component.impl.SettingComponentImplTest]: SettingComponentImplTest does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
+2023-08-22 03:31:58 === [Test worker] === INFO  === o.s.b.t.context.SpringBootTestContextBootstrapper === - Found @SpringBootConfiguration com.erp.sf.SfApplication for test class com.erp.sf.component.impl.SettingComponentImplTest
+2023-08-22 03:31:58 === [Test worker] === INFO  === com.erp.sf.util.WatchUtil === -  Start watch
+2023-08-22 03:31:58 === [Test worker] === DEBUG === com.erp.sf.mapper.SettingMapper.selectValueByKey === - ==>  Preparing: SELECT s.value FROM setting s where s.key = ?
+2023-08-22 03:31:58 === [Test worker] === DEBUG === com.erp.sf.mapper.SettingMapper.selectValueByKey === - ==> Parameters: inviteCode(String)
+2023-08-22 03:31:58 === [Test worker] === DEBUG === com.erp.sf.mapper.SettingMapper.selectValueByKey === - <==      Total: 1
+2023-08-22 03:31:58 === [Test worker] === INFO  === com.erp.sf.util.WatchUtil === - Watch time: 7
+2023-08-22 03:31:58 === [Test worker] === INFO  === com.erp.sf.util.WatchUtil === -  Start watch
+2023-08-22 03:31:58 === [Test worker] === INFO  === com.erp.sf.util.WatchUtil === - Watch time: 1
+2023-08-22 03:31:58 === [Test worker] === INFO  === o.s.t.c.support.AnnotationConfigContextLoaderUtils === - Could not detect default configuration classes for test class [com.erp.sf.mapper.MenuDishMapperTest]: MenuDishMapperTest does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
+2023-08-22 03:31:58 === [Test worker] === INFO  === o.s.b.t.context.SpringBootTestContextBootstrapper === - Found @SpringBootConfiguration com.erp.sf.SfApplication for test class com.erp.sf.mapper.MenuDishMapperTest
+2023-08-22 03:31:58 === [Test worker] === DEBUG === com.erp.sf.mapper.MenuDishTextMapper.selectList === - ==>  Preparing: SELECT id,chinese_name,english_name,price,season,visible,delete_at FROM MENU_DISH_TEXT WHERE delete_at IS NULL AND (season = ?)
+2023-08-22 03:31:58 === [Test worker] === DEBUG === com.erp.sf.mapper.MenuDishTextMapper.selectList === - ==> Parameters: 2023(Integer)
+2023-08-22 03:31:58 === [Test worker] === DEBUG === com.erp.sf.mapper.MenuDishTextMapper.selectList === - <==      Total: 109
+2023-08-22 03:31:58 === [Test worker] === INFO  === o.s.t.c.support.AnnotationConfigContextLoaderUtils === - Could not detect default configuration classes for test class [com.erp.sf.mapper.ScoreMapperTest]: ScoreMapperTest does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
+2023-08-22 03:31:58 === [Test worker] === INFO  === o.s.b.t.context.SpringBootTestContextBootstrapper === - Found @SpringBootConfiguration com.erp.sf.SfApplication for test class com.erp.sf.mapper.ScoreMapperTest
+2023-08-22 03:31:58 === [Test worker] === INFO  === o.s.t.c.support.AnnotationConfigContextLoaderUtils === - Could not detect default configuration classes for test class [com.erp.sf.mapper.SettingMapperTest]: SettingMapperTest does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
+2023-08-22 03:31:58 === [Test worker] === INFO  === o.s.b.t.context.SpringBootTestContextBootstrapper === - Found @SpringBootConfiguration com.erp.sf.SfApplication for test class com.erp.sf.mapper.SettingMapperTest
+2023-08-22 03:31:58 === [Test worker] === DEBUG === com.erp.sf.mapper.SettingMapper.selectValueByKey === - ==>  Preparing: SELECT s.value FROM setting s where s.key = ?
+2023-08-22 03:31:58 === [Test worker] === DEBUG === com.erp.sf.mapper.SettingMapper.selectValueByKey === - ==> Parameters: inviteCode(String)
+2023-08-22 03:31:58 === [Test worker] === DEBUG === com.erp.sf.mapper.SettingMapper.selectValueByKey === - <==      Total: 1
+2023-08-22 03:31:58 === [Test worker] === DEBUG === com.erp.sf.mapper.SettingMapper.selectAllSetting === - ==>  Preparing: SELECT s.key, s.value FROM setting s
+2023-08-22 03:31:58 === [Test worker] === DEBUG === com.erp.sf.mapper.SettingMapper.selectAllSetting === - ==> Parameters: 
+2023-08-22 03:31:58 === [Test worker] === DEBUG === com.erp.sf.mapper.SettingMapper.selectAllSetting === - <==      Total: 3
+2023-08-22 03:31:58 === [Test worker] === INFO  === o.s.t.c.support.AnnotationConfigContextLoaderUtils === - Could not detect default configuration classes for test class [com.erp.sf.mapper.SysMenuMapperTest]: SysMenuMapperTest does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
+2023-08-22 03:31:58 === [Test worker] === INFO  === o.s.b.t.context.SpringBootTestContextBootstrapper === - Found @SpringBootConfiguration com.erp.sf.SfApplication for test class com.erp.sf.mapper.SysMenuMapperTest
+2023-08-22 03:31:58 === [Test worker] === DEBUG === com.erp.sf.mapper.SysMenuMapper.selectCount === - ==>  Preparing: SELECT COUNT( * ) AS total FROM SYS_MENU WHERE delete_at IS NULL
+2023-08-22 03:31:58 === [Test worker] === DEBUG === com.erp.sf.mapper.SysMenuMapper.selectCount === - ==> Parameters: 
+2023-08-22 03:31:58 === [Test worker] === DEBUG === com.erp.sf.mapper.SysMenuMapper.selectCount === - <==      Total: 1
+2023-08-22 03:31:58 === [Test worker] === DEBUG === com.erp.sf.mapper.SysMenuMapper.insert === - ==>  Preparing: INSERT INTO SYS_MENU ( id, perms, create_at, update_at ) VALUES ( ?, ?, ?, ? )
+2023-08-22 03:31:58 === [Test worker] === DEBUG === com.erp.sf.mapper.SysMenuMapper.insert === - ==> Parameters: 0(Long), 99b3e9aa-78b4-48a3-8f8c-3aa8947648fe(String), null, null
+2023-08-22 03:31:58 === [Test worker] === DEBUG === com.erp.sf.mapper.SysMenuMapper.insert === - <==    Updates: 1
+2023-08-22 03:31:58 === [Test worker] === DEBUG === com.erp.sf.mapper.SysMenuMapper.insert === - ==>  Preparing: INSERT INTO SYS_MENU ( id, perms, create_at, update_at ) VALUES ( ?, ?, ?, ? )
+2023-08-22 03:31:58 === [Test worker] === DEBUG === com.erp.sf.mapper.SysMenuMapper.insert === - ==> Parameters: 0(Long), d4a2ce75-f0ea-4a7d-b7e7-6d6fa7f0e1a4(String), null, null
+2023-08-22 03:31:58 === [Test worker] === DEBUG === com.erp.sf.mapper.SysMenuMapper.insert === - <==    Updates: 1
+2023-08-22 03:31:58 === [Test worker] === DEBUG === com.erp.sf.mapper.SysMenuMapper.insert === - ==>  Preparing: INSERT INTO SYS_MENU ( id, perms, create_at, update_at ) VALUES ( ?, ?, ?, ? )
+2023-08-22 03:31:58 === [Test worker] === DEBUG === com.erp.sf.mapper.SysMenuMapper.insert === - ==> Parameters: 0(Long), 4a1318fc-d120-4b60-90d4-86cabd7d54d9(String), null, null
+2023-08-22 03:31:58 === [Test worker] === DEBUG === com.erp.sf.mapper.SysMenuMapper.insert === - <==    Updates: 1
+2023-08-22 03:31:58 === [Test worker] === DEBUG === com.erp.sf.mapper.SysMenuMapper.selectCount === - ==>  Preparing: SELECT COUNT( * ) AS total FROM SYS_MENU WHERE delete_at IS NULL
+2023-08-22 03:31:58 === [Test worker] === DEBUG === com.erp.sf.mapper.SysMenuMapper.selectCount === - ==> Parameters: 
+2023-08-22 03:31:58 === [Test worker] === DEBUG === com.erp.sf.mapper.SysMenuMapper.selectCount === - <==      Total: 1
+2023-08-22 03:31:58 === [Test worker] === DEBUG === com.erp.sf.mapper.SysUserMapper.selectCount === - ==>  Preparing: SELECT COUNT( * ) AS total FROM SYS_USER WHERE delete_at IS NULL
+2023-08-22 03:31:58 === [Test worker] === DEBUG === com.erp.sf.mapper.SysUserMapper.selectCount === - ==> Parameters: 
+2023-08-22 03:31:58 === [Test worker] === DEBUG === com.erp.sf.mapper.SysUserMapper.selectCount === - <==      Total: 1
+2023-08-22 03:31:58 === [Test worker] === DEBUG === com.erp.sf.mapper.SysUserMapper.insert === - ==>  Preparing: INSERT INTO SYS_USER ( id, username, password, chinese_name, english_name, email, create_at, update_at ) VALUES ( ?, ?, ?, ?, ?, ?, ?, ? )
+2023-08-22 03:31:58 === [Test worker] === DEBUG === com.erp.sf.mapper.SysUserMapper.insert === - ==> Parameters: 0(Long), 92e2423e-0ea2-4cfa-9b66-f1fb44a2c449(String), $2a$10$JgWztmQlAQkzvuiASk1XV.tfstlkea.JNrE95.jB5.5m8P00tgesG(String), (String), (String), 45ebbf46-b3e9-49e8-b71c-bcf16dfebea4(String), null, null
+2023-08-22 03:31:58 === [Test worker] === DEBUG === com.erp.sf.mapper.SysUserMapper.insert === - <==    Updates: 1
+2023-08-22 03:31:58 === [Test worker] === DEBUG === com.erp.sf.mapper.SysUserMapper.insert === - ==>  Preparing: INSERT INTO SYS_USER ( id, username, password, chinese_name, english_name, email, create_at, update_at ) VALUES ( ?, ?, ?, ?, ?, ?, ?, ? )
+2023-08-22 03:31:58 === [Test worker] === DEBUG === com.erp.sf.mapper.SysUserMapper.insert === - ==> Parameters: 0(Long), 7906a543-2235-4dbd-b8d8-f21aafb612c5(String), $2a$10$Rx7uYRpyncExoy9zSfEawu8OdoiIdAWaug0navpE1Uec6dHP8r2E6(String), (String), (String), 311351d1-fbd4-4840-b7c5-fb16b49ab7c3(String), null, null
+2023-08-22 03:31:58 === [Test worker] === DEBUG === com.erp.sf.mapper.SysUserMapper.insert === - <==    Updates: 1
+2023-08-22 03:31:58 === [Test worker] === DEBUG === com.erp.sf.mapper.SysUserMapper.insert === - ==>  Preparing: INSERT INTO SYS_USER ( id, username, password, chinese_name, english_name, email, create_at, update_at ) VALUES ( ?, ?, ?, ?, ?, ?, ?, ? )
+2023-08-22 03:31:58 === [Test worker] === DEBUG === com.erp.sf.mapper.SysUserMapper.insert === - ==> Parameters: 0(Long), a84dd80b-9ec8-4f12-a83d-d17f83b65ce1(String), $2a$10$3FJuddjOT6xd1umFZacIBOuVa/dd3cq/ioaPQsMM8MPsPMqYFLWhu(String), (String), (String), 28ccb90b-ab05-4216-975f-e48c9dec4c21(String), null, null
+2023-08-22 03:31:58 === [Test worker] === DEBUG === com.erp.sf.mapper.SysUserMapper.insert === - <==    Updates: 1
+2023-08-22 03:31:58 === [Test worker] === DEBUG === com.erp.sf.mapper.SysUserMapper.selectCount === - ==>  Preparing: SELECT COUNT( * ) AS total FROM SYS_USER WHERE delete_at IS NULL
+2023-08-22 03:31:58 === [Test worker] === DEBUG === com.erp.sf.mapper.SysUserMapper.selectCount === - ==> Parameters: 
+2023-08-22 03:31:58 === [Test worker] === DEBUG === com.erp.sf.mapper.SysUserMapper.selectCount === - <==      Total: 1
+2023-08-22 03:31:58 === [Test worker] === DEBUG === com.erp.sf.mapper.SysRoleMapper.selectCount === - ==>  Preparing: SELECT COUNT( * ) AS total FROM SYS_ROLE WHERE delete_at IS NULL
+2023-08-22 03:31:58 === [Test worker] === DEBUG === com.erp.sf.mapper.SysRoleMapper.selectCount === - ==> Parameters: 
+2023-08-22 03:31:58 === [Test worker] === DEBUG === com.erp.sf.mapper.SysRoleMapper.selectCount === - <==      Total: 1
+2023-08-22 03:31:58 === [Test worker] === DEBUG === com.erp.sf.mapper.SysRoleMapper.insert === - ==>  Preparing: INSERT INTO SYS_ROLE ( id, name, create_at, update_at ) VALUES ( ?, ?, ?, ? )
+2023-08-22 03:31:58 === [Test worker] === DEBUG === com.erp.sf.mapper.SysRoleMapper.insert === - ==> Parameters: 0(Long), a24f3590-c725-43f0-af9d-56daa6629883(String), null, null
+2023-08-22 03:31:58 === [Test worker] === DEBUG === com.erp.sf.mapper.SysRoleMapper.insert === - <==    Updates: 1
+2023-08-22 03:31:58 === [Test worker] === DEBUG === com.erp.sf.mapper.SysRoleMapper.insert === - ==>  Preparing: INSERT INTO SYS_ROLE ( id, name, create_at, update_at ) VALUES ( ?, ?, ?, ? )
+2023-08-22 03:31:58 === [Test worker] === DEBUG === com.erp.sf.mapper.SysRoleMapper.insert === - ==> Parameters: 0(Long), 5c88c2e6-7c89-43ee-995d-2256361adc3d(String), null, null
+2023-08-22 03:31:58 === [Test worker] === DEBUG === com.erp.sf.mapper.SysRoleMapper.insert === - <==    Updates: 1
+2023-08-22 03:31:58 === [Test worker] === DEBUG === com.erp.sf.mapper.SysRoleMapper.insert === - ==>  Preparing: INSERT INTO SYS_ROLE ( id, name, create_at, update_at ) VALUES ( ?, ?, ?, ? )
+2023-08-22 03:31:58 === [Test worker] === DEBUG === com.erp.sf.mapper.SysRoleMapper.insert === - ==> Parameters: 0(Long), b84a4b69-e840-4f53-ad23-7128e15ea258(String), null, null
+2023-08-22 03:31:58 === [Test worker] === DEBUG === com.erp.sf.mapper.SysRoleMapper.insert === - <==    Updates: 1
+2023-08-22 03:31:58 === [Test worker] === DEBUG === com.erp.sf.mapper.SysRoleMapper.selectCount === - ==>  Preparing: SELECT COUNT( * ) AS total FROM SYS_ROLE WHERE delete_at IS NULL
+2023-08-22 03:31:58 === [Test worker] === DEBUG === com.erp.sf.mapper.SysRoleMapper.selectCount === - ==> Parameters: 
+2023-08-22 03:31:58 === [Test worker] === DEBUG === com.erp.sf.mapper.SysRoleMapper.selectCount === - <==      Total: 1
+2023-08-22 03:31:58 === [Test worker] === DEBUG === com.erp.sf.mapper.SysRoleMenuMapper.insert === - ==>  Preparing: INSERT INTO SYS_ROLE_MENU ( id, role_id, menu_id ) VALUES ( ?, ?, ? )
+2023-08-22 03:31:58 === [Test worker] === DEBUG === com.erp.sf.mapper.SysRoleMenuMapper.insert === - ==> Parameters: 0(Long), 9(Long), 4(Long)
+2023-08-22 03:31:58 === [Test worker] === DEBUG === com.erp.sf.mapper.SysRoleMenuMapper.insert === - <==    Updates: 1
+2023-08-22 03:31:58 === [Test worker] === DEBUG === com.erp.sf.mapper.SysUserRoleMapper.insert === - ==>  Preparing: INSERT INTO SYS_USER_ROLE ( id, user_id, role_id ) VALUES ( ?, ?, ? )
+2023-08-22 03:31:58 === [Test worker] === DEBUG === com.erp.sf.mapper.SysUserRoleMapper.insert === - ==> Parameters: 0(Long), 3(Long), 9(Long)
+2023-08-22 03:31:58 === [Test worker] === DEBUG === com.erp.sf.mapper.SysUserRoleMapper.insert === - <==    Updates: 1
+2023-08-22 03:31:58 === [Test worker] === DEBUG === com.erp.sf.mapper.SysRoleMenuMapper.insert === - ==>  Preparing: INSERT INTO SYS_ROLE_MENU ( id, role_id, menu_id ) VALUES ( ?, ?, ? )
+2023-08-22 03:31:58 === [Test worker] === DEBUG === com.erp.sf.mapper.SysRoleMenuMapper.insert === - ==> Parameters: 0(Long), 10(Long), 5(Long)
+2023-08-22 03:31:58 === [Test worker] === DEBUG === com.erp.sf.mapper.SysRoleMenuMapper.insert === - <==    Updates: 1
+2023-08-22 03:31:58 === [Test worker] === DEBUG === com.erp.sf.mapper.SysUserRoleMapper.insert === - ==>  Preparing: INSERT INTO SYS_USER_ROLE ( id, user_id, role_id ) VALUES ( ?, ?, ? )
+2023-08-22 03:31:58 === [Test worker] === DEBUG === com.erp.sf.mapper.SysUserRoleMapper.insert === - ==> Parameters: 0(Long), 4(Long), 10(Long)
+2023-08-22 03:31:58 === [Test worker] === DEBUG === com.erp.sf.mapper.SysUserRoleMapper.insert === - <==    Updates: 1
+2023-08-22 03:31:58 === [Test worker] === DEBUG === com.erp.sf.mapper.SysRoleMenuMapper.insert === - ==>  Preparing: INSERT INTO SYS_ROLE_MENU ( id, role_id, menu_id ) VALUES ( ?, ?, ? )
+2023-08-22 03:31:58 === [Test worker] === DEBUG === com.erp.sf.mapper.SysRoleMenuMapper.insert === - ==> Parameters: 0(Long), 11(Long), 6(Long)
+2023-08-22 03:31:58 === [Test worker] === DEBUG === com.erp.sf.mapper.SysRoleMenuMapper.insert === - <==    Updates: 1
+2023-08-22 03:31:58 === [Test worker] === DEBUG === com.erp.sf.mapper.SysUserRoleMapper.insert === - ==>  Preparing: INSERT INTO SYS_USER_ROLE ( id, user_id, role_id ) VALUES ( ?, ?, ? )
+2023-08-22 03:31:58 === [Test worker] === DEBUG === com.erp.sf.mapper.SysUserRoleMapper.insert === - ==> Parameters: 0(Long), 5(Long), 11(Long)
+2023-08-22 03:31:58 === [Test worker] === DEBUG === com.erp.sf.mapper.SysUserRoleMapper.insert === - <==    Updates: 1
+2023-08-22 03:31:58 === [Test worker] === DEBUG === c.erp.sf.mapper.SysMenuMapper.selectPermsByUserId === - ==>  Preparing: SELECT sm.`perms` FROM `sys_user_role` sur LEFT JOIN `sys_role_menu` srm ON sur.`role_id` = srm.`role_id` LEFT JOIN `sys_menu` sm ON srm.`MENU_ID` = sm.`ID` where sur.USER_ID = ?
+2023-08-22 03:31:58 === [Test worker] === DEBUG === c.erp.sf.mapper.SysMenuMapper.selectPermsByUserId === - ==> Parameters: 3(Long)
+2023-08-22 03:31:58 === [Test worker] === DEBUG === c.erp.sf.mapper.SysMenuMapper.selectPermsByUserId === - <==      Total: 1
+2023-08-22 03:31:58 === [Test worker] === DEBUG === c.erp.sf.mapper.SysMenuMapper.selectPermsByUserId === - ==>  Preparing: SELECT sm.`perms` FROM `sys_user_role` sur LEFT JOIN `sys_role_menu` srm ON sur.`role_id` = srm.`role_id` LEFT JOIN `sys_menu` sm ON srm.`MENU_ID` = sm.`ID` where sur.USER_ID = ?
+2023-08-22 03:31:58 === [Test worker] === DEBUG === c.erp.sf.mapper.SysMenuMapper.selectPermsByUserId === - ==> Parameters: 4(Long)
+2023-08-22 03:31:58 === [Test worker] === DEBUG === c.erp.sf.mapper.SysMenuMapper.selectPermsByUserId === - <==      Total: 1
+2023-08-22 03:31:58 === [Test worker] === DEBUG === c.erp.sf.mapper.SysMenuMapper.selectPermsByUserId === - ==>  Preparing: SELECT sm.`perms` FROM `sys_user_role` sur LEFT JOIN `sys_role_menu` srm ON sur.`role_id` = srm.`role_id` LEFT JOIN `sys_menu` sm ON srm.`MENU_ID` = sm.`ID` where sur.USER_ID = ?
+2023-08-22 03:31:58 === [Test worker] === DEBUG === c.erp.sf.mapper.SysMenuMapper.selectPermsByUserId === - ==> Parameters: 5(Long)
+2023-08-22 03:31:58 === [Test worker] === DEBUG === c.erp.sf.mapper.SysMenuMapper.selectPermsByUserId === - <==      Total: 1
+2023-08-22 03:31:58 === [Test worker] === INFO  === o.s.t.c.support.AnnotationConfigContextLoaderUtils === - Could not detect default configuration classes for test class [com.erp.sf.mapper.SysUserMapperTest]: SysUserMapperTest does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
+2023-08-22 03:31:58 === [Test worker] === INFO  === o.s.b.t.context.SpringBootTestContextBootstrapper === - Found @SpringBootConfiguration com.erp.sf.SfApplication for test class com.erp.sf.mapper.SysUserMapperTest
+2023-08-22 03:31:58 === [Test worker] === DEBUG === com.erp.sf.mapper.SysUserMapper.selectCount === - ==>  Preparing: SELECT COUNT( * ) AS total FROM SYS_USER WHERE delete_at IS NULL
+2023-08-22 03:31:58 === [Test worker] === DEBUG === com.erp.sf.mapper.SysUserMapper.selectCount === - ==> Parameters: 
+2023-08-22 03:31:58 === [Test worker] === DEBUG === com.erp.sf.mapper.SysUserMapper.selectCount === - <==      Total: 1
+2023-08-22 03:31:59 === [Test worker] === DEBUG === com.erp.sf.mapper.SysUserMapper.insert === - ==>  Preparing: INSERT INTO SYS_USER ( id, username, password, chinese_name, english_name, email, create_at, update_at ) VALUES ( ?, ?, ?, ?, ?, ?, ?, ? )
+2023-08-22 03:31:59 === [Test worker] === DEBUG === com.erp.sf.mapper.SysUserMapper.insert === - ==> Parameters: 0(Long), d16e1c22-318a-4c7c-bf7c-3d54d4de2e87(String), $2a$10$bPC9CNJlR51rS8VDfBbVeenkuelrACaYKhX1FCIijuIgqvye3rTt.(String), (String), (String), 852f2ae5-fe3a-407c-ba27-8f2d9f5a4711(String), null, null
+2023-08-22 03:31:59 === [Test worker] === DEBUG === com.erp.sf.mapper.SysUserMapper.insert === - <==    Updates: 1
+2023-08-22 03:31:59 === [Test worker] === DEBUG === com.erp.sf.mapper.SysUserMapper.insert === - ==>  Preparing: INSERT INTO SYS_USER ( id, username, password, chinese_name, english_name, email, create_at, update_at ) VALUES ( ?, ?, ?, ?, ?, ?, ?, ? )
+2023-08-22 03:31:59 === [Test worker] === DEBUG === com.erp.sf.mapper.SysUserMapper.insert === - ==> Parameters: 0(Long), 41f2fdaf-d789-4462-aa38-35e3c5f0b7bd(String), $2a$10$P6VHk4QzvVP7P4yZ0MBvgeONQ4yar1aYi7zUWts9ekdjZ9aDHCU1C(String), (String), (String), 5e1a09ca-0b80-4268-a776-cce59ad7a82e(String), null, null
+2023-08-22 03:31:59 === [Test worker] === DEBUG === com.erp.sf.mapper.SysUserMapper.insert === - <==    Updates: 1
+2023-08-22 03:31:59 === [Test worker] === DEBUG === com.erp.sf.mapper.SysUserMapper.insert === - ==>  Preparing: INSERT INTO SYS_USER ( id, username, password, chinese_name, english_name, email, create_at, update_at ) VALUES ( ?, ?, ?, ?, ?, ?, ?, ? )
+2023-08-22 03:31:59 === [Test worker] === DEBUG === com.erp.sf.mapper.SysUserMapper.insert === - ==> Parameters: 0(Long), 0e643914-cd6a-4ffb-a317-254ba6f8770a(String), $2a$10$gcPMhn/ORpl0WPDXu9AYBe.QJ8FWMnyzHukjpjvNaL5qlDaoU.pky(String), (String), (String), df2da7f5-25c3-4492-8596-776796fdd117(String), null, null
+2023-08-22 03:31:59 === [Test worker] === DEBUG === com.erp.sf.mapper.SysUserMapper.insert === - <==    Updates: 1
+2023-08-22 03:31:59 === [Test worker] === DEBUG === com.erp.sf.mapper.SysUserMapper.insert === - ==>  Preparing: INSERT INTO SYS_USER ( id, username, password, chinese_name, english_name, email, create_at, update_at ) VALUES ( ?, ?, ?, ?, ?, ?, ?, ? )
+2023-08-22 03:31:59 === [Test worker] === DEBUG === com.erp.sf.mapper.SysUserMapper.insert === - ==> Parameters: 0(Long), a1322165-054f-4e0d-b0ea-c5a86beddc3d(String), $2a$10$v3fzg2vumxTnXIoX1JdSCuE2YXgp7jgmbXT7ej5vg4u9lsLI0JAWW(String), (String), (String), 486fa3a3-7977-4e8f-86bf-fdd834d19906(String), null, null
+2023-08-22 03:31:59 === [Test worker] === DEBUG === com.erp.sf.mapper.SysUserMapper.insert === - <==    Updates: 1
+2023-08-22 03:31:59 === [Test worker] === DEBUG === com.erp.sf.mapper.SysUserMapper.insert === - ==>  Preparing: INSERT INTO SYS_USER ( id, username, password, chinese_name, english_name, email, create_at, update_at ) VALUES ( ?, ?, ?, ?, ?, ?, ?, ? )
+2023-08-22 03:31:59 === [Test worker] === DEBUG === com.erp.sf.mapper.SysUserMapper.insert === - ==> Parameters: 0(Long), 0b6e542f-09f1-43db-b4a3-a2f9e64bc1d1(String), $2a$10$DVZjlhz5GRrs.xA/gWigW.Um.gh98Rv668rQJLtMoIw7Fu/qa3egy(String), (String), (String), 6559ee0c-a0e5-4309-a214-dcecc40a6b01(String), null, null
+2023-08-22 03:31:59 === [Test worker] === DEBUG === com.erp.sf.mapper.SysUserMapper.insert === - <==    Updates: 1
+2023-08-22 03:31:59 === [Test worker] === DEBUG === com.erp.sf.mapper.SysUserMapper.selectCount === - ==>  Preparing: SELECT COUNT( * ) AS total FROM SYS_USER WHERE delete_at IS NULL
+2023-08-22 03:31:59 === [Test worker] === DEBUG === com.erp.sf.mapper.SysUserMapper.selectCount === - ==> Parameters: 
+2023-08-22 03:31:59 === [Test worker] === DEBUG === com.erp.sf.mapper.SysUserMapper.selectCount === - <==      Total: 1
+2023-08-22 03:31:59 === [Test worker] === DEBUG === c.erp.sf.mapper.SysUserMapper.selectOneByUsername === - ==>  Preparing: select su.`id`, su.`username`, su.`password`, su.`chinese_name`, su.`english_name`, su.`email`, su.`create_at`, su.`update_at`, su.`delete_at` from SYS_USER su WHERE username = ?
+2023-08-22 03:31:59 === [Test worker] === DEBUG === c.erp.sf.mapper.SysUserMapper.selectOneByUsername === - ==> Parameters: d16e1c22-318a-4c7c-bf7c-3d54d4de2e87(String)
+2023-08-22 03:31:59 === [Test worker] === DEBUG === c.erp.sf.mapper.SysUserMapper.selectOneByUsername === - <==      Total: 1
+2023-08-22 03:31:59 === [Test worker] === DEBUG === c.erp.sf.mapper.SysUserMapper.selectOneByUsername === - ==>  Preparing: select su.`id`, su.`username`, su.`password`, su.`chinese_name`, su.`english_name`, su.`email`, su.`create_at`, su.`update_at`, su.`delete_at` from SYS_USER su WHERE username = ?
+2023-08-22 03:31:59 === [Test worker] === DEBUG === c.erp.sf.mapper.SysUserMapper.selectOneByUsername === - ==> Parameters: 41f2fdaf-d789-4462-aa38-35e3c5f0b7bd(String)
+2023-08-22 03:31:59 === [Test worker] === DEBUG === c.erp.sf.mapper.SysUserMapper.selectOneByUsername === - <==      Total: 1
+2023-08-22 03:31:59 === [Test worker] === DEBUG === c.erp.sf.mapper.SysUserMapper.selectOneByUsername === - ==>  Preparing: select su.`id`, su.`username`, su.`password`, su.`chinese_name`, su.`english_name`, su.`email`, su.`create_at`, su.`update_at`, su.`delete_at` from SYS_USER su WHERE username = ?
+2023-08-22 03:31:59 === [Test worker] === DEBUG === c.erp.sf.mapper.SysUserMapper.selectOneByUsername === - ==> Parameters: 0e643914-cd6a-4ffb-a317-254ba6f8770a(String)
+2023-08-22 03:31:59 === [Test worker] === DEBUG === c.erp.sf.mapper.SysUserMapper.selectOneByUsername === - <==      Total: 1
+2023-08-22 03:31:59 === [Test worker] === DEBUG === c.erp.sf.mapper.SysUserMapper.selectOneByUsername === - ==>  Preparing: select su.`id`, su.`username`, su.`password`, su.`chinese_name`, su.`english_name`, su.`email`, su.`create_at`, su.`update_at`, su.`delete_at` from SYS_USER su WHERE username = ?
+2023-08-22 03:31:59 === [Test worker] === DEBUG === c.erp.sf.mapper.SysUserMapper.selectOneByUsername === - ==> Parameters: a1322165-054f-4e0d-b0ea-c5a86beddc3d(String)
+2023-08-22 03:31:59 === [Test worker] === DEBUG === c.erp.sf.mapper.SysUserMapper.selectOneByUsername === - <==      Total: 1
+2023-08-22 03:31:59 === [Test worker] === DEBUG === c.erp.sf.mapper.SysUserMapper.selectOneByUsername === - ==>  Preparing: select su.`id`, su.`username`, su.`password`, su.`chinese_name`, su.`english_name`, su.`email`, su.`create_at`, su.`update_at`, su.`delete_at` from SYS_USER su WHERE username = ?
+2023-08-22 03:31:59 === [Test worker] === DEBUG === c.erp.sf.mapper.SysUserMapper.selectOneByUsername === - ==> Parameters: 0b6e542f-09f1-43db-b4a3-a2f9e64bc1d1(String)
+2023-08-22 03:31:59 === [Test worker] === DEBUG === c.erp.sf.mapper.SysUserMapper.selectOneByUsername === - <==      Total: 1
+2023-08-22 03:31:59 === [Test worker] === INFO  === o.s.t.c.support.AnnotationConfigContextLoaderUtils === - Could not detect default configuration classes for test class [com.erp.sf.service.impl.MenuDishPhotoServiceImplTest]: MenuDishPhotoServiceImplTest does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
+2023-08-22 03:31:59 === [Test worker] === INFO  === o.s.b.t.context.SpringBootTestContextBootstrapper === - Found @SpringBootConfiguration com.erp.sf.SfApplication for test class com.erp.sf.service.impl.MenuDishPhotoServiceImplTest
+2023-08-22 03:31:59 === [Test worker] === INFO  === o.s.t.c.support.AnnotationConfigContextLoaderUtils === - Could not detect default configuration classes for test class [com.erp.sf.service.impl.MenuDishTextServiceImplTest]: MenuDishTextServiceImplTest does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
+2023-08-22 03:31:59 === [Test worker] === INFO  === o.s.b.t.context.SpringBootTestContextBootstrapper === - Found @SpringBootConfiguration com.erp.sf.SfApplication for test class com.erp.sf.service.impl.MenuDishTextServiceImplTest
+2023-08-22 03:31:59 === [Test worker] === DEBUG === com.erp.sf.mapper.MenuDishTextMapper.selectCount === - ==>  Preparing: SELECT COUNT( * ) AS total FROM MENU_DISH_TEXT WHERE delete_at IS NULL
+2023-08-22 03:31:59 === [Test worker] === DEBUG === com.erp.sf.mapper.MenuDishTextMapper.selectCount === - ==> Parameters: 
+2023-08-22 03:31:59 === [Test worker] === DEBUG === com.erp.sf.mapper.MenuDishTextMapper.selectCount === - <==      Total: 1
+2023-08-22 03:31:59 === [Test worker] === DEBUG === com.erp.sf.mapper.MenuDishTextMapper.insert === - ==>  Preparing: INSERT INTO MENU_DISH_TEXT ( id, chinese_name, english_name, price, season, visible ) VALUES ( ?, ?, ?, ?, ?, ? )
+2023-08-22 03:31:59 === [Test worker] === DEBUG === com.erp.sf.mapper.MenuDishTextMapper.insert === - ==> Parameters: 0(Long), cc0c0b99-052b-4933-b6fa-c8d7776693b2(String), cc0c0b99-052b-4933-b6fa-c8d7776693b2(String), 6301(Integer), 6301(Integer), false(Boolean)
+2023-08-22 03:31:59 === [Test worker] === DEBUG === com.erp.sf.mapper.MenuDishTextMapper.insert === - <==    Updates: 1
+2023-08-22 03:31:59 === [Test worker] === DEBUG === com.erp.sf.mapper.MenuDishTextMapper.insert === - ==>  Preparing: INSERT INTO MENU_DISH_TEXT ( id, chinese_name, english_name, price, season, visible ) VALUES ( ?, ?, ?, ?, ?, ? )
+2023-08-22 03:31:59 === [Test worker] === DEBUG === com.erp.sf.mapper.MenuDishTextMapper.insert === - ==> Parameters: 0(Long), 6e1c4b59-d109-4450-a040-001e073e39c4(String), 6e1c4b59-d109-4450-a040-001e073e39c4(String), 8341(Integer), 8341(Integer), false(Boolean)
+2023-08-22 03:31:59 === [Test worker] === DEBUG === com.erp.sf.mapper.MenuDishTextMapper.insert === - <==    Updates: 1
+2023-08-22 03:31:59 === [Test worker] === DEBUG === com.erp.sf.mapper.MenuDishTextMapper.insert === - ==>  Preparing: INSERT INTO MENU_DISH_TEXT ( id, chinese_name, english_name, price, season, visible ) VALUES ( ?, ?, ?, ?, ?, ? )
+2023-08-22 03:31:59 === [Test worker] === DEBUG === com.erp.sf.mapper.MenuDishTextMapper.insert === - ==> Parameters: 0(Long), c62cced9-f2fd-46ee-9168-405ada962759(String), c62cced9-f2fd-46ee-9168-405ada962759(String), 2093(Integer), 2093(Integer), false(Boolean)
+2023-08-22 03:31:59 === [Test worker] === DEBUG === com.erp.sf.mapper.MenuDishTextMapper.insert === - <==    Updates: 1
+2023-08-22 03:31:59 === [Test worker] === DEBUG === com.erp.sf.mapper.MenuDishTextMapper.insert === - ==>  Preparing: INSERT INTO MENU_DISH_TEXT ( id, chinese_name, english_name, price, season, visible ) VALUES ( ?, ?, ?, ?, ?, ? )
+2023-08-22 03:31:59 === [Test worker] === DEBUG === com.erp.sf.mapper.MenuDishTextMapper.insert === - ==> Parameters: 0(Long), 33cc6d36-566f-412a-a9dd-45ef48081228(String), 33cc6d36-566f-412a-a9dd-45ef48081228(String), 4469(Integer), 4469(Integer), false(Boolean)
+2023-08-22 03:31:59 === [Test worker] === DEBUG === com.erp.sf.mapper.MenuDishTextMapper.insert === - <==    Updates: 1
+2023-08-22 03:31:59 === [Test worker] === DEBUG === com.erp.sf.mapper.MenuDishTextMapper.insert === - ==>  Preparing: INSERT INTO MENU_DISH_TEXT ( id, chinese_name, english_name, price, season, visible ) VALUES ( ?, ?, ?, ?, ?, ? )
+2023-08-22 03:31:59 === [Test worker] === DEBUG === com.erp.sf.mapper.MenuDishTextMapper.insert === - ==> Parameters: 0(Long), 4c27eabc-9763-4193-a9b1-5f632ae67f04(String), 4c27eabc-9763-4193-a9b1-5f632ae67f04(String), 7476(Integer), 7476(Integer), false(Boolean)
+2023-08-22 03:31:59 === [Test worker] === DEBUG === com.erp.sf.mapper.MenuDishTextMapper.insert === - <==    Updates: 1
+2023-08-22 03:31:59 === [Test worker] === DEBUG === com.erp.sf.mapper.MenuDishTextMapper.selectCount === - ==>  Preparing: SELECT COUNT( * ) AS total FROM MENU_DISH_TEXT WHERE delete_at IS NULL
+2023-08-22 03:31:59 === [Test worker] === DEBUG === com.erp.sf.mapper.MenuDishTextMapper.selectCount === - ==> Parameters: 
+2023-08-22 03:31:59 === [Test worker] === DEBUG === com.erp.sf.mapper.MenuDishTextMapper.selectCount === - <==      Total: 1
+2023-08-22 03:31:59 === [Test worker] === DEBUG === com.erp.sf.mapper.MenuDishTextMapper.selectList === - ==>  Preparing: SELECT id,chinese_name,english_name,price,season,visible,delete_at FROM MENU_DISH_TEXT WHERE delete_at IS NULL
+2023-08-22 03:31:59 === [Test worker] === DEBUG === com.erp.sf.mapper.MenuDishTextMapper.selectList === - ==> Parameters: 
+2023-08-22 03:31:59 === [Test worker] === DEBUG === com.erp.sf.mapper.MenuDishTextMapper.selectList === - <==      Total: 237
+2023-08-22 03:31:59 === [Test worker] === DEBUG === com.erp.sf.mapper.MenuDishTextMapper.selectCount === - ==>  Preparing: SELECT COUNT( * ) AS total FROM MENU_DISH_TEXT WHERE delete_at IS NULL
+2023-08-22 03:31:59 === [Test worker] === DEBUG === com.erp.sf.mapper.MenuDishTextMapper.selectCount === - ==> Parameters: 
+2023-08-22 03:31:59 === [Test worker] === DEBUG === com.erp.sf.mapper.MenuDishTextMapper.selectCount === - <==      Total: 1
+2023-08-22 03:31:59 === [Test worker] === DEBUG === com.erp.sf.mapper.MenuDishTextMapper.insert === - ==>  Preparing: INSERT INTO MENU_DISH_TEXT ( id, chinese_name, english_name, price, season, visible ) VALUES ( ?, ?, ?, ?, ?, ? )
+2023-08-22 03:31:59 === [Test worker] === DEBUG === com.erp.sf.mapper.MenuDishTextMapper.insert === - ==> Parameters: 0(Long), 9a76f0ac-f876-432b-be49-6471de731040(String), 9a76f0ac-f876-432b-be49-6471de731040(String), 3961(Integer), 3961(Integer), false(Boolean)
+2023-08-22 03:31:59 === [Test worker] === DEBUG === com.erp.sf.mapper.MenuDishTextMapper.insert === - <==    Updates: 1
+2023-08-22 03:31:59 === [Test worker] === DEBUG === com.erp.sf.mapper.MenuDishTextMapper.insert === - ==>  Preparing: INSERT INTO MENU_DISH_TEXT ( id, chinese_name, english_name, price, season, visible ) VALUES ( ?, ?, ?, ?, ?, ? )
+2023-08-22 03:31:59 === [Test worker] === DEBUG === com.erp.sf.mapper.MenuDishTextMapper.insert === - ==> Parameters: 0(Long), 14083aa0-7224-4b01-a779-3fcf779641ee(String), 14083aa0-7224-4b01-a779-3fcf779641ee(String), 2351(Integer), 2351(Integer), false(Boolean)
+2023-08-22 03:31:59 === [Test worker] === DEBUG === com.erp.sf.mapper.MenuDishTextMapper.insert === - <==    Updates: 1
+2023-08-22 03:31:59 === [Test worker] === DEBUG === com.erp.sf.mapper.MenuDishTextMapper.insert === - ==>  Preparing: INSERT INTO MENU_DISH_TEXT ( id, chinese_name, english_name, price, season, visible ) VALUES ( ?, ?, ?, ?, ?, ? )
+2023-08-22 03:31:59 === [Test worker] === DEBUG === com.erp.sf.mapper.MenuDishTextMapper.insert === - ==> Parameters: 0(Long), 5d2ea69f-673a-44a6-9ee9-cd2d11cc08e5(String), 5d2ea69f-673a-44a6-9ee9-cd2d11cc08e5(String), 9663(Integer), 9663(Integer), false(Boolean)
+2023-08-22 03:31:59 === [Test worker] === DEBUG === com.erp.sf.mapper.MenuDishTextMapper.insert === - <==    Updates: 1
+2023-08-22 03:31:59 === [Test worker] === DEBUG === com.erp.sf.mapper.MenuDishTextMapper.insert === - ==>  Preparing: INSERT INTO MENU_DISH_TEXT ( id, chinese_name, english_name, price, season, visible ) VALUES ( ?, ?, ?, ?, ?, ? )
+2023-08-22 03:31:59 === [Test worker] === DEBUG === com.erp.sf.mapper.MenuDishTextMapper.insert === - ==> Parameters: 0(Long), 183d8131-27ef-4b72-bd0f-37f19b2d8d3b(String), 183d8131-27ef-4b72-bd0f-37f19b2d8d3b(String), 5297(Integer), 5297(Integer), false(Boolean)
+2023-08-22 03:31:59 === [Test worker] === DEBUG === com.erp.sf.mapper.MenuDishTextMapper.insert === - <==    Updates: 1
+2023-08-22 03:31:59 === [Test worker] === DEBUG === com.erp.sf.mapper.MenuDishTextMapper.insert === - ==>  Preparing: INSERT INTO MENU_DISH_TEXT ( id, chinese_name, english_name, price, season, visible ) VALUES ( ?, ?, ?, ?, ?, ? )
+2023-08-22 03:31:59 === [Test worker] === DEBUG === com.erp.sf.mapper.MenuDishTextMapper.insert === - ==> Parameters: 0(Long), 4fbe5402-85a2-44a8-bc0c-b3e2646d260f(String), 4fbe5402-85a2-44a8-bc0c-b3e2646d260f(String), 6940(Integer), 6940(Integer), false(Boolean)
+2023-08-22 03:31:59 === [Test worker] === DEBUG === com.erp.sf.mapper.MenuDishTextMapper.insert === - <==    Updates: 1
+2023-08-22 03:31:59 === [Test worker] === DEBUG === com.erp.sf.mapper.MenuDishTextMapper.selectCount === - ==>  Preparing: SELECT COUNT( * ) AS total FROM MENU_DISH_TEXT WHERE delete_at IS NULL
+2023-08-22 03:31:59 === [Test worker] === DEBUG === com.erp.sf.mapper.MenuDishTextMapper.selectCount === - ==> Parameters: 
+2023-08-22 03:31:59 === [Test worker] === DEBUG === com.erp.sf.mapper.MenuDishTextMapper.selectCount === - <==      Total: 1
+2023-08-22 03:31:59 === [Test worker] === DEBUG === com.erp.sf.mapper.MenuDishTextMapper.selectList === - ==>  Preparing: SELECT id,chinese_name,english_name,price,season,visible,delete_at FROM MENU_DISH_TEXT WHERE delete_at IS NULL AND (season = ?)
+2023-08-22 03:31:59 === [Test worker] === DEBUG === com.erp.sf.mapper.MenuDishTextMapper.selectList === - ==> Parameters: 3961(Long)
+2023-08-22 03:31:59 === [Test worker] === DEBUG === com.erp.sf.mapper.MenuDishTextMapper.selectList === - <==      Total: 1
+2023-08-22 03:31:59 === [Test worker] === INFO  === o.s.t.c.support.AnnotationConfigContextLoaderUtils === - Could not detect default configuration classes for test class [com.erp.sf.service.impl.ScoreServiceImplTest]: ScoreServiceImplTest does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
+2023-08-22 03:31:59 === [Test worker] === INFO  === o.s.b.t.context.SpringBootTestContextBootstrapper === - Found @SpringBootConfiguration com.erp.sf.SfApplication for test class com.erp.sf.service.impl.ScoreServiceImplTest
+2023-08-22 03:31:59 === [Test worker] === DEBUG === com.erp.sf.mapper.SysUserMapper.selectCount === - ==>  Preparing: SELECT COUNT( * ) AS total FROM SYS_USER WHERE delete_at IS NULL
+2023-08-22 03:31:59 === [Test worker] === DEBUG === com.erp.sf.mapper.SysUserMapper.selectCount === - ==> Parameters: 
+2023-08-22 03:31:59 === [Test worker] === DEBUG === com.erp.sf.mapper.SysUserMapper.selectCount === - <==      Total: 1
+2023-08-22 03:31:59 === [Test worker] === DEBUG === com.erp.sf.mapper.SysUserMapper.insert === - ==>  Preparing: INSERT INTO SYS_USER ( id, username, password, chinese_name, english_name, email, create_at, update_at ) VALUES ( ?, ?, ?, ?, ?, ?, ?, ? )
+2023-08-22 03:31:59 === [Test worker] === DEBUG === com.erp.sf.mapper.SysUserMapper.insert === - ==> Parameters: 0(Long), 3ee05a49-c4e4-44c5-ac5a-54fe8297cbd6(String), $2a$10$WIKGvaR3DAwovjdCcynRVedjDrh52mTPixsSOMlNpMyT/mEowSeP.(String), (String), (String), 3237e633-df90-4954-88d3-b23d1bf163d0(String), null, null
+2023-08-22 03:31:59 === [Test worker] === DEBUG === com.erp.sf.mapper.SysUserMapper.insert === - <==    Updates: 1
+2023-08-22 03:31:59 === [Test worker] === DEBUG === com.erp.sf.mapper.SysUserMapper.insert === - ==>  Preparing: INSERT INTO SYS_USER ( id, username, password, chinese_name, english_name, email, create_at, update_at ) VALUES ( ?, ?, ?, ?, ?, ?, ?, ? )
+2023-08-22 03:31:59 === [Test worker] === DEBUG === com.erp.sf.mapper.SysUserMapper.insert === - ==> Parameters: 0(Long), c9f143d2-c696-40cf-8a75-a0dcf3bba685(String), $2a$10$EYS1sDrJvbehnEuD3tXJheboagxDHtznf.KPbHWhlFs9BmQmZG52K(String), (String), (String), 04f286b6-19d7-44ed-b288-3549e63e60ae(String), null, null
+2023-08-22 03:31:59 === [Test worker] === DEBUG === com.erp.sf.mapper.SysUserMapper.insert === - <==    Updates: 1
+2023-08-22 03:31:59 === [Test worker] === DEBUG === com.erp.sf.mapper.SysUserMapper.insert === - ==>  Preparing: INSERT INTO SYS_USER ( id, username, password, chinese_name, english_name, email, create_at, update_at ) VALUES ( ?, ?, ?, ?, ?, ?, ?, ? )
+2023-08-22 03:31:59 === [Test worker] === DEBUG === com.erp.sf.mapper.SysUserMapper.insert === - ==> Parameters: 0(Long), ac992e60-3842-489c-afdc-d48f35e38644(String), $2a$10$D1jn.aickZ53maEhPREhbOaM5.JxbsK2yX8jFLmY62KwHncG9WYGu(String), (String), (String), 4d38a96c-291f-41a5-82c9-03087b0cc3db(String), null, null
+2023-08-22 03:31:59 === [Test worker] === DEBUG === com.erp.sf.mapper.SysUserMapper.insert === - <==    Updates: 1
+2023-08-22 03:32:00 === [Test worker] === DEBUG === com.erp.sf.mapper.SysUserMapper.insert === - ==>  Preparing: INSERT INTO SYS_USER ( id, username, password, chinese_name, english_name, email, create_at, update_at ) VALUES ( ?, ?, ?, ?, ?, ?, ?, ? )
+2023-08-22 03:32:00 === [Test worker] === DEBUG === com.erp.sf.mapper.SysUserMapper.insert === - ==> Parameters: 0(Long), ff20619d-117d-4c81-8634-fed05e50c6f7(String), $2a$10$aJ0xEGtZFOD/pWP/ErFeyOneOowuWTJ7Mykuo0pz91OMNZMREKBiO(String), (String), (String), 8053b805-cb7a-40e4-8753-cc062aab2d27(String), null, null
+2023-08-22 03:32:00 === [Test worker] === DEBUG === com.erp.sf.mapper.SysUserMapper.insert === - <==    Updates: 1
+2023-08-22 03:32:00 === [Test worker] === DEBUG === com.erp.sf.mapper.SysUserMapper.insert === - ==>  Preparing: INSERT INTO SYS_USER ( id, username, password, chinese_name, english_name, email, create_at, update_at ) VALUES ( ?, ?, ?, ?, ?, ?, ?, ? )
+2023-08-22 03:32:00 === [Test worker] === DEBUG === com.erp.sf.mapper.SysUserMapper.insert === - ==> Parameters: 0(Long), 173ad057-8302-4240-bad6-cf43f40d2b6e(String), $2a$10$rl9Fca/KPMJekTwqNfLiEuTPuDjMi7vSX8Fo4rVxsAJddwyCdXulC(String), (String), (String), 4b64d287-53d4-4091-aa4a-b05f28919ec0(String), null, null
+2023-08-22 03:32:00 === [Test worker] === DEBUG === com.erp.sf.mapper.SysUserMapper.insert === - <==    Updates: 1
+2023-08-22 03:32:00 === [Test worker] === DEBUG === com.erp.sf.mapper.SysUserMapper.selectCount === - ==>  Preparing: SELECT COUNT( * ) AS total FROM SYS_USER WHERE delete_at IS NULL
+2023-08-22 03:32:00 === [Test worker] === DEBUG === com.erp.sf.mapper.SysUserMapper.selectCount === - ==> Parameters: 
+2023-08-22 03:32:00 === [Test worker] === DEBUG === com.erp.sf.mapper.SysUserMapper.selectCount === - <==      Total: 1
+2023-08-22 03:32:00 === [Test worker] === DEBUG === com.erp.sf.mapper.ScoreMapper.insert === - ==>  Preparing: INSERT INTO score ( id, user_id, score, create_at, update_at ) VALUES ( ?, ?, ?, ?, ? )
+2023-08-22 03:32:00 === [Test worker] === DEBUG === com.erp.sf.mapper.ScoreMapper.insert === - ==> Parameters: 0(Long), 11(Long), 0(Integer), null, null
+2023-08-22 03:32:00 === [Test worker] === DEBUG === com.erp.sf.mapper.ScoreMapper.insert === - <==    Updates: 1
+2023-08-22 03:32:00 === [Test worker] === DEBUG === com.erp.sf.mapper.ScoreMapper.insert === - ==>  Preparing: INSERT INTO score ( id, user_id, score, create_at, update_at ) VALUES ( ?, ?, ?, ?, ? )
+2023-08-22 03:32:00 === [Test worker] === DEBUG === com.erp.sf.mapper.ScoreMapper.insert === - ==> Parameters: 0(Long), 12(Long), 0(Integer), null, null
+2023-08-22 03:32:00 === [Test worker] === DEBUG === com.erp.sf.mapper.ScoreMapper.insert === - <==    Updates: 1
+2023-08-22 03:32:00 === [Test worker] === DEBUG === com.erp.sf.mapper.ScoreMapper.insert === - ==>  Preparing: INSERT INTO score ( id, user_id, score, create_at, update_at ) VALUES ( ?, ?, ?, ?, ? )
+2023-08-22 03:32:00 === [Test worker] === DEBUG === com.erp.sf.mapper.ScoreMapper.insert === - ==> Parameters: 0(Long), 13(Long), 0(Integer), null, null
+2023-08-22 03:32:00 === [Test worker] === DEBUG === com.erp.sf.mapper.ScoreMapper.insert === - <==    Updates: 1
+2023-08-22 03:32:00 === [Test worker] === DEBUG === com.erp.sf.mapper.ScoreMapper.insert === - ==>  Preparing: INSERT INTO score ( id, user_id, score, create_at, update_at ) VALUES ( ?, ?, ?, ?, ? )
+2023-08-22 03:32:00 === [Test worker] === DEBUG === com.erp.sf.mapper.ScoreMapper.insert === - ==> Parameters: 0(Long), 14(Long), 0(Integer), null, null
+2023-08-22 03:32:00 === [Test worker] === DEBUG === com.erp.sf.mapper.ScoreMapper.insert === - <==    Updates: 1
+2023-08-22 03:32:00 === [Test worker] === DEBUG === com.erp.sf.mapper.ScoreMapper.insert === - ==>  Preparing: INSERT INTO score ( id, user_id, score, create_at, update_at ) VALUES ( ?, ?, ?, ?, ? )
+2023-08-22 03:32:00 === [Test worker] === DEBUG === com.erp.sf.mapper.ScoreMapper.insert === - ==> Parameters: 0(Long), 15(Long), 0(Integer), null, null
+2023-08-22 03:32:00 === [Test worker] === DEBUG === com.erp.sf.mapper.ScoreMapper.insert === - <==    Updates: 1
+2023-08-22 03:32:00 === [Test worker] === DEBUG === com.erp.sf.mapper.ScoreMapper.selectCount === - ==>  Preparing: SELECT COUNT( * ) AS total FROM score
+2023-08-22 03:32:00 === [Test worker] === DEBUG === com.erp.sf.mapper.ScoreMapper.selectCount === - ==> Parameters: 
+2023-08-22 03:32:00 === [Test worker] === DEBUG === com.erp.sf.mapper.ScoreMapper.selectCount === - <==      Total: 1
+2023-08-22 03:32:00 === [Test worker] === DEBUG === com.erp.sf.mapper.ScoreMapper.selectList === - ==>  Preparing: SELECT id,user_id,score,create_at,update_at FROM score WHERE (user_id = ?)
+2023-08-22 03:32:00 === [Test worker] === DEBUG === com.erp.sf.mapper.ScoreMapper.selectList === - ==> Parameters: 11(Long)
+2023-08-22 03:32:00 === [Test worker] === DEBUG === com.erp.sf.mapper.ScoreMapper.selectList === - <==      Total: 1
+2023-08-22 03:32:00 === [Test worker] === DEBUG === com.erp.sf.mapper.SysUserMapper.selectCount === - ==>  Preparing: SELECT COUNT( * ) AS total FROM SYS_USER WHERE delete_at IS NULL
+2023-08-22 03:32:00 === [Test worker] === DEBUG === com.erp.sf.mapper.SysUserMapper.selectCount === - ==> Parameters: 
+2023-08-22 03:32:00 === [Test worker] === DEBUG === com.erp.sf.mapper.SysUserMapper.selectCount === - <==      Total: 1
+2023-08-22 03:32:00 === [Test worker] === DEBUG === com.erp.sf.mapper.SysUserMapper.insert === - ==>  Preparing: INSERT INTO SYS_USER ( id, username, password, chinese_name, english_name, email, create_at, update_at ) VALUES ( ?, ?, ?, ?, ?, ?, ?, ? )
+2023-08-22 03:32:00 === [Test worker] === DEBUG === com.erp.sf.mapper.SysUserMapper.insert === - ==> Parameters: 0(Long), 4dd9898e-6f17-4777-936c-10449145e895(String), $2a$10$QIgV2mqEnXuZJFFbwMuyR.6Cgv72K.CwYUcDzyS4Jit44lZe8VxXa(String), (String), (String), a5a1d589-c96f-4c75-b931-567068bd3069(String), null, null
+2023-08-22 03:32:00 === [Test worker] === DEBUG === com.erp.sf.mapper.SysUserMapper.insert === - <==    Updates: 1
+2023-08-22 03:32:00 === [Test worker] === DEBUG === com.erp.sf.mapper.SysUserMapper.insert === - ==>  Preparing: INSERT INTO SYS_USER ( id, username, password, chinese_name, english_name, email, create_at, update_at ) VALUES ( ?, ?, ?, ?, ?, ?, ?, ? )
+2023-08-22 03:32:00 === [Test worker] === DEBUG === com.erp.sf.mapper.SysUserMapper.insert === - ==> Parameters: 0(Long), 002b07d9-c3d2-4035-b08b-300d7cccd52d(String), $2a$10$tojPkd2G4WPBsBLTOcRbHuVg1MeWbp2a4fGjS8nbUAaYeblgmV2vS(String), (String), (String), ac5ef36c-457b-4f74-8087-57bef6feacfb(String), null, null
+2023-08-22 03:32:00 === [Test worker] === DEBUG === com.erp.sf.mapper.SysUserMapper.insert === - <==    Updates: 1
+2023-08-22 03:32:00 === [Test worker] === DEBUG === com.erp.sf.mapper.SysUserMapper.insert === - ==>  Preparing: INSERT INTO SYS_USER ( id, username, password, chinese_name, english_name, email, create_at, update_at ) VALUES ( ?, ?, ?, ?, ?, ?, ?, ? )
+2023-08-22 03:32:00 === [Test worker] === DEBUG === com.erp.sf.mapper.SysUserMapper.insert === - ==> Parameters: 0(Long), 7ff9f06c-019c-4045-a3da-cbafad6ac844(String), $2a$10$7JY0w.AFopKqG8XncvCBRewzpTrnoTBx5TBCaKKFinklFArse9mYm(String), (String), (String), 22298862-baa4-4169-89d6-0b84d99666b6(String), null, null
+2023-08-22 03:32:00 === [Test worker] === DEBUG === com.erp.sf.mapper.SysUserMapper.insert === - <==    Updates: 1
+2023-08-22 03:32:00 === [Test worker] === DEBUG === com.erp.sf.mapper.SysUserMapper.insert === - ==>  Preparing: INSERT INTO SYS_USER ( id, username, password, chinese_name, english_name, email, create_at, update_at ) VALUES ( ?, ?, ?, ?, ?, ?, ?, ? )
+2023-08-22 03:32:00 === [Test worker] === DEBUG === com.erp.sf.mapper.SysUserMapper.insert === - ==> Parameters: 0(Long), 8d72b93a-8fd1-4428-b0a0-a390d7b43045(String), $2a$10$2iLPdylxvoarZA/A1Rb2Q.kUWvj4lHWDX51mKuHcwMkfds.fdfze2(String), (String), (String), eca05b5c-37be-477f-8f90-b2b686d9316d(String), null, null
+2023-08-22 03:32:00 === [Test worker] === DEBUG === com.erp.sf.mapper.SysUserMapper.insert === - <==    Updates: 1
+2023-08-22 03:32:00 === [Test worker] === DEBUG === com.erp.sf.mapper.SysUserMapper.insert === - ==>  Preparing: INSERT INTO SYS_USER ( id, username, password, chinese_name, english_name, email, create_at, update_at ) VALUES ( ?, ?, ?, ?, ?, ?, ?, ? )
+2023-08-22 03:32:00 === [Test worker] === DEBUG === com.erp.sf.mapper.SysUserMapper.insert === - ==> Parameters: 0(Long), 1563f335-68e0-4117-8dfe-4d4608a1fe72(String), $2a$10$Iut4cFnYJKAllw8O6b3PkO0TO9QgH3G7dbAEU7S0aCy.74ExPUksq(String), (String), (String), 65b7dec2-508d-48e9-88fb-b95e3ed48dff(String), null, null
+2023-08-22 03:32:00 === [Test worker] === DEBUG === com.erp.sf.mapper.SysUserMapper.insert === - <==    Updates: 1
+2023-08-22 03:32:00 === [Test worker] === DEBUG === com.erp.sf.mapper.SysUserMapper.selectCount === - ==>  Preparing: SELECT COUNT( * ) AS total FROM SYS_USER WHERE delete_at IS NULL
+2023-08-22 03:32:00 === [Test worker] === DEBUG === com.erp.sf.mapper.SysUserMapper.selectCount === - ==> Parameters: 
+2023-08-22 03:32:00 === [Test worker] === DEBUG === com.erp.sf.mapper.SysUserMapper.selectCount === - <==      Total: 1
+2023-08-22 03:32:00 === [Test worker] === DEBUG === com.erp.sf.mapper.ScoreMapper.insert === - ==>  Preparing: INSERT INTO score ( id, user_id, score, create_at, update_at ) VALUES ( ?, ?, ?, ?, ? )
+2023-08-22 03:32:00 === [Test worker] === DEBUG === com.erp.sf.mapper.ScoreMapper.insert === - ==> Parameters: 0(Long), 16(Long), 0(Integer), null, null
+2023-08-22 03:32:00 === [Test worker] === DEBUG === com.erp.sf.mapper.ScoreMapper.insert === - <==    Updates: 1
+2023-08-22 03:32:00 === [Test worker] === DEBUG === com.erp.sf.mapper.ScoreMapper.insert === - ==>  Preparing: INSERT INTO score ( id, user_id, score, create_at, update_at ) VALUES ( ?, ?, ?, ?, ? )
+2023-08-22 03:32:00 === [Test worker] === DEBUG === com.erp.sf.mapper.ScoreMapper.insert === - ==> Parameters: 0(Long), 17(Long), 0(Integer), null, null
+2023-08-22 03:32:00 === [Test worker] === DEBUG === com.erp.sf.mapper.ScoreMapper.insert === - <==    Updates: 1
+2023-08-22 03:32:00 === [Test worker] === DEBUG === com.erp.sf.mapper.ScoreMapper.insert === - ==>  Preparing: INSERT INTO score ( id, user_id, score, create_at, update_at ) VALUES ( ?, ?, ?, ?, ? )
+2023-08-22 03:32:00 === [Test worker] === DEBUG === com.erp.sf.mapper.ScoreMapper.insert === - ==> Parameters: 0(Long), 18(Long), 0(Integer), null, null
+2023-08-22 03:32:00 === [Test worker] === DEBUG === com.erp.sf.mapper.ScoreMapper.insert === - <==    Updates: 1
+2023-08-22 03:32:00 === [Test worker] === DEBUG === com.erp.sf.mapper.ScoreMapper.insert === - ==>  Preparing: INSERT INTO score ( id, user_id, score, create_at, update_at ) VALUES ( ?, ?, ?, ?, ? )
+2023-08-22 03:32:00 === [Test worker] === DEBUG === com.erp.sf.mapper.ScoreMapper.insert === - ==> Parameters: 0(Long), 19(Long), 0(Integer), null, null
+2023-08-22 03:32:00 === [Test worker] === DEBUG === com.erp.sf.mapper.ScoreMapper.insert === - <==    Updates: 1
+2023-08-22 03:32:00 === [Test worker] === DEBUG === com.erp.sf.mapper.ScoreMapper.insert === - ==>  Preparing: INSERT INTO score ( id, user_id, score, create_at, update_at ) VALUES ( ?, ?, ?, ?, ? )
+2023-08-22 03:32:00 === [Test worker] === DEBUG === com.erp.sf.mapper.ScoreMapper.insert === - ==> Parameters: 0(Long), 20(Long), 0(Integer), null, null
+2023-08-22 03:32:00 === [Test worker] === DEBUG === com.erp.sf.mapper.ScoreMapper.insert === - <==    Updates: 1
+2023-08-22 03:32:00 === [Test worker] === DEBUG === com.erp.sf.mapper.ScoreMapper.selectCount === - ==>  Preparing: SELECT COUNT( * ) AS total FROM score
+2023-08-22 03:32:00 === [Test worker] === DEBUG === com.erp.sf.mapper.ScoreMapper.selectCount === - ==> Parameters: 
+2023-08-22 03:32:00 === [Test worker] === DEBUG === com.erp.sf.mapper.ScoreMapper.selectCount === - <==      Total: 1
+2023-08-22 03:32:00 === [Test worker] === DEBUG === com.erp.sf.mapper.ScoreMapper.insert === - ==>  Preparing: INSERT INTO score ( id, user_id, score, create_at, update_at ) VALUES ( ?, ?, ?, ?, ? )
+2023-08-22 03:32:00 === [Test worker] === DEBUG === com.erp.sf.mapper.ScoreMapper.insert === - ==> Parameters: 0(Long), 16(Long), 0(Integer), null, null
+2023-08-22 03:32:00 === [Test worker] === DEBUG === com.erp.sf.mapper.ScoreMapper.insert === - <==    Updates: 1
+2023-08-22 03:32:00 === [Test worker] === DEBUG === com.erp.sf.mapper.ScoreMapper.selectCount === - ==>  Preparing: SELECT COUNT( * ) AS total FROM score
+2023-08-22 03:32:00 === [Test worker] === DEBUG === com.erp.sf.mapper.ScoreMapper.selectCount === - ==> Parameters: 
+2023-08-22 03:32:00 === [Test worker] === DEBUG === com.erp.sf.mapper.ScoreMapper.selectCount === - <==      Total: 1
+2023-08-22 03:32:00 === [Test worker] === INFO  === o.s.t.c.support.AnnotationConfigContextLoaderUtils === - Could not detect default configuration classes for test class [com.erp.sf.service.security.LoginServiceImplTest]: LoginServiceImplTest does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
+2023-08-22 03:32:00 === [Test worker] === INFO  === o.s.b.t.context.SpringBootTestContextBootstrapper === - Found @SpringBootConfiguration com.erp.sf.SfApplication for test class com.erp.sf.service.security.LoginServiceImplTest
+2023-08-22 03:32:00 === [Test worker] === DEBUG === com.erp.sf.mapper.SysMenuMapper.selectCount === - ==>  Preparing: SELECT COUNT( * ) AS total FROM SYS_MENU WHERE delete_at IS NULL
+2023-08-22 03:32:00 === [Test worker] === DEBUG === com.erp.sf.mapper.SysMenuMapper.selectCount === - ==> Parameters: 
+2023-08-22 03:32:00 === [Test worker] === DEBUG === com.erp.sf.mapper.SysMenuMapper.selectCount === - <==      Total: 1
+2023-08-22 03:32:00 === [Test worker] === DEBUG === com.erp.sf.mapper.SysMenuMapper.insert === - ==>  Preparing: INSERT INTO SYS_MENU ( id, perms, create_at, update_at ) VALUES ( ?, ?, ?, ? )
+2023-08-22 03:32:00 === [Test worker] === DEBUG === com.erp.sf.mapper.SysMenuMapper.insert === - ==> Parameters: 0(Long), 602ec8bc-7a47-4319-92bc-6a66d3a42f5e(String), null, null
+2023-08-22 03:32:00 === [Test worker] === DEBUG === com.erp.sf.mapper.SysMenuMapper.insert === - <==    Updates: 1
+2023-08-22 03:32:00 === [Test worker] === DEBUG === com.erp.sf.mapper.SysMenuMapper.insert === - ==>  Preparing: INSERT INTO SYS_MENU ( id, perms, create_at, update_at ) VALUES ( ?, ?, ?, ? )
+2023-08-22 03:32:00 === [Test worker] === DEBUG === com.erp.sf.mapper.SysMenuMapper.insert === - ==> Parameters: 0(Long), a53a5067-5bab-442b-ab2d-7875f8e491c5(String), null, null
+2023-08-22 03:32:00 === [Test worker] === DEBUG === com.erp.sf.mapper.SysMenuMapper.insert === - <==    Updates: 1
+2023-08-22 03:32:00 === [Test worker] === DEBUG === com.erp.sf.mapper.SysMenuMapper.insert === - ==>  Preparing: INSERT INTO SYS_MENU ( id, perms, create_at, update_at ) VALUES ( ?, ?, ?, ? )
+2023-08-22 03:32:00 === [Test worker] === DEBUG === com.erp.sf.mapper.SysMenuMapper.insert === - ==> Parameters: 0(Long), 5187c924-1c79-4e4a-9056-fd6522a9e902(String), null, null
+2023-08-22 03:32:00 === [Test worker] === DEBUG === com.erp.sf.mapper.SysMenuMapper.insert === - <==    Updates: 1
+2023-08-22 03:32:00 === [Test worker] === DEBUG === com.erp.sf.mapper.SysMenuMapper.selectCount === - ==>  Preparing: SELECT COUNT( * ) AS total FROM SYS_MENU WHERE delete_at IS NULL
+2023-08-22 03:32:00 === [Test worker] === DEBUG === com.erp.sf.mapper.SysMenuMapper.selectCount === - ==> Parameters: 
+2023-08-22 03:32:00 === [Test worker] === DEBUG === com.erp.sf.mapper.SysMenuMapper.selectCount === - <==      Total: 1
+2023-08-22 03:32:00 === [Test worker] === DEBUG === com.erp.sf.mapper.SysUserMapper.selectCount === - ==>  Preparing: SELECT COUNT( * ) AS total FROM SYS_USER WHERE delete_at IS NULL
+2023-08-22 03:32:00 === [Test worker] === DEBUG === com.erp.sf.mapper.SysUserMapper.selectCount === - ==> Parameters: 
+2023-08-22 03:32:00 === [Test worker] === DEBUG === com.erp.sf.mapper.SysUserMapper.selectCount === - <==      Total: 1
+2023-08-22 03:32:00 === [Test worker] === DEBUG === com.erp.sf.mapper.SysUserMapper.insert === - ==>  Preparing: INSERT INTO SYS_USER ( id, username, password, chinese_name, english_name, email, create_at, update_at ) VALUES ( ?, ?, ?, ?, ?, ?, ?, ? )
+2023-08-22 03:32:00 === [Test worker] === DEBUG === com.erp.sf.mapper.SysUserMapper.insert === - ==> Parameters: 0(Long), fdc14385-61a5-4b22-b978-e79e8bd4dd1f(String), $2a$10$Gw/McU4p9A8vrcoZ8h8JR.d4mtF2E//gHyzNtrm8W8/doGaYNd1Me(String), (String), (String), 850808b5-e1f8-465a-87af-0e413fc7692b(String), null, null
+2023-08-22 03:32:00 === [Test worker] === DEBUG === com.erp.sf.mapper.SysUserMapper.insert === - <==    Updates: 1
+2023-08-22 03:32:00 === [Test worker] === DEBUG === com.erp.sf.mapper.SysUserMapper.insert === - ==>  Preparing: INSERT INTO SYS_USER ( id, username, password, chinese_name, english_name, email, create_at, update_at ) VALUES ( ?, ?, ?, ?, ?, ?, ?, ? )
+2023-08-22 03:32:00 === [Test worker] === DEBUG === com.erp.sf.mapper.SysUserMapper.insert === - ==> Parameters: 0(Long), aca396cd-42ae-4baf-b336-4144aaed6856(String), $2a$10$lmoAsm1Cs6N1jWZdsav5j.Y12OEDfXhNaECyzpcl3TRSKzqQYhlYy(String), (String), (String), c28c2821-ffb2-4c6e-b480-128a46020c0a(String), null, null
+2023-08-22 03:32:00 === [Test worker] === DEBUG === com.erp.sf.mapper.SysUserMapper.insert === - <==    Updates: 1
+2023-08-22 03:32:01 === [Test worker] === DEBUG === com.erp.sf.mapper.SysUserMapper.insert === - ==>  Preparing: INSERT INTO SYS_USER ( id, username, password, chinese_name, english_name, email, create_at, update_at ) VALUES ( ?, ?, ?, ?, ?, ?, ?, ? )
+2023-08-22 03:32:01 === [Test worker] === DEBUG === com.erp.sf.mapper.SysUserMapper.insert === - ==> Parameters: 0(Long), a05c7732-731f-4cda-b844-847f65dc5b09(String), $2a$10$Ba4ELwqyxs95OEM6s9phz.WFMNOhTevsKQuzDEC3PNdmjFcAmivDm(String), (String), (String), b032764a-ac94-4e34-bfcf-cdd1192d24f7(String), null, null
+2023-08-22 03:32:01 === [Test worker] === DEBUG === com.erp.sf.mapper.SysUserMapper.insert === - <==    Updates: 1
+2023-08-22 03:32:01 === [Test worker] === DEBUG === com.erp.sf.mapper.SysUserMapper.selectCount === - ==>  Preparing: SELECT COUNT( * ) AS total FROM SYS_USER WHERE delete_at IS NULL
+2023-08-22 03:32:01 === [Test worker] === DEBUG === com.erp.sf.mapper.SysUserMapper.selectCount === - ==> Parameters: 
+2023-08-22 03:32:01 === [Test worker] === DEBUG === com.erp.sf.mapper.SysUserMapper.selectCount === - <==      Total: 1
+2023-08-22 03:32:01 === [Test worker] === DEBUG === com.erp.sf.mapper.SysRoleMapper.selectCount === - ==>  Preparing: SELECT COUNT( * ) AS total FROM SYS_ROLE WHERE delete_at IS NULL
+2023-08-22 03:32:01 === [Test worker] === DEBUG === com.erp.sf.mapper.SysRoleMapper.selectCount === - ==> Parameters: 
+2023-08-22 03:32:01 === [Test worker] === DEBUG === com.erp.sf.mapper.SysRoleMapper.selectCount === - <==      Total: 1
+2023-08-22 03:32:01 === [Test worker] === DEBUG === com.erp.sf.mapper.SysRoleMapper.insert === - ==>  Preparing: INSERT INTO SYS_ROLE ( id, name, create_at, update_at ) VALUES ( ?, ?, ?, ? )
+2023-08-22 03:32:01 === [Test worker] === DEBUG === com.erp.sf.mapper.SysRoleMapper.insert === - ==> Parameters: 0(Long), 0e1c5d9a-834e-4588-9d61-2fb06f149cc9(String), null, null
+2023-08-22 03:32:01 === [Test worker] === DEBUG === com.erp.sf.mapper.SysRoleMapper.insert === - <==    Updates: 1
+2023-08-22 03:32:01 === [Test worker] === DEBUG === com.erp.sf.mapper.SysRoleMapper.insert === - ==>  Preparing: INSERT INTO SYS_ROLE ( id, name, create_at, update_at ) VALUES ( ?, ?, ?, ? )
+2023-08-22 03:32:01 === [Test worker] === DEBUG === com.erp.sf.mapper.SysRoleMapper.insert === - ==> Parameters: 0(Long), a84081d1-ba97-4477-9887-1e021db704c0(String), null, null
+2023-08-22 03:32:01 === [Test worker] === DEBUG === com.erp.sf.mapper.SysRoleMapper.insert === - <==    Updates: 1
+2023-08-22 03:32:01 === [Test worker] === DEBUG === com.erp.sf.mapper.SysRoleMapper.insert === - ==>  Preparing: INSERT INTO SYS_ROLE ( id, name, create_at, update_at ) VALUES ( ?, ?, ?, ? )
+2023-08-22 03:32:01 === [Test worker] === DEBUG === com.erp.sf.mapper.SysRoleMapper.insert === - ==> Parameters: 0(Long), 2e25648f-f506-4625-aa93-f66b32233e80(String), null, null
+2023-08-22 03:32:01 === [Test worker] === DEBUG === com.erp.sf.mapper.SysRoleMapper.insert === - <==    Updates: 1
+2023-08-22 03:32:01 === [Test worker] === DEBUG === com.erp.sf.mapper.SysRoleMapper.selectCount === - ==>  Preparing: SELECT COUNT( * ) AS total FROM SYS_ROLE WHERE delete_at IS NULL
+2023-08-22 03:32:01 === [Test worker] === DEBUG === com.erp.sf.mapper.SysRoleMapper.selectCount === - ==> Parameters: 
+2023-08-22 03:32:01 === [Test worker] === DEBUG === com.erp.sf.mapper.SysRoleMapper.selectCount === - <==      Total: 1
+2023-08-22 03:32:01 === [Test worker] === DEBUG === com.erp.sf.mapper.SysRoleMenuMapper.insertBatch === - ==>  Preparing: INSERT INTO SYS_ROLE_MENU (role_id,menu_id) VALUES (?,?) , (?,?) , (?,?)
+2023-08-22 03:32:01 === [Test worker] === DEBUG === com.erp.sf.mapper.SysRoleMenuMapper.insertBatch === - ==> Parameters: 12(Long), 7(Long), 13(Long), 8(Long), 14(Long), 9(Long)
+2023-08-22 03:32:01 === [Test worker] === DEBUG === com.erp.sf.mapper.SysRoleMenuMapper.insertBatch === - <==    Updates: 3
+2023-08-22 03:32:01 === [Test worker] === DEBUG === com.erp.sf.mapper.SysUserRoleMapper.insertBatch === - ==>  Preparing: INSERT INTO SYS_USER_ROLE (user_id,role_id) VALUES (?,?) , (?,?) , (?,?)
+2023-08-22 03:32:01 === [Test worker] === DEBUG === com.erp.sf.mapper.SysUserRoleMapper.insertBatch === - ==> Parameters: 21(Long), 12(Long), 22(Long), 13(Long), 23(Long), 14(Long)
+2023-08-22 03:32:01 === [Test worker] === DEBUG === com.erp.sf.mapper.SysUserRoleMapper.insertBatch === - <==    Updates: 3
+2023-08-22 03:32:01 === [Test worker] === DEBUG === com.erp.sf.mapper.SysMenuMapper.selectCount === - ==>  Preparing: SELECT COUNT( * ) AS total FROM SYS_MENU WHERE delete_at IS NULL
+2023-08-22 03:32:01 === [Test worker] === DEBUG === com.erp.sf.mapper.SysMenuMapper.selectCount === - ==> Parameters: 
+2023-08-22 03:32:01 === [Test worker] === DEBUG === com.erp.sf.mapper.SysMenuMapper.selectCount === - <==      Total: 1
+2023-08-22 03:32:01 === [Test worker] === DEBUG === com.erp.sf.mapper.SysMenuMapper.insert === - ==>  Preparing: INSERT INTO SYS_MENU ( id, perms, create_at, update_at ) VALUES ( ?, ?, ?, ? )
+2023-08-22 03:32:01 === [Test worker] === DEBUG === com.erp.sf.mapper.SysMenuMapper.insert === - ==> Parameters: 0(Long), 8cc2f7cf-a758-4cf2-ae1d-e18b1ccfa7a0(String), null, null
+2023-08-22 03:32:01 === [Test worker] === DEBUG === com.erp.sf.mapper.SysMenuMapper.insert === - <==    Updates: 1
+2023-08-22 03:32:01 === [Test worker] === DEBUG === com.erp.sf.mapper.SysMenuMapper.insert === - ==>  Preparing: INSERT INTO SYS_MENU ( id, perms, create_at, update_at ) VALUES ( ?, ?, ?, ? )
+2023-08-22 03:32:01 === [Test worker] === DEBUG === com.erp.sf.mapper.SysMenuMapper.insert === - ==> Parameters: 0(Long), 0954f219-cf7b-48d7-a145-cb19a9ecff26(String), null, null
+2023-08-22 03:32:01 === [Test worker] === DEBUG === com.erp.sf.mapper.SysMenuMapper.insert === - <==    Updates: 1
+2023-08-22 03:32:01 === [Test worker] === DEBUG === com.erp.sf.mapper.SysMenuMapper.insert === - ==>  Preparing: INSERT INTO SYS_MENU ( id, perms, create_at, update_at ) VALUES ( ?, ?, ?, ? )
+2023-08-22 03:32:01 === [Test worker] === DEBUG === com.erp.sf.mapper.SysMenuMapper.insert === - ==> Parameters: 0(Long), 38e75f6b-35e9-4120-8142-7961e66af617(String), null, null
+2023-08-22 03:32:01 === [Test worker] === DEBUG === com.erp.sf.mapper.SysMenuMapper.insert === - <==    Updates: 1
+2023-08-22 03:32:01 === [Test worker] === DEBUG === com.erp.sf.mapper.SysMenuMapper.selectCount === - ==>  Preparing: SELECT COUNT( * ) AS total FROM SYS_MENU WHERE delete_at IS NULL
+2023-08-22 03:32:01 === [Test worker] === DEBUG === com.erp.sf.mapper.SysMenuMapper.selectCount === - ==> Parameters: 
+2023-08-22 03:32:01 === [Test worker] === DEBUG === com.erp.sf.mapper.SysMenuMapper.selectCount === - <==      Total: 1
+2023-08-22 03:32:01 === [Test worker] === DEBUG === com.erp.sf.mapper.SysUserMapper.selectCount === - ==>  Preparing: SELECT COUNT( * ) AS total FROM SYS_USER WHERE delete_at IS NULL
+2023-08-22 03:32:01 === [Test worker] === DEBUG === com.erp.sf.mapper.SysUserMapper.selectCount === - ==> Parameters: 
+2023-08-22 03:32:01 === [Test worker] === DEBUG === com.erp.sf.mapper.SysUserMapper.selectCount === - <==      Total: 1
+2023-08-22 03:32:01 === [Test worker] === DEBUG === com.erp.sf.mapper.SysUserMapper.insert === - ==>  Preparing: INSERT INTO SYS_USER ( id, username, password, chinese_name, english_name, email, create_at, update_at ) VALUES ( ?, ?, ?, ?, ?, ?, ?, ? )
+2023-08-22 03:32:01 === [Test worker] === DEBUG === com.erp.sf.mapper.SysUserMapper.insert === - ==> Parameters: 0(Long), fbc86cfe-6294-47f2-acff-ea95039cc064(String), $2a$10$lYIismDLfLAhLMiyOalqVu6on4PBBcSFnR653aX.gat2GZVPvTU/u(String), (String), (String), ba64928e-a286-4a73-a627-95072823ea93(String), null, null
+2023-08-22 03:32:01 === [Test worker] === DEBUG === com.erp.sf.mapper.SysUserMapper.insert === - <==    Updates: 1
+2023-08-22 03:32:01 === [Test worker] === DEBUG === com.erp.sf.mapper.SysUserMapper.insert === - ==>  Preparing: INSERT INTO SYS_USER ( id, username, password, chinese_name, english_name, email, create_at, update_at ) VALUES ( ?, ?, ?, ?, ?, ?, ?, ? )
+2023-08-22 03:32:01 === [Test worker] === DEBUG === com.erp.sf.mapper.SysUserMapper.insert === - ==> Parameters: 0(Long), 8c1320f7-ca41-4516-891a-c294f409369f(String), $2a$10$McGJCQrKfwmbGtPx9I7Xq.TAohh5svJp.VqeIsTGHVGfssfkaPjv2(String), (String), (String), 74355649-a33e-455b-9dbb-5230f437ab87(String), null, null
+2023-08-22 03:32:01 === [Test worker] === DEBUG === com.erp.sf.mapper.SysUserMapper.insert === - <==    Updates: 1
+2023-08-22 03:32:01 === [Test worker] === DEBUG === com.erp.sf.mapper.SysUserMapper.insert === - ==>  Preparing: INSERT INTO SYS_USER ( id, username, password, chinese_name, english_name, email, create_at, update_at ) VALUES ( ?, ?, ?, ?, ?, ?, ?, ? )
+2023-08-22 03:32:01 === [Test worker] === DEBUG === com.erp.sf.mapper.SysUserMapper.insert === - ==> Parameters: 0(Long), b0eccf5c-0013-4788-bbcf-73170cd12767(String), $2a$10$1zTTBHE21lCO8UcdS6ytSu9tGfIwoxBcTMMCAZnnAFqInHVkoe78i(String), (String), (String), dbf113b2-ca2b-4877-bdc7-840b0f1339c8(String), null, null
+2023-08-22 03:32:01 === [Test worker] === DEBUG === com.erp.sf.mapper.SysUserMapper.insert === - <==    Updates: 1
+2023-08-22 03:32:01 === [Test worker] === DEBUG === com.erp.sf.mapper.SysUserMapper.selectCount === - ==>  Preparing: SELECT COUNT( * ) AS total FROM SYS_USER WHERE delete_at IS NULL
+2023-08-22 03:32:01 === [Test worker] === DEBUG === com.erp.sf.mapper.SysUserMapper.selectCount === - ==> Parameters: 
+2023-08-22 03:32:01 === [Test worker] === DEBUG === com.erp.sf.mapper.SysUserMapper.selectCount === - <==      Total: 1
+2023-08-22 03:32:01 === [Test worker] === DEBUG === com.erp.sf.mapper.SysRoleMapper.selectCount === - ==>  Preparing: SELECT COUNT( * ) AS total FROM SYS_ROLE WHERE delete_at IS NULL
+2023-08-22 03:32:01 === [Test worker] === DEBUG === com.erp.sf.mapper.SysRoleMapper.selectCount === - ==> Parameters: 
+2023-08-22 03:32:01 === [Test worker] === DEBUG === com.erp.sf.mapper.SysRoleMapper.selectCount === - <==      Total: 1
+2023-08-22 03:32:01 === [Test worker] === DEBUG === com.erp.sf.mapper.SysRoleMapper.insert === - ==>  Preparing: INSERT INTO SYS_ROLE ( id, name, create_at, update_at ) VALUES ( ?, ?, ?, ? )
+2023-08-22 03:32:01 === [Test worker] === DEBUG === com.erp.sf.mapper.SysRoleMapper.insert === - ==> Parameters: 0(Long), f4ff775c-ca66-40dd-8972-2e5688b36a8b(String), null, null
+2023-08-22 03:32:01 === [Test worker] === DEBUG === com.erp.sf.mapper.SysRoleMapper.insert === - <==    Updates: 1
+2023-08-22 03:32:01 === [Test worker] === DEBUG === com.erp.sf.mapper.SysRoleMapper.insert === - ==>  Preparing: INSERT INTO SYS_ROLE ( id, name, create_at, update_at ) VALUES ( ?, ?, ?, ? )
+2023-08-22 03:32:01 === [Test worker] === DEBUG === com.erp.sf.mapper.SysRoleMapper.insert === - ==> Parameters: 0(Long), 903e0f7e-3ab1-496b-9e1c-050fe2e0f407(String), null, null
+2023-08-22 03:32:01 === [Test worker] === DEBUG === com.erp.sf.mapper.SysRoleMapper.insert === - <==    Updates: 1
+2023-08-22 03:32:01 === [Test worker] === DEBUG === com.erp.sf.mapper.SysRoleMapper.insert === - ==>  Preparing: INSERT INTO SYS_ROLE ( id, name, create_at, update_at ) VALUES ( ?, ?, ?, ? )
+2023-08-22 03:32:01 === [Test worker] === DEBUG === com.erp.sf.mapper.SysRoleMapper.insert === - ==> Parameters: 0(Long), 7d53e82f-fdeb-42e5-8bcb-e2313ca688ca(String), null, null
+2023-08-22 03:32:01 === [Test worker] === DEBUG === com.erp.sf.mapper.SysRoleMapper.insert === - <==    Updates: 1
+2023-08-22 03:32:01 === [Test worker] === DEBUG === com.erp.sf.mapper.SysRoleMapper.selectCount === - ==>  Preparing: SELECT COUNT( * ) AS total FROM SYS_ROLE WHERE delete_at IS NULL
+2023-08-22 03:32:01 === [Test worker] === DEBUG === com.erp.sf.mapper.SysRoleMapper.selectCount === - ==> Parameters: 
+2023-08-22 03:32:01 === [Test worker] === DEBUG === com.erp.sf.mapper.SysRoleMapper.selectCount === - <==      Total: 1
+2023-08-22 03:32:01 === [Test worker] === DEBUG === com.erp.sf.mapper.SysRoleMenuMapper.insertBatch === - ==>  Preparing: INSERT INTO SYS_ROLE_MENU (role_id,menu_id) VALUES (?,?) , (?,?) , (?,?)
+2023-08-22 03:32:01 === [Test worker] === DEBUG === com.erp.sf.mapper.SysRoleMenuMapper.insertBatch === - ==> Parameters: 15(Long), 10(Long), 16(Long), 11(Long), 17(Long), 12(Long)
+2023-08-22 03:32:01 === [Test worker] === DEBUG === com.erp.sf.mapper.SysRoleMenuMapper.insertBatch === - <==    Updates: 3
+2023-08-22 03:32:01 === [Test worker] === DEBUG === com.erp.sf.mapper.SysUserRoleMapper.insertBatch === - ==>  Preparing: INSERT INTO SYS_USER_ROLE (user_id,role_id) VALUES (?,?) , (?,?) , (?,?)
+2023-08-22 03:32:01 === [Test worker] === DEBUG === com.erp.sf.mapper.SysUserRoleMapper.insertBatch === - ==> Parameters: 24(Long), 15(Long), 25(Long), 16(Long), 26(Long), 17(Long)
+2023-08-22 03:32:01 === [Test worker] === DEBUG === com.erp.sf.mapper.SysUserRoleMapper.insertBatch === - <==    Updates: 3
+2023-08-22 03:32:01 === [Test worker] === DEBUG === com.erp.sf.mapper.SysUserMapper.selectCount === - ==>  Preparing: SELECT COUNT( * ) AS total FROM SYS_USER WHERE delete_at IS NULL AND (username = ?)
+2023-08-22 03:32:01 === [Test worker] === DEBUG === com.erp.sf.mapper.SysUserMapper.selectCount === - ==> Parameters: 3c1f1966-623f-40ae-8ce4-b62b70c9d6bf(String)
+2023-08-22 03:32:01 === [Test worker] === DEBUG === com.erp.sf.mapper.SysUserMapper.selectCount === - <==      Total: 1
+2023-08-22 03:32:01 === [Test worker] === DEBUG === com.erp.sf.mapper.SysUserMapper.insert === - ==>  Preparing: INSERT INTO SYS_USER ( id, username, password, chinese_name, english_name, email, create_at, update_at ) VALUES ( ?, ?, ?, ?, ?, ?, ?, ? )
+2023-08-22 03:32:01 === [Test worker] === DEBUG === com.erp.sf.mapper.SysUserMapper.insert === - ==> Parameters: 0(Long), 3c1f1966-623f-40ae-8ce4-b62b70c9d6bf(String), $2a$10$xRmRVds7p.WIWIwYdUgxD.OqEOcyVrBNn5z2Url7Ibu9e9GCpEylG(String), (String), (String), bff256ec-f5fe-4a0f-83b2-dc6331c73b1d(String), null, null
+2023-08-22 03:32:01 === [Test worker] === DEBUG === com.erp.sf.mapper.SysUserMapper.insert === - <==    Updates: 1
+2023-08-22 03:32:01 === [Test worker] === DEBUG === com.erp.sf.mapper.SettingMapper.selectValueByKey === - ==>  Preparing: SELECT s.value FROM setting s where s.key = ?
+2023-08-22 03:32:01 === [Test worker] === DEBUG === com.erp.sf.mapper.SettingMapper.selectValueByKey === - ==> Parameters: initRole(String)
+2023-08-22 03:32:01 === [Test worker] === DEBUG === com.erp.sf.mapper.SettingMapper.selectValueByKey === - <==      Total: 1
+2023-08-22 03:32:01 === [Test worker] === DEBUG === com.erp.sf.mapper.SysRoleMapper.selectList === - ==>  Preparing: SELECT id,name,create_at,update_at,delete_at FROM SYS_ROLE WHERE delete_at IS NULL AND (name = ?)
+2023-08-22 03:32:01 === [Test worker] === DEBUG === com.erp.sf.mapper.SysRoleMapper.selectList === - ==> Parameters: visitor(String)
+2023-08-22 03:32:01 === [Test worker] === DEBUG === com.erp.sf.mapper.SysRoleMapper.selectList === - <==      Total: 1
+2023-08-22 03:32:01 === [Test worker] === DEBUG === com.erp.sf.mapper.SysUserRoleMapper.insert === - ==>  Preparing: INSERT INTO SYS_USER_ROLE ( id, user_id, role_id ) VALUES ( ?, ?, ? )
+2023-08-22 03:32:01 === [Test worker] === DEBUG === com.erp.sf.mapper.SysUserRoleMapper.insert === - ==> Parameters: 0(Long), 27(Long), 5(Long)
+2023-08-22 03:32:01 === [Test worker] === DEBUG === com.erp.sf.mapper.SysUserRoleMapper.insert === - <==    Updates: 1
+2023-08-22 03:32:01 === [Test worker] === DEBUG === c.erp.sf.mapper.SysMenuMapper.selectPermsByUserId === - ==>  Preparing: SELECT sm.`perms` FROM `sys_user_role` sur LEFT JOIN `sys_role_menu` srm ON sur.`role_id` = srm.`role_id` LEFT JOIN `sys_menu` sm ON srm.`MENU_ID` = sm.`ID` where sur.USER_ID = ?
+2023-08-22 03:32:01 === [Test worker] === DEBUG === c.erp.sf.mapper.SysMenuMapper.selectPermsByUserId === - ==> Parameters: 27(Long)
+2023-08-22 03:32:01 === [Test worker] === DEBUG === c.erp.sf.mapper.SysMenuMapper.selectPermsByUserId === - <==      Total: 3
+2023-08-22 03:32:01 === [Test worker] === DEBUG === com.erp.sf.mapper.SysUserMapper.selectCount === - ==>  Preparing: SELECT COUNT( * ) AS total FROM SYS_USER WHERE delete_at IS NULL AND (username = ?)
+2023-08-22 03:32:01 === [Test worker] === DEBUG === com.erp.sf.mapper.SysUserMapper.selectCount === - ==> Parameters: 2793a642-e659-461b-a856-eba49fac91a6(String)
+2023-08-22 03:32:01 === [Test worker] === DEBUG === com.erp.sf.mapper.SysUserMapper.selectCount === - <==      Total: 1
+2023-08-22 03:32:01 === [Test worker] === DEBUG === com.erp.sf.mapper.SysUserMapper.insert === - ==>  Preparing: INSERT INTO SYS_USER ( id, username, password, chinese_name, english_name, email, create_at, update_at ) VALUES ( ?, ?, ?, ?, ?, ?, ?, ? )
+2023-08-22 03:32:01 === [Test worker] === DEBUG === com.erp.sf.mapper.SysUserMapper.insert === - ==> Parameters: 0(Long), 2793a642-e659-461b-a856-eba49fac91a6(String), $2a$10$1of7b.wJGgRTpVK62JxYAOfWrq3OIjEjIbuImgXDE.F4OSClRc2hu(String), (String), (String), 4ace8405-88ff-45ee-8316-d27e0aae1209(String), null, null
+2023-08-22 03:32:01 === [Test worker] === DEBUG === com.erp.sf.mapper.SysUserMapper.insert === - <==    Updates: 1
+2023-08-22 03:32:01 === [Test worker] === DEBUG === com.erp.sf.mapper.SysRoleMapper.selectList === - ==>  Preparing: SELECT id,name,create_at,update_at,delete_at FROM SYS_ROLE WHERE delete_at IS NULL AND (name = ?)
+2023-08-22 03:32:01 === [Test worker] === DEBUG === com.erp.sf.mapper.SysRoleMapper.selectList === - ==> Parameters: visitor(String)
+2023-08-22 03:32:01 === [Test worker] === DEBUG === com.erp.sf.mapper.SysRoleMapper.selectList === - <==      Total: 1
+2023-08-22 03:32:01 === [Test worker] === DEBUG === com.erp.sf.mapper.SysUserRoleMapper.insert === - ==>  Preparing: INSERT INTO SYS_USER_ROLE ( id, user_id, role_id ) VALUES ( ?, ?, ? )
+2023-08-22 03:32:01 === [Test worker] === DEBUG === com.erp.sf.mapper.SysUserRoleMapper.insert === - ==> Parameters: 0(Long), 28(Long), 5(Long)
+2023-08-22 03:32:01 === [Test worker] === DEBUG === com.erp.sf.mapper.SysUserRoleMapper.insert === - <==    Updates: 1
+2023-08-22 03:32:01 === [Test worker] === DEBUG === c.erp.sf.mapper.SysMenuMapper.selectPermsByUserId === - ==>  Preparing: SELECT sm.`perms` FROM `sys_user_role` sur LEFT JOIN `sys_role_menu` srm ON sur.`role_id` = srm.`role_id` LEFT JOIN `sys_menu` sm ON srm.`MENU_ID` = sm.`ID` where sur.USER_ID = ?
+2023-08-22 03:32:01 === [Test worker] === DEBUG === c.erp.sf.mapper.SysMenuMapper.selectPermsByUserId === - ==> Parameters: 28(Long)
+2023-08-22 03:32:01 === [Test worker] === DEBUG === c.erp.sf.mapper.SysMenuMapper.selectPermsByUserId === - <==      Total: 3
+2023-08-22 03:32:01 === [Test worker] === DEBUG === com.erp.sf.mapper.SysUserMapper.selectCount === - ==>  Preparing: SELECT COUNT( * ) AS total FROM SYS_USER WHERE delete_at IS NULL AND (username = ?)
+2023-08-22 03:32:01 === [Test worker] === DEBUG === com.erp.sf.mapper.SysUserMapper.selectCount === - ==> Parameters: a20fba25-70fe-45fb-8ae0-62abe4552fc9(String)
+2023-08-22 03:32:01 === [Test worker] === DEBUG === com.erp.sf.mapper.SysUserMapper.selectCount === - <==      Total: 1
+2023-08-22 03:32:01 === [Test worker] === DEBUG === com.erp.sf.mapper.SysUserMapper.insert === - ==>  Preparing: INSERT INTO SYS_USER ( id, username, password, chinese_name, english_name, email, create_at, update_at ) VALUES ( ?, ?, ?, ?, ?, ?, ?, ? )
+2023-08-22 03:32:01 === [Test worker] === DEBUG === com.erp.sf.mapper.SysUserMapper.insert === - ==> Parameters: 0(Long), a20fba25-70fe-45fb-8ae0-62abe4552fc9(String), $2a$10$DuFMpJ1eUHxvtPDhKuhW7.0aEIIcNNDcGXBpq19gm.xyM1KtJhdva(String), (String), (String), 932a415c-abea-4b5a-b308-da7e0f50bccc(String), null, null
+2023-08-22 03:32:01 === [Test worker] === DEBUG === com.erp.sf.mapper.SysUserMapper.insert === - <==    Updates: 1
+2023-08-22 03:32:01 === [Test worker] === DEBUG === com.erp.sf.mapper.SysRoleMapper.selectList === - ==>  Preparing: SELECT id,name,create_at,update_at,delete_at FROM SYS_ROLE WHERE delete_at IS NULL AND (name = ?)
+2023-08-22 03:32:01 === [Test worker] === DEBUG === com.erp.sf.mapper.SysRoleMapper.selectList === - ==> Parameters: visitor(String)
+2023-08-22 03:32:01 === [Test worker] === DEBUG === com.erp.sf.mapper.SysRoleMapper.selectList === - <==      Total: 1
+2023-08-22 03:32:01 === [Test worker] === DEBUG === com.erp.sf.mapper.SysUserRoleMapper.insert === - ==>  Preparing: INSERT INTO SYS_USER_ROLE ( id, user_id, role_id ) VALUES ( ?, ?, ? )
+2023-08-22 03:32:01 === [Test worker] === DEBUG === com.erp.sf.mapper.SysUserRoleMapper.insert === - ==> Parameters: 0(Long), 29(Long), 5(Long)
+2023-08-22 03:32:01 === [Test worker] === DEBUG === com.erp.sf.mapper.SysUserRoleMapper.insert === - <==    Updates: 1
+2023-08-22 03:32:01 === [Test worker] === DEBUG === c.erp.sf.mapper.SysMenuMapper.selectPermsByUserId === - ==>  Preparing: SELECT sm.`perms` FROM `sys_user_role` sur LEFT JOIN `sys_role_menu` srm ON sur.`role_id` = srm.`role_id` LEFT JOIN `sys_menu` sm ON srm.`MENU_ID` = sm.`ID` where sur.USER_ID = ?
+2023-08-22 03:32:01 === [Test worker] === DEBUG === c.erp.sf.mapper.SysMenuMapper.selectPermsByUserId === - ==> Parameters: 29(Long)
+2023-08-22 03:32:01 === [Test worker] === DEBUG === c.erp.sf.mapper.SysMenuMapper.selectPermsByUserId === - <==      Total: 3
+2023-08-22 03:32:01 === [Test worker] === DEBUG === com.erp.sf.mapper.SysMenuMapper.selectCount === - ==>  Preparing: SELECT COUNT( * ) AS total FROM SYS_MENU WHERE delete_at IS NULL
+2023-08-22 03:32:01 === [Test worker] === DEBUG === com.erp.sf.mapper.SysMenuMapper.selectCount === - ==> Parameters: 
+2023-08-22 03:32:01 === [Test worker] === DEBUG === com.erp.sf.mapper.SysMenuMapper.selectCount === - <==      Total: 1
+2023-08-22 03:32:01 === [Test worker] === DEBUG === com.erp.sf.mapper.SysMenuMapper.insert === - ==>  Preparing: INSERT INTO SYS_MENU ( id, perms, create_at, update_at ) VALUES ( ?, ?, ?, ? )
+2023-08-22 03:32:01 === [Test worker] === DEBUG === com.erp.sf.mapper.SysMenuMapper.insert === - ==> Parameters: 0(Long), 85ddec2b-cf8b-4cd4-8349-d633b1c80e56(String), null, null
+2023-08-22 03:32:01 === [Test worker] === DEBUG === com.erp.sf.mapper.SysMenuMapper.insert === - <==    Updates: 1
+2023-08-22 03:32:01 === [Test worker] === DEBUG === com.erp.sf.mapper.SysMenuMapper.insert === - ==>  Preparing: INSERT INTO SYS_MENU ( id, perms, create_at, update_at ) VALUES ( ?, ?, ?, ? )
+2023-08-22 03:32:01 === [Test worker] === DEBUG === com.erp.sf.mapper.SysMenuMapper.insert === - ==> Parameters: 0(Long), 77377304-fc66-4aee-a82e-a215ae7fd4fc(String), null, null
+2023-08-22 03:32:01 === [Test worker] === DEBUG === com.erp.sf.mapper.SysMenuMapper.insert === - <==    Updates: 1
+2023-08-22 03:32:01 === [Test worker] === DEBUG === com.erp.sf.mapper.SysMenuMapper.insert === - ==>  Preparing: INSERT INTO SYS_MENU ( id, perms, create_at, update_at ) VALUES ( ?, ?, ?, ? )
+2023-08-22 03:32:01 === [Test worker] === DEBUG === com.erp.sf.mapper.SysMenuMapper.insert === - ==> Parameters: 0(Long), d224a93e-59b9-48f7-ba87-aa5d616e389e(String), null, null
+2023-08-22 03:32:01 === [Test worker] === DEBUG === com.erp.sf.mapper.SysMenuMapper.insert === - <==    Updates: 1
+2023-08-22 03:32:01 === [Test worker] === DEBUG === com.erp.sf.mapper.SysMenuMapper.selectCount === - ==>  Preparing: SELECT COUNT( * ) AS total FROM SYS_MENU WHERE delete_at IS NULL
+2023-08-22 03:32:01 === [Test worker] === DEBUG === com.erp.sf.mapper.SysMenuMapper.selectCount === - ==> Parameters: 
+2023-08-22 03:32:01 === [Test worker] === DEBUG === com.erp.sf.mapper.SysMenuMapper.selectCount === - <==      Total: 1
+2023-08-22 03:32:01 === [Test worker] === DEBUG === com.erp.sf.mapper.SysUserMapper.selectCount === - ==>  Preparing: SELECT COUNT( * ) AS total FROM SYS_USER WHERE delete_at IS NULL
+2023-08-22 03:32:01 === [Test worker] === DEBUG === com.erp.sf.mapper.SysUserMapper.selectCount === - ==> Parameters: 
+2023-08-22 03:32:01 === [Test worker] === DEBUG === com.erp.sf.mapper.SysUserMapper.selectCount === - <==      Total: 1
+2023-08-22 03:32:01 === [Test worker] === DEBUG === com.erp.sf.mapper.SysUserMapper.insert === - ==>  Preparing: INSERT INTO SYS_USER ( id, username, password, chinese_name, english_name, email, create_at, update_at ) VALUES ( ?, ?, ?, ?, ?, ?, ?, ? )
+2023-08-22 03:32:01 === [Test worker] === DEBUG === com.erp.sf.mapper.SysUserMapper.insert === - ==> Parameters: 0(Long), 7843f86f-f733-47ff-be51-c2ac6dc2874d(String), $2a$10$.WmpzToIqjOf0PD2SxGNDO1p1n9RYQlsqCCzqxn7gkguqIngGSoKG(String), (String), (String), ed80cf8e-8267-4b45-9154-15dbf77e19e1(String), null, null
+2023-08-22 03:32:01 === [Test worker] === DEBUG === com.erp.sf.mapper.SysUserMapper.insert === - <==    Updates: 1
+2023-08-22 03:32:02 === [Test worker] === DEBUG === com.erp.sf.mapper.SysUserMapper.insert === - ==>  Preparing: INSERT INTO SYS_USER ( id, username, password, chinese_name, english_name, email, create_at, update_at ) VALUES ( ?, ?, ?, ?, ?, ?, ?, ? )
+2023-08-22 03:32:02 === [Test worker] === DEBUG === com.erp.sf.mapper.SysUserMapper.insert === - ==> Parameters: 0(Long), 7e812a14-cc7e-4a80-aa2f-81ee2768c81b(String), $2a$10$ZIFiXm4Sy37.QIOWk7PMBe9MaUShXhBn32CCZCPvLG10eVDQ0/jnu(String), (String), (String), 03ac2455-6ebc-405d-9e84-44736fd78629(String), null, null
+2023-08-22 03:32:02 === [Test worker] === DEBUG === com.erp.sf.mapper.SysUserMapper.insert === - <==    Updates: 1
+2023-08-22 03:32:02 === [Test worker] === DEBUG === com.erp.sf.mapper.SysUserMapper.insert === - ==>  Preparing: INSERT INTO SYS_USER ( id, username, password, chinese_name, english_name, email, create_at, update_at ) VALUES ( ?, ?, ?, ?, ?, ?, ?, ? )
+2023-08-22 03:32:02 === [Test worker] === DEBUG === com.erp.sf.mapper.SysUserMapper.insert === - ==> Parameters: 0(Long), ecfaab33-bbfa-4bb1-9d92-67ae1c312a48(String), $2a$10$rJYjRckcCoGOxH1PGeByj.WU8oihHo0frnxbp2oCAoCn.beQ0.qbm(String), (String), (String), a2b06421-eeac-49e6-b2da-cf03a71d73f2(String), null, null
+2023-08-22 03:32:02 === [Test worker] === DEBUG === com.erp.sf.mapper.SysUserMapper.insert === - <==    Updates: 1
+2023-08-22 03:32:02 === [Test worker] === DEBUG === com.erp.sf.mapper.SysUserMapper.selectCount === - ==>  Preparing: SELECT COUNT( * ) AS total FROM SYS_USER WHERE delete_at IS NULL
+2023-08-22 03:32:02 === [Test worker] === DEBUG === com.erp.sf.mapper.SysUserMapper.selectCount === - ==> Parameters: 
+2023-08-22 03:32:02 === [Test worker] === DEBUG === com.erp.sf.mapper.SysUserMapper.selectCount === - <==      Total: 1
+2023-08-22 03:32:02 === [Test worker] === DEBUG === com.erp.sf.mapper.SysRoleMapper.selectCount === - ==>  Preparing: SELECT COUNT( * ) AS total FROM SYS_ROLE WHERE delete_at IS NULL
+2023-08-22 03:32:02 === [Test worker] === DEBUG === com.erp.sf.mapper.SysRoleMapper.selectCount === - ==> Parameters: 
+2023-08-22 03:32:02 === [Test worker] === DEBUG === com.erp.sf.mapper.SysRoleMapper.selectCount === - <==      Total: 1
+2023-08-22 03:32:02 === [Test worker] === DEBUG === com.erp.sf.mapper.SysRoleMapper.insert === - ==>  Preparing: INSERT INTO SYS_ROLE ( id, name, create_at, update_at ) VALUES ( ?, ?, ?, ? )
+2023-08-22 03:32:02 === [Test worker] === DEBUG === com.erp.sf.mapper.SysRoleMapper.insert === - ==> Parameters: 0(Long), 851d2ce1-7a8b-4e7c-b5ba-70936519deec(String), null, null
+2023-08-22 03:32:02 === [Test worker] === DEBUG === com.erp.sf.mapper.SysRoleMapper.insert === - <==    Updates: 1
+2023-08-22 03:32:02 === [Test worker] === DEBUG === com.erp.sf.mapper.SysRoleMapper.insert === - ==>  Preparing: INSERT INTO SYS_ROLE ( id, name, create_at, update_at ) VALUES ( ?, ?, ?, ? )
+2023-08-22 03:32:02 === [Test worker] === DEBUG === com.erp.sf.mapper.SysRoleMapper.insert === - ==> Parameters: 0(Long), fa1fa314-0e4f-46bb-b692-503f269c0a8a(String), null, null
+2023-08-22 03:32:02 === [Test worker] === DEBUG === com.erp.sf.mapper.SysRoleMapper.insert === - <==    Updates: 1
+2023-08-22 03:32:02 === [Test worker] === DEBUG === com.erp.sf.mapper.SysRoleMapper.insert === - ==>  Preparing: INSERT INTO SYS_ROLE ( id, name, create_at, update_at ) VALUES ( ?, ?, ?, ? )
+2023-08-22 03:32:02 === [Test worker] === DEBUG === com.erp.sf.mapper.SysRoleMapper.insert === - ==> Parameters: 0(Long), 331b9329-207c-4a7d-8ed9-acf404091d48(String), null, null
+2023-08-22 03:32:02 === [Test worker] === DEBUG === com.erp.sf.mapper.SysRoleMapper.insert === - <==    Updates: 1
+2023-08-22 03:32:02 === [Test worker] === DEBUG === com.erp.sf.mapper.SysRoleMapper.selectCount === - ==>  Preparing: SELECT COUNT( * ) AS total FROM SYS_ROLE WHERE delete_at IS NULL
+2023-08-22 03:32:02 === [Test worker] === DEBUG === com.erp.sf.mapper.SysRoleMapper.selectCount === - ==> Parameters: 
+2023-08-22 03:32:02 === [Test worker] === DEBUG === com.erp.sf.mapper.SysRoleMapper.selectCount === - <==      Total: 1
+2023-08-22 03:32:02 === [Test worker] === DEBUG === com.erp.sf.mapper.SysRoleMenuMapper.insertBatch === - ==>  Preparing: INSERT INTO SYS_ROLE_MENU (role_id,menu_id) VALUES (?,?) , (?,?) , (?,?)
+2023-08-22 03:32:02 === [Test worker] === DEBUG === com.erp.sf.mapper.SysRoleMenuMapper.insertBatch === - ==> Parameters: 18(Long), 13(Long), 19(Long), 14(Long), 20(Long), 15(Long)
+2023-08-22 03:32:02 === [Test worker] === DEBUG === com.erp.sf.mapper.SysRoleMenuMapper.insertBatch === - <==    Updates: 3
+2023-08-22 03:32:02 === [Test worker] === DEBUG === com.erp.sf.mapper.SysUserRoleMapper.insertBatch === - ==>  Preparing: INSERT INTO SYS_USER_ROLE (user_id,role_id) VALUES (?,?) , (?,?) , (?,?)
+2023-08-22 03:32:02 === [Test worker] === DEBUG === com.erp.sf.mapper.SysUserRoleMapper.insertBatch === - ==> Parameters: 30(Long), 18(Long), 31(Long), 19(Long), 32(Long), 20(Long)
+2023-08-22 03:32:02 === [Test worker] === DEBUG === com.erp.sf.mapper.SysUserRoleMapper.insertBatch === - <==    Updates: 3
+2023-08-22 03:32:02 === [Test worker] === DEBUG === com.erp.sf.mapper.SysUserMapper.selectList === - ==>  Preparing: SELECT id,username,password,chinese_name,english_name,email,create_at,update_at,delete_at FROM SYS_USER WHERE delete_at IS NULL AND (username = ?)
+2023-08-22 03:32:02 === [Test worker] === DEBUG === com.erp.sf.mapper.SysUserMapper.selectList === - ==> Parameters: 7843f86f-f733-47ff-be51-c2ac6dc2874d(String)
+2023-08-22 03:32:02 === [Test worker] === DEBUG === com.erp.sf.mapper.SysUserMapper.selectList === - <==      Total: 1
+2023-08-22 03:32:02 === [Test worker] === DEBUG === c.erp.sf.mapper.SysMenuMapper.selectPermsByUserId === - ==>  Preparing: SELECT sm.`perms` FROM `sys_user_role` sur LEFT JOIN `sys_role_menu` srm ON sur.`role_id` = srm.`role_id` LEFT JOIN `sys_menu` sm ON srm.`MENU_ID` = sm.`ID` where sur.USER_ID = ?
+2023-08-22 03:32:02 === [Test worker] === DEBUG === c.erp.sf.mapper.SysMenuMapper.selectPermsByUserId === - ==> Parameters: 30(Long)
+2023-08-22 03:32:02 === [Test worker] === DEBUG === c.erp.sf.mapper.SysMenuMapper.selectPermsByUserId === - <==      Total: 1
+2023-08-22 03:32:02 === [Test worker] === DEBUG === com.erp.sf.mapper.SysUserMapper.selectList === - ==>  Preparing: SELECT id,username,password,chinese_name,english_name,email,create_at,update_at,delete_at FROM SYS_USER WHERE delete_at IS NULL AND (username = ?)
+2023-08-22 03:32:02 === [Test worker] === DEBUG === com.erp.sf.mapper.SysUserMapper.selectList === - ==> Parameters: 7e812a14-cc7e-4a80-aa2f-81ee2768c81b(String)
+2023-08-22 03:32:02 === [Test worker] === DEBUG === com.erp.sf.mapper.SysUserMapper.selectList === - <==      Total: 1
+2023-08-22 03:32:02 === [Test worker] === DEBUG === c.erp.sf.mapper.SysMenuMapper.selectPermsByUserId === - ==>  Preparing: SELECT sm.`perms` FROM `sys_user_role` sur LEFT JOIN `sys_role_menu` srm ON sur.`role_id` = srm.`role_id` LEFT JOIN `sys_menu` sm ON srm.`MENU_ID` = sm.`ID` where sur.USER_ID = ?
+2023-08-22 03:32:02 === [Test worker] === DEBUG === c.erp.sf.mapper.SysMenuMapper.selectPermsByUserId === - ==> Parameters: 31(Long)
+2023-08-22 03:32:02 === [Test worker] === DEBUG === c.erp.sf.mapper.SysMenuMapper.selectPermsByUserId === - <==      Total: 1
+2023-08-22 03:32:02 === [Test worker] === DEBUG === com.erp.sf.mapper.SysUserMapper.selectList === - ==>  Preparing: SELECT id,username,password,chinese_name,english_name,email,create_at,update_at,delete_at FROM SYS_USER WHERE delete_at IS NULL AND (username = ?)
+2023-08-22 03:32:02 === [Test worker] === DEBUG === com.erp.sf.mapper.SysUserMapper.selectList === - ==> Parameters: ecfaab33-bbfa-4bb1-9d92-67ae1c312a48(String)
+2023-08-22 03:32:02 === [Test worker] === DEBUG === com.erp.sf.mapper.SysUserMapper.selectList === - <==      Total: 1
+2023-08-22 03:32:02 === [Test worker] === DEBUG === c.erp.sf.mapper.SysMenuMapper.selectPermsByUserId === - ==>  Preparing: SELECT sm.`perms` FROM `sys_user_role` sur LEFT JOIN `sys_role_menu` srm ON sur.`role_id` = srm.`role_id` LEFT JOIN `sys_menu` sm ON srm.`MENU_ID` = sm.`ID` where sur.USER_ID = ?
+2023-08-22 03:32:02 === [Test worker] === DEBUG === c.erp.sf.mapper.SysMenuMapper.selectPermsByUserId === - ==> Parameters: 32(Long)
+2023-08-22 03:32:02 === [Test worker] === DEBUG === c.erp.sf.mapper.SysMenuMapper.selectPermsByUserId === - <==      Total: 1
+2023-08-22 03:32:02 === [Test worker] === INFO  === o.s.t.c.support.AnnotationConfigContextLoaderUtils === - Could not detect default configuration classes for test class [com.erp.sf.service.security.UserDetailServiceImplTest]: UserDetailServiceImplTest does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
+2023-08-22 03:32:02 === [Test worker] === INFO  === o.s.b.t.context.SpringBootTestContextBootstrapper === - Found @SpringBootConfiguration com.erp.sf.SfApplication for test class com.erp.sf.service.security.UserDetailServiceImplTest
+2023-08-22 03:32:02 === [Test worker] === DEBUG === com.erp.sf.mapper.SysMenuMapper.selectCount === - ==>  Preparing: SELECT COUNT( * ) AS total FROM SYS_MENU WHERE delete_at IS NULL
+2023-08-22 03:32:02 === [Test worker] === DEBUG === com.erp.sf.mapper.SysMenuMapper.selectCount === - ==> Parameters: 
+2023-08-22 03:32:02 === [Test worker] === DEBUG === com.erp.sf.mapper.SysMenuMapper.selectCount === - <==      Total: 1
+2023-08-22 03:32:02 === [Test worker] === DEBUG === com.erp.sf.mapper.SysMenuMapper.insert === - ==>  Preparing: INSERT INTO SYS_MENU ( id, perms, create_at, update_at ) VALUES ( ?, ?, ?, ? )
+2023-08-22 03:32:02 === [Test worker] === DEBUG === com.erp.sf.mapper.SysMenuMapper.insert === - ==> Parameters: 0(Long), 9cd4b3fb-2094-42bc-8c78-ff3b7020ca34(String), null, null
+2023-08-22 03:32:02 === [Test worker] === DEBUG === com.erp.sf.mapper.SysMenuMapper.insert === - <==    Updates: 1
+2023-08-22 03:32:02 === [Test worker] === DEBUG === com.erp.sf.mapper.SysMenuMapper.insert === - ==>  Preparing: INSERT INTO SYS_MENU ( id, perms, create_at, update_at ) VALUES ( ?, ?, ?, ? )
+2023-08-22 03:32:02 === [Test worker] === DEBUG === com.erp.sf.mapper.SysMenuMapper.insert === - ==> Parameters: 0(Long), b5bdefee-c822-43fe-b80a-4551dd5c5ce0(String), null, null
+2023-08-22 03:32:02 === [Test worker] === DEBUG === com.erp.sf.mapper.SysMenuMapper.insert === - <==    Updates: 1
+2023-08-22 03:32:02 === [Test worker] === DEBUG === com.erp.sf.mapper.SysMenuMapper.insert === - ==>  Preparing: INSERT INTO SYS_MENU ( id, perms, create_at, update_at ) VALUES ( ?, ?, ?, ? )
+2023-08-22 03:32:02 === [Test worker] === DEBUG === com.erp.sf.mapper.SysMenuMapper.insert === - ==> Parameters: 0(Long), 838d7827-43dd-43a5-bcde-859128b91627(String), null, null
+2023-08-22 03:32:02 === [Test worker] === DEBUG === com.erp.sf.mapper.SysMenuMapper.insert === - <==    Updates: 1
+2023-08-22 03:32:02 === [Test worker] === DEBUG === com.erp.sf.mapper.SysMenuMapper.selectCount === - ==>  Preparing: SELECT COUNT( * ) AS total FROM SYS_MENU WHERE delete_at IS NULL
+2023-08-22 03:32:02 === [Test worker] === DEBUG === com.erp.sf.mapper.SysMenuMapper.selectCount === - ==> Parameters: 
+2023-08-22 03:32:02 === [Test worker] === DEBUG === com.erp.sf.mapper.SysMenuMapper.selectCount === - <==      Total: 1
+2023-08-22 03:32:02 === [Test worker] === DEBUG === com.erp.sf.mapper.SysUserMapper.selectCount === - ==>  Preparing: SELECT COUNT( * ) AS total FROM SYS_USER WHERE delete_at IS NULL
+2023-08-22 03:32:02 === [Test worker] === DEBUG === com.erp.sf.mapper.SysUserMapper.selectCount === - ==> Parameters: 
+2023-08-22 03:32:02 === [Test worker] === DEBUG === com.erp.sf.mapper.SysUserMapper.selectCount === - <==      Total: 1
+2023-08-22 03:32:02 === [Test worker] === DEBUG === com.erp.sf.mapper.SysUserMapper.insert === - ==>  Preparing: INSERT INTO SYS_USER ( id, username, password, chinese_name, english_name, email, create_at, update_at ) VALUES ( ?, ?, ?, ?, ?, ?, ?, ? )
+2023-08-22 03:32:02 === [Test worker] === DEBUG === com.erp.sf.mapper.SysUserMapper.insert === - ==> Parameters: 0(Long), 1d250f43-4bd2-4129-aa67-b12e9e7128a0(String), $2a$10$aiF.d9wNW.p9cNK1.tfMNO6WSwQ5UAVvUd8MreCX1LZ/QhCQDQSTe(String), (String), (String), 9ebcc3de-b4b4-4453-b6e7-f021ccf99409(String), null, null
+2023-08-22 03:32:02 === [Test worker] === DEBUG === com.erp.sf.mapper.SysUserMapper.insert === - <==    Updates: 1
+2023-08-22 03:32:02 === [Test worker] === DEBUG === com.erp.sf.mapper.SysUserMapper.insert === - ==>  Preparing: INSERT INTO SYS_USER ( id, username, password, chinese_name, english_name, email, create_at, update_at ) VALUES ( ?, ?, ?, ?, ?, ?, ?, ? )
+2023-08-22 03:32:02 === [Test worker] === DEBUG === com.erp.sf.mapper.SysUserMapper.insert === - ==> Parameters: 0(Long), e1e62f9f-99c8-41e5-8438-69215f094686(String), $2a$10$c9.OrvMRUoDJhpHm1Rji/ehfAz9czOjcIqyFXz58oQMqlNtIivAGC(String), (String), (String), 957b5d39-258d-479e-a2ec-40f076a42295(String), null, null
+2023-08-22 03:32:02 === [Test worker] === DEBUG === com.erp.sf.mapper.SysUserMapper.insert === - <==    Updates: 1
+2023-08-22 03:32:02 === [Test worker] === DEBUG === com.erp.sf.mapper.SysUserMapper.insert === - ==>  Preparing: INSERT INTO SYS_USER ( id, username, password, chinese_name, english_name, email, create_at, update_at ) VALUES ( ?, ?, ?, ?, ?, ?, ?, ? )
+2023-08-22 03:32:02 === [Test worker] === DEBUG === com.erp.sf.mapper.SysUserMapper.insert === - ==> Parameters: 0(Long), 002bbd84-f609-459a-90f5-5f3293eef5a1(String), $2a$10$UYJXyZLi.LyrQDwF7reImec3fNsGABBps9wa00l7GQkFvLjcRLldW(String), (String), (String), 75694ad7-d5e0-41d9-a521-3008066185a2(String), null, null
+2023-08-22 03:32:02 === [Test worker] === DEBUG === com.erp.sf.mapper.SysUserMapper.insert === - <==    Updates: 1
+2023-08-22 03:32:02 === [Test worker] === DEBUG === com.erp.sf.mapper.SysUserMapper.selectCount === - ==>  Preparing: SELECT COUNT( * ) AS total FROM SYS_USER WHERE delete_at IS NULL
+2023-08-22 03:32:02 === [Test worker] === DEBUG === com.erp.sf.mapper.SysUserMapper.selectCount === - ==> Parameters: 
+2023-08-22 03:32:02 === [Test worker] === DEBUG === com.erp.sf.mapper.SysUserMapper.selectCount === - <==      Total: 1
+2023-08-22 03:32:02 === [Test worker] === DEBUG === com.erp.sf.mapper.SysRoleMapper.selectCount === - ==>  Preparing: SELECT COUNT( * ) AS total FROM SYS_ROLE WHERE delete_at IS NULL
+2023-08-22 03:32:02 === [Test worker] === DEBUG === com.erp.sf.mapper.SysRoleMapper.selectCount === - ==> Parameters: 
+2023-08-22 03:32:02 === [Test worker] === DEBUG === com.erp.sf.mapper.SysRoleMapper.selectCount === - <==      Total: 1
+2023-08-22 03:32:02 === [Test worker] === DEBUG === com.erp.sf.mapper.SysRoleMapper.insert === - ==>  Preparing: INSERT INTO SYS_ROLE ( id, name, create_at, update_at ) VALUES ( ?, ?, ?, ? )
+2023-08-22 03:32:02 === [Test worker] === DEBUG === com.erp.sf.mapper.SysRoleMapper.insert === - ==> Parameters: 0(Long), 2b632c4a-34dd-44df-ab3c-e3e18e721202(String), null, null
+2023-08-22 03:32:02 === [Test worker] === DEBUG === com.erp.sf.mapper.SysRoleMapper.insert === - <==    Updates: 1
+2023-08-22 03:32:02 === [Test worker] === DEBUG === com.erp.sf.mapper.SysRoleMapper.insert === - ==>  Preparing: INSERT INTO SYS_ROLE ( id, name, create_at, update_at ) VALUES ( ?, ?, ?, ? )
+2023-08-22 03:32:02 === [Test worker] === DEBUG === com.erp.sf.mapper.SysRoleMapper.insert === - ==> Parameters: 0(Long), 0567a8d9-4e66-4227-9833-e4ab3769308e(String), null, null
+2023-08-22 03:32:02 === [Test worker] === DEBUG === com.erp.sf.mapper.SysRoleMapper.insert === - <==    Updates: 1
+2023-08-22 03:32:02 === [Test worker] === DEBUG === com.erp.sf.mapper.SysRoleMapper.insert === - ==>  Preparing: INSERT INTO SYS_ROLE ( id, name, create_at, update_at ) VALUES ( ?, ?, ?, ? )
+2023-08-22 03:32:02 === [Test worker] === DEBUG === com.erp.sf.mapper.SysRoleMapper.insert === - ==> Parameters: 0(Long), 4483ea6c-c703-4ee4-98a7-9a823b28e7b8(String), null, null
+2023-08-22 03:32:02 === [Test worker] === DEBUG === com.erp.sf.mapper.SysRoleMapper.insert === - <==    Updates: 1
+2023-08-22 03:32:02 === [Test worker] === DEBUG === com.erp.sf.mapper.SysRoleMapper.selectCount === - ==>  Preparing: SELECT COUNT( * ) AS total FROM SYS_ROLE WHERE delete_at IS NULL
+2023-08-22 03:32:02 === [Test worker] === DEBUG === com.erp.sf.mapper.SysRoleMapper.selectCount === - ==> Parameters: 
+2023-08-22 03:32:02 === [Test worker] === DEBUG === com.erp.sf.mapper.SysRoleMapper.selectCount === - <==      Total: 1
+2023-08-22 03:32:02 === [Test worker] === DEBUG === com.erp.sf.mapper.SysRoleMenuMapper.insertBatch === - ==>  Preparing: INSERT INTO SYS_ROLE_MENU (role_id,menu_id) VALUES (?,?) , (?,?) , (?,?)
+2023-08-22 03:32:02 === [Test worker] === DEBUG === com.erp.sf.mapper.SysRoleMenuMapper.insertBatch === - ==> Parameters: 21(Long), 16(Long), 22(Long), 17(Long), 23(Long), 18(Long)
+2023-08-22 03:32:02 === [Test worker] === DEBUG === com.erp.sf.mapper.SysRoleMenuMapper.insertBatch === - <==    Updates: 3
+2023-08-22 03:32:02 === [Test worker] === DEBUG === com.erp.sf.mapper.SysUserRoleMapper.insertBatch === - ==>  Preparing: INSERT INTO SYS_USER_ROLE (user_id,role_id) VALUES (?,?) , (?,?) , (?,?)
+2023-08-22 03:32:02 === [Test worker] === DEBUG === com.erp.sf.mapper.SysUserRoleMapper.insertBatch === - ==> Parameters: 33(Long), 21(Long), 34(Long), 22(Long), 35(Long), 23(Long)
+2023-08-22 03:32:02 === [Test worker] === DEBUG === com.erp.sf.mapper.SysUserRoleMapper.insertBatch === - <==    Updates: 3
+2023-08-22 03:32:02 === [Test worker] === DEBUG === com.erp.sf.mapper.SysUserMapper.selectList === - ==>  Preparing: SELECT id,username,password,chinese_name,english_name,email,create_at,update_at,delete_at FROM SYS_USER WHERE delete_at IS NULL AND (username = ?)
+2023-08-22 03:32:02 === [Test worker] === DEBUG === com.erp.sf.mapper.SysUserMapper.selectList === - ==> Parameters: 1d250f43-4bd2-4129-aa67-b12e9e7128a0(String)
+2023-08-22 03:32:02 === [Test worker] === DEBUG === com.erp.sf.mapper.SysUserMapper.selectList === - <==      Total: 1
+2023-08-22 03:32:02 === [Test worker] === DEBUG === c.erp.sf.mapper.SysMenuMapper.selectPermsByUserId === - ==>  Preparing: SELECT sm.`perms` FROM `sys_user_role` sur LEFT JOIN `sys_role_menu` srm ON sur.`role_id` = srm.`role_id` LEFT JOIN `sys_menu` sm ON srm.`MENU_ID` = sm.`ID` where sur.USER_ID = ?
+2023-08-22 03:32:02 === [Test worker] === DEBUG === c.erp.sf.mapper.SysMenuMapper.selectPermsByUserId === - ==> Parameters: 33(Long)
+2023-08-22 03:32:02 === [Test worker] === DEBUG === c.erp.sf.mapper.SysMenuMapper.selectPermsByUserId === - <==      Total: 1
+2023-08-22 03:32:02 === [Test worker] === DEBUG === com.erp.sf.mapper.SysUserMapper.selectList === - ==>  Preparing: SELECT id,username,password,chinese_name,english_name,email,create_at,update_at,delete_at FROM SYS_USER WHERE delete_at IS NULL AND (username = ?)
+2023-08-22 03:32:02 === [Test worker] === DEBUG === com.erp.sf.mapper.SysUserMapper.selectList === - ==> Parameters: e1e62f9f-99c8-41e5-8438-69215f094686(String)
+2023-08-22 03:32:02 === [Test worker] === DEBUG === com.erp.sf.mapper.SysUserMapper.selectList === - <==      Total: 1
+2023-08-22 03:32:02 === [Test worker] === DEBUG === c.erp.sf.mapper.SysMenuMapper.selectPermsByUserId === - ==>  Preparing: SELECT sm.`perms` FROM `sys_user_role` sur LEFT JOIN `sys_role_menu` srm ON sur.`role_id` = srm.`role_id` LEFT JOIN `sys_menu` sm ON srm.`MENU_ID` = sm.`ID` where sur.USER_ID = ?
+2023-08-22 03:32:02 === [Test worker] === DEBUG === c.erp.sf.mapper.SysMenuMapper.selectPermsByUserId === - ==> Parameters: 34(Long)
+2023-08-22 03:32:02 === [Test worker] === DEBUG === c.erp.sf.mapper.SysMenuMapper.selectPermsByUserId === - <==      Total: 1
+2023-08-22 03:32:03 === [Test worker] === DEBUG === com.erp.sf.mapper.SysUserMapper.selectList === - ==>  Preparing: SELECT id,username,password,chinese_name,english_name,email,create_at,update_at,delete_at FROM SYS_USER WHERE delete_at IS NULL AND (username = ?)
+2023-08-22 03:32:03 === [Test worker] === DEBUG === com.erp.sf.mapper.SysUserMapper.selectList === - ==> Parameters: 002bbd84-f609-459a-90f5-5f3293eef5a1(String)
+2023-08-22 03:32:03 === [Test worker] === DEBUG === com.erp.sf.mapper.SysUserMapper.selectList === - <==      Total: 1
+2023-08-22 03:32:03 === [Test worker] === DEBUG === c.erp.sf.mapper.SysMenuMapper.selectPermsByUserId === - ==>  Preparing: SELECT sm.`perms` FROM `sys_user_role` sur LEFT JOIN `sys_role_menu` srm ON sur.`role_id` = srm.`role_id` LEFT JOIN `sys_menu` sm ON srm.`MENU_ID` = sm.`ID` where sur.USER_ID = ?
+2023-08-22 03:32:03 === [Test worker] === DEBUG === c.erp.sf.mapper.SysMenuMapper.selectPermsByUserId === - ==> Parameters: 35(Long)
+2023-08-22 03:32:03 === [Test worker] === DEBUG === c.erp.sf.mapper.SysMenuMapper.selectPermsByUserId === - <==      Total: 1
+2023-08-22 03:32:03 === [Test worker] === DEBUG === com.erp.sf.mapper.SysUserMapper.selectList === - ==>  Preparing: SELECT id,username,password,chinese_name,english_name,email,create_at,update_at,delete_at FROM SYS_USER WHERE delete_at IS NULL AND (username = ?)
+2023-08-22 03:32:03 === [Test worker] === DEBUG === com.erp.sf.mapper.SysUserMapper.selectList === - ==> Parameters: 9204a08b-a944-4ebf-9859-e46f5f132ec1(String)
+2023-08-22 03:32:03 === [Test worker] === DEBUG === com.erp.sf.mapper.SysUserMapper.selectList === - <==      Total: 0
+2023-08-22 03:32:03 === [SpringApplicationShutdownHook] === INFO  === com.zaxxer.hikari.HikariDataSource === - HikariPool-1 - Shutdown initiated...
+2023-08-22 03:32:03 === [SpringApplicationShutdownHook] === INFO  === com.zaxxer.hikari.HikariDataSource === - HikariPool-1 - Shutdown completed.
+2023-08-22 03:32:03 === [SpringApplicationShutdownHook] === INFO  === com.zaxxer.hikari.HikariDataSource === - HikariPool-2 - Shutdown initiated...
+2023-08-22 03:32:03 === [SpringApplicationShutdownHook] === INFO  === com.zaxxer.hikari.HikariDataSource === - HikariPool-2 - Shutdown completed.
+2023-08-22 03:34:28 === [restartedMain] === INFO  === com.erp.sf.SfApplicationKt === - Starting SfApplicationKt using Java 18.0.2.1 with PID 17132 (C:\Users\djpke\IdeaProjects\SecondFloorCafe\kotlinSpringApi\build\classes\kotlin\main started by ken in C:\Users\djpke\IdeaProjects\SecondFloorCafe\kotlinSpringApi)
+2023-08-22 03:34:28 === [restartedMain] === INFO  === com.erp.sf.SfApplicationKt === - No active profile set, falling back to 1 default profile: "default"
+2023-08-22 03:34:28 === [restartedMain] === INFO  === o.s.b.d.env.DevToolsPropertyDefaultsPostProcessor === - Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2023-08-22 03:34:28 === [restartedMain] === INFO  === o.s.b.d.env.DevToolsPropertyDefaultsPostProcessor === - For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2023-08-22 03:34:29 === [restartedMain] === INFO  === o.s.d.r.config.RepositoryConfigurationDelegate === - Multiple Spring Data modules found, entering strict repository configuration mode
+2023-08-22 03:34:29 === [restartedMain] === INFO  === o.s.d.r.config.RepositoryConfigurationDelegate === - Bootstrapping Spring Data Redis repositories in DEFAULT mode.
+2023-08-22 03:34:29 === [restartedMain] === INFO  === o.s.d.r.config.RepositoryConfigurationDelegate === - Finished Spring Data repository scanning in 27 ms. Found 0 Redis repository interfaces.
+2023-08-22 03:34:30 === [restartedMain] === INFO  === o.s.boot.web.embedded.tomcat.TomcatWebServer === - Tomcat initialized with port(s): 8082 (http)
+2023-08-22 03:34:30 === [restartedMain] === INFO  === org.apache.catalina.core.StandardService === - Starting service [Tomcat]
+2023-08-22 03:34:30 === [restartedMain] === INFO  === org.apache.catalina.core.StandardEngine === - Starting Servlet engine: [Apache Tomcat/10.1.8]
+2023-08-22 03:34:30 === [restartedMain] === INFO  === o.a.c.c.ContainerBase.[Tomcat].[localhost].[/api] === - Initializing Spring embedded WebApplicationContext
+2023-08-22 03:34:30 === [restartedMain] === INFO  === o.s.b.w.s.c.ServletWebServerApplicationContext === - Root WebApplicationContext: initialization completed in 2039 ms
+2023-08-22 03:34:31 === [restartedMain] === WARN  === c.b.mybatisplus.core.metadata.TableInfoHelper === - Can not find table primary key in Class: "cn.hutool.setting.Setting".
+2023-08-22 03:34:31 === [restartedMain] === WARN  === com.erp.sf.config.InsertBatchSqlInjector === - class cn.hutool.setting.Setting ,Not found @TableId annotation, Cannot use Mybatis-Plus 'xxById' Method.
+2023-08-22 03:34:31 === [restartedMain] === INFO  === o.s.boot.web.embedded.tomcat.TomcatWebServer === - Tomcat started on port(s): 8082 (http) with context path '/api'
+2023-08-22 03:34:31 === [restartedMain] === INFO  === o.s.b.d.autoconfigure.OptionalLiveReloadServer === - LiveReload server is running on port 35729
+2023-08-22 03:34:31 === [restartedMain] === INFO  === com.erp.sf.SfApplicationKt === - Started SfApplicationKt in 3.852 seconds (process running for 4.335)
+2023-08-22 03:34:32 === [restartedMain] === INFO  === com.erp.sf.SfApplication$$SpringCGLIB$$0 === - Redis status : cleaned
+2023-08-22 03:34:32 === [restartedMain] === INFO  === com.erp.sf.SfApplication$$SpringCGLIB$$0 === - File encoding : UTF-8
+2023-08-22 03:42:02 === [restartedMain] === INFO  === com.erp.sf.SfApplicationKt === - Starting SfApplicationKt using Java 18.0.2.1 with PID 17120 (C:\Users\djpke\IdeaProjects\SecondFloorCafe\kotlinSpringApi\build\classes\kotlin\main started by ken in C:\Users\djpke\IdeaProjects\SecondFloorCafe\kotlinSpringApi)
+2023-08-22 03:42:02 === [restartedMain] === INFO  === com.erp.sf.SfApplicationKt === - No active profile set, falling back to 1 default profile: "default"
+2023-08-22 03:42:02 === [restartedMain] === INFO  === o.s.b.d.env.DevToolsPropertyDefaultsPostProcessor === - Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2023-08-22 03:42:02 === [restartedMain] === INFO  === o.s.b.d.env.DevToolsPropertyDefaultsPostProcessor === - For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2023-08-22 03:42:04 === [restartedMain] === INFO  === o.s.d.r.config.RepositoryConfigurationDelegate === - Multiple Spring Data modules found, entering strict repository configuration mode
+2023-08-22 03:42:04 === [restartedMain] === INFO  === o.s.d.r.config.RepositoryConfigurationDelegate === - Bootstrapping Spring Data Redis repositories in DEFAULT mode.
+2023-08-22 03:42:04 === [restartedMain] === INFO  === o.s.d.r.config.RepositoryConfigurationDelegate === - Finished Spring Data repository scanning in 29 ms. Found 0 Redis repository interfaces.
+2023-08-22 03:42:04 === [restartedMain] === INFO  === o.s.boot.web.embedded.tomcat.TomcatWebServer === - Tomcat initialized with port(s): 8082 (http)
+2023-08-22 03:42:04 === [restartedMain] === INFO  === org.apache.catalina.core.StandardService === - Starting service [Tomcat]
+2023-08-22 03:42:04 === [restartedMain] === INFO  === org.apache.catalina.core.StandardEngine === - Starting Servlet engine: [Apache Tomcat/10.1.8]
+2023-08-22 03:42:04 === [restartedMain] === INFO  === o.a.c.c.ContainerBase.[Tomcat].[localhost].[/api] === - Initializing Spring embedded WebApplicationContext
+2023-08-22 03:42:04 === [restartedMain] === INFO  === o.s.b.w.s.c.ServletWebServerApplicationContext === - Root WebApplicationContext: initialization completed in 2135 ms
+2023-08-22 03:42:05 === [restartedMain] === WARN  === c.b.mybatisplus.core.metadata.TableInfoHelper === - Can not find table primary key in Class: "cn.hutool.setting.Setting".
+2023-08-22 03:42:05 === [restartedMain] === WARN  === com.erp.sf.config.InsertBatchSqlInjector === - class cn.hutool.setting.Setting ,Not found @TableId annotation, Cannot use Mybatis-Plus 'xxById' Method.
+2023-08-22 03:42:06 === [restartedMain] === WARN  === o.s.b.w.s.c.AnnotationConfigServletWebServerApplicationContext === - Exception encountered during context initialization - cancelling refresh attempt: org.springframework.context.ApplicationContextException: Failed to start bean 'webServerStartStop'
+2023-08-22 03:42:06 === [restartedMain] === INFO  === org.apache.catalina.core.StandardService === - Stopping service [Tomcat]
+2023-08-22 03:42:06 === [restartedMain] === INFO  === o.s.b.a.logging.ConditionEvaluationReportLogger === - 
+
+Error starting ApplicationContext. To display the condition evaluation report re-run your application with 'debug' enabled.
+2023-08-22 03:42:06 === [restartedMain] === ERROR === o.s.b.diagnostics.LoggingFailureAnalysisReporter === - 
+
+***************************
+APPLICATION FAILED TO START
+***************************
+
+Description:
+
+Web server failed to start. Port 8082 was already in use.
+
+Action:
+
+Identify and stop the process that's listening on port 8082 or configure this application to listen on another port.
+

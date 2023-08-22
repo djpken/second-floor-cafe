@@ -7,14 +7,19 @@
         <id property="id" column="id" jdbcType="BIGINT"/>
         <result property="menuDIshId" column="menu_dish_id" jdbcType="BIGINT"/>
         <result property="data" column="data" jdbcType="BLOB"/>
-        <result property="createAt" column="create_at" jdbcType="TIMESTAMP"/>
-        <result property="updateAt" column="update_at" jdbcType="TIMESTAMP"/>
     </resultMap>
     <sql id="Base_Column_List">
         su.`id`,
         su.`menu_DISH_Id`,
         su.`data`,
-        su.`create_at`,
-        su.`update_at`
     </sql>
+    <select id="selectMenuDishPhotoBySeason" resultMap="BaseResultMap" >
+    select
+    <include refid="Base_Column_List"/>
+    from
+    MenuDishPhoto mdp
+    left join MenuDishText mdt on mdp.menu_Dish_id = mdt.id
+    where mdt.season = #{season}
+
+    </select>
 </mapper>

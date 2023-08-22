@@ -1,9 +1,9 @@
 import React from "react";
 import {Box} from "@mui/material";
 
-const MenuManager = () => {
+const TestManager = () => {
     return (
         <><Box>hello</Box></>
     )
 }
-export default MenuManager
+export default TestManager

@@ -1,6 +1,6 @@
-import IBaseTime from "./IBaseTime";
+import {IBaseTime} from "./base";
 
-export default interface SysUser extends IBaseTime {
+export interface SysUser extends IBaseTime {
     username: string
     password?: string
     chineseName?: string

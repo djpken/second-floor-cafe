@@ -17,17 +17,5 @@ export interface RoutesItem extends DomTitleProps, InitProps {
 }
 
 
-export const Init = ({path}: InitProps) => {
-    const navigate = useNavigate();
-    useEffect(() => {
-        navigate(path);
-    }, [navigate, path]);
-    return <></>;
-};
 
-export const DomTitle = ({name, element, nodeRef}: DomTitleProps) => {
-    document.title = name;
-    return <div ref={nodeRef}>
-        {element}
-    </div>;
-};
+
