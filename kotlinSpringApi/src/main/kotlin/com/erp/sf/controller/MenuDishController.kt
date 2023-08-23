@@ -6,17 +6,12 @@ import com.erp.sf.model.responseEntity.apiResposne.MenuDishModel
 import com.erp.sf.service.MenuDishPhotoService
 import com.erp.sf.service.MenuDishTextService
 import org.springframework.beans.factory.annotation.Autowired
-import org.springframework.core.io.ByteArrayResource
-import org.springframework.mock.web.MockMultipartFile
-import org.springframework.web.bind.annotation.GetMapping
-import org.springframework.web.bind.annotation.PathVariable
-import org.springframework.web.bind.annotation.PostMapping
-import org.springframework.web.bind.annotation.RequestBody
-import org.springframework.web.bind.annotation.RequestMapping
-import org.springframework.web.bind.annotation.RestController
+import org.springframework.web.bind.annotation.*
+import org.springframework.web.multipart.MultipartFile
+import java.util.Base64
 
 @RestController
-@RequestMapping("/dish")
+@RequestMapping("/menuDish")
 class MenuDishController {
     @Autowired
     private lateinit var menuDishTextService: MenuDishTextService
@@ -24,36 +19,35 @@ class MenuDishController {
     @Autowired
     private lateinit var menuDishPhotoService: MenuDishPhotoService
 
+//    @GetMapping("{season}")
+//    fun selectMenuDishBySeason(@PathVariable season: Int): ResponseEntity<List<MenuDishText>> {
+//        val selectMenuDishText = menuDishTextService.selectMenuDishTextBySeason(season);
+//        return ResponseEntity.ok(selectMenuDishText)
+//    }
+
     @GetMapping("{season}")
-    fun selectMenuDishBySeason(@PathVariable season: Int): ResponseEntity<List<MenuDishModel>> {
+    fun selectMenuDishPhotoById(@PathVariable season: Int): ResponseEntity<List<MenuDishModel>> {
         val selectMenuDishText = menuDishTextService.selectMenuDishTextBySeason(season);
-        val selectMenuDishPhoto = menuDishPhotoService.selectMenuDishPhotoBySeason(season)
-        val list = selectMenuDishText.mapIndexed { index, it ->
-            (MenuDishModel(
-                it, MockMultipartFile(
-                    "photo$index.jpg",
-                    selectMenuDishPhoto[index].data
-                )
-            ))
-        }
-        return ResponseEntity.ok(list)
+        val idList = selectMenuDishText.map { it.id ?: 0 }
+        val stringList = menuDishPhotoService.selectMenuDishPhotoById(idList)
+            .map { Base64.getEncoder().encodeToString(it.data) }
+        val menuDishModelList = stringList.mapIndexed { index, s -> MenuDishModel(selectMenuDishText[index], s) }
+        return ResponseEntity.ok(menuDishModelList)
     }
+
     @PostMapping("")
     fun insertMultipartFile(
-        @RequestBody menuDishModelList: List<MenuDishModel>,
-    ): ResponseEntity<List<MenuDishModel>> {
-        val menuDishTextList = menuDishModelList.map { it.menuDishText }
-        menuDishTextService.saveBatch(menuDishTextList)
-        val menuDishPhotoList = menuDishModelList.mapIndexed { index, it ->
-            MenuDishPhoto(
-                0,
-                menuDishTextList[index].id,
-                it.multipartFile?.bytes
-            )
-        }
-        menuDishPhotoService.saveBatch(menuDishPhotoList)
-        val list =
-            menuDishTextList.mapIndexed { index, it -> MenuDishModel(it, menuDishModelList[index].multipartFile) }
-        return ResponseEntity.ok(list)
+        @RequestParam files: List<MultipartFile>,
+    ): ResponseEntity<String> {
+        val fileList = files.filter { it.originalFilename != null }
+            .map {
+                MenuDishPhoto(
+                    0,
+                    it.originalFilename!!.substring(0, it.originalFilename!!.length - 4).toLong(),
+                    it.bytes
+                )
+            }
+        menuDishPhotoService.saveBatch(fileList)
+        return ResponseEntity.ok("ok")
     }
 }

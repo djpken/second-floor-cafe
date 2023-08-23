@@ -18,7 +18,10 @@ export interface CardProps {
 
 const getDish = async (season: number) => {
     const response = await apiGetDish(season);
-    return response.data.textArray;
+    const menuDishTextList = response.data.map((it) => {
+        return it.menuDishText
+    })
+    return menuDishTextList
 }
 
 const Menu = () => {

@@ -7,6 +7,6 @@ import java.io.Serializable
 data class MenuDishPhoto(
     @TableId(type = IdType.AUTO)
     var id: Long? = null,
-    var menuDIshId: Long? = null,
+    var menuDishId: Long? = null,
     var data: ByteArray? = null,
 ): Serializable

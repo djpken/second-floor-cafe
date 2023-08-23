@@ -17,7 +17,7 @@ export default function CustomAppBar({openNav, handleDrawerOpen}: AppProps) {
                 onClick={handleDrawerOpen}
                 sx={{opacity: 1, ...(openNav && {display: "none"})}}
             >
-                <MenuTwoToneIcon sx={{fontSize: {md: 20, lg: 25, xl: 30}}}/>
+                <MenuTwoToneIcon fontSize={"inherit"}/>
             </IconButton>
         </Stack>
     )

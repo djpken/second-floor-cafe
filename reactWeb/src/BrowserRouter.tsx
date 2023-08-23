@@ -73,7 +73,8 @@ const BrowserRouter = createBrowserRouter([
             index: route.path === '/',
             path: (route.extended ? route.path + "/*" : route.path),
             element: route.element
-        }))
+        })),
+        errorElement: <Login/>
     }
 ])
 

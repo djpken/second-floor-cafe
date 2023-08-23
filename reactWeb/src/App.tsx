@@ -19,7 +19,7 @@ const App = () => {
     return (
         <QueryClientProvider client={queryClient}>
             <ThemeProvider theme={Theme}>
-                <RouterProvider router={BrowserRouter}/>
+                <RouterProvider router={BrowserRouter} />
             </ThemeProvider>
             <ReactQueryDevtools initialIsOpen={false}/>
         </QueryClientProvider>

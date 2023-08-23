@@ -5,21 +5,22 @@
 <mapper namespace="com.erp.sf.mapper.MenuDishPhotoMapper">
     <resultMap id="BaseResultMap" type="com.erp.sf.entity.MenuDishPhoto">
         <id property="id" column="id" jdbcType="BIGINT"/>
-        <result property="menuDIshId" column="menu_dish_id" jdbcType="BIGINT"/>
+        <result property="menuDishId" column="menu_dish_id" jdbcType="BIGINT"/>
         <result property="data" column="data" jdbcType="BLOB"/>
     </resultMap>
-    <sql id="Base_Column_List">
-        su.`id`,
-        su.`menu_DISH_Id`,
-        su.`data`,
-    </sql>
-    <select id="selectMenuDishPhotoBySeason" resultMap="BaseResultMap" >
-    select
-    <include refid="Base_Column_List"/>
-    from
-    MenuDishPhoto mdp
-    left join MenuDishText mdt on mdp.menu_Dish_id = mdt.id
-    where mdt.season = #{season}
 
+    <sql id="Base_Column_List">
+        mdp.`id`,
+        mdp.`menu_dish_id`,
+        mdp.`data`
+    </sql>
+
+    <select id="selectMenuDishPhotoBySeason" resultMap="BaseResultMap" >
+        SELECT
+        <include refid="Base_Column_List"/>
+        From
+        `menu_dish_photo` mdp
+        left join `Menu_DISH_TEXT` mdt on mdp.`MENU_DISH_ID` = mdt.`id`
+        where mdt.`season` = #{season}
     </select>
 </mapper>

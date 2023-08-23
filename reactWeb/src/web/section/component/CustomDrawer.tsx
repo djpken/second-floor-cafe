@@ -24,7 +24,7 @@ export default function CustomDrawer({
         <Drawer
             sx={{
                 "& .MuiDrawer-paper": {
-                    width: {xs: 140, lg: 220, xl: 300},
+
                     boxSizing: "border-box",
                 },
             }}

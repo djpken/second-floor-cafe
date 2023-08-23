@@ -12,7 +12,7 @@
     </select>
     <select id="selectValueByKey" resultType="java.lang.String">
         SELECT s.value
-        FROM setting s
+        FROM `setting` s
         where s.key = #{key}
     </select>
 

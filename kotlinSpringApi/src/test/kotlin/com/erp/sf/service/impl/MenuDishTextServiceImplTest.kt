@@ -31,7 +31,7 @@ class MenuDishTextServiceImplTest : JunitService() {
 
     @Test
     fun selectAllMenuDish() {
-        val selectMenuDishBySeason = menuDishTextService.selectMenuDishTextBySeason(menuDishTest.list[0].season.toLong())
+        val selectMenuDishBySeason = menuDishTextService.selectMenuDishTextBySeason(2023)
         Assertions.assertFalse(selectMenuDishBySeason.isEmpty())
     }
 }
