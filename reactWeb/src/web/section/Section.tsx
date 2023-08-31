@@ -1,7 +1,7 @@
 import {Route, Routes, useLocation, useNavigate} from "react-router-dom";
 import {Box, Stack, styled} from "@mui/material";
-import Authority from "./page/Authority";
-import Home from "./page/Home";
+import Authority from "./page/authority/Authority";
+import Home from "./page/home/Home";
 import {useMutation} from "@tanstack/react-query";
 import React, {useState} from "react";
 import {apiSecurityLogout} from "../../api";
@@ -18,7 +18,7 @@ const securityLogout = async () => {
 const Section = () => {
     const location = useLocation();
     const navigate = useNavigate();
-    const [open, setOpen] = useState(false);
+    const [openNav, setOpenNav] = useState(false);
     const logoutMutation = useMutation({
         mutationFn: securityLogout,
         onSuccess: () => {
@@ -27,10 +27,10 @@ const Section = () => {
     });
 
     const handleDrawerOpen = () => {
-        setOpen(true);
+        setOpenNav(true);
     };
     const handleDrawerClose = () => {
-        setOpen(false);
+        setOpenNav(false);
     };
     const handleLogout = (event: React.MouseEvent<HTMLButtonElement>) => {
         event.preventDefault();
@@ -38,19 +38,19 @@ const Section = () => {
     };
     return (
         <Bgd>
-            <CustomAppBar openNav={open} handleDrawerOpen={handleDrawerOpen}/>
+            <CustomAppBar openNav={openNav} handleDrawerOpen={handleDrawerOpen}/>
             <CustomDrawer
-                openNav={open}
+                openNav={openNav}
                 handleDrawerClose={handleDrawerClose}
                 menus={menus}
                 handleLogout={handleLogout}
             />
             <Stack direction={'row'}>
-                <Main open={open}>
+                <Main open={openNav}>
                     <Routes location={location}>
                         <Route path={"home"} element={<Home/>}/>
                         <Route path={"authority"} element={<Authority/>}/>
-                        <Route path={"testManager"} element={<TestManager/>}/>
+                        <Route path={"testManager"} element={<TestManager openNav={openNav}/>}/>
                     </Routes>
                 </Main>
             </Stack>
@@ -64,7 +64,7 @@ const Main = styled('main', {shouldForwardProp: (prop) => prop !== 'open'})<{
 }>(({theme, open}) => ({
     flexGrow: 1,
     padding: theme.spacing(1),
-    paddingLeft: theme.spacing(4),
+    paddingLeft: theme.spacing(5),
     transition: theme.transitions.create('margin', {
         easing: theme.transitions.easing.sharp,
         duration: theme.transitions.duration.leavingScreen,
@@ -75,13 +75,13 @@ const Main = styled('main', {shouldForwardProp: (prop) => prop !== 'open'})<{
             duration: theme.transitions.duration.enteringScreen,
         }),
         [theme.breakpoints.up('xs')]: {
-            paddingLeft: theme.spacing(14),
+            marginLeft: theme.spacing(7),
         },
         [theme.breakpoints.up('lg')]: {
-            paddingLeft: theme.spacing(22),
+            marginLeft: theme.spacing(11),
         },
         [theme.breakpoints.up('xl')]: {
-            paddingLeft: theme.spacing(30),
+            marginLeft: theme.spacing(15),
         }
     })
 }));
@@ -90,7 +90,8 @@ const Bgd = styled(Box)({
     width: "100vw",
     height: "100vh",
     display: "flex",
-    backgroundColor: "white",
+    overflow: "scroll",
+    backgroundAttachment: "scroll",
     backgroundImage: `url(${process.env.PUBLIC_URL}/background/menu_background.jpg)`,
     backgroundSize: "cover",
     backgroundPosition: "bottom",

@@ -8,5 +8,6 @@ data class MenuDishPhoto(
     @TableId(type = IdType.AUTO)
     var id: Long? = null,
     var menuDishId: Long? = null,
+    var filename: String? = null,
     var data: ByteArray? = null,
-): Serializable
+) : Serializable

@@ -5,7 +5,8 @@ CREATE TABLE MENU_DISH_PHOTO
 (
     ID           BIGINT AUTO_INCREMENT PRIMARY KEY NOT NULL,
     MENU_DISH_ID BIGINT                            NOT NULL,
-    DATA         BLOB                              NOT NULL
+    FILENAME     VARCHAR(255)                      NOT NULL,
+    DATA         MEDIUMBLOB                        NOT NULL
 ) CHARACTER SET = UTF8MB4
   COLLATE = UTF8MB4_GENERAL_CI COMMENT 'MENU_DISH_PHOTO';
 ALTER TABLE MENU_DISH_PHOTO

@@ -1,6 +1,6 @@
 import {useNavigate} from "react-router-dom";
 import React, {useEffect} from "react";
-import {Button} from "@mui/material";
+import {Button, styled} from "@mui/material";
 import {useMutation} from "@tanstack/react-query";
 import {Score, SysUser} from "../../../entity";
 import {apiPostScore} from "../../../api";
@@ -25,12 +25,12 @@ export default function ReturnPage({children, score}: ReturnPageProps) {
         console.log("request")
     }, []);
     return (
-        <Button onClick={() => navigate("/main/section")} sx={style}>
+        <GoHomeButton onClick={() => navigate("/main/section")}>
             {children}
-        </Button>
+        </GoHomeButton>
     );
 }
-const style = {
+const GoHomeButton = styled(Button)({
     border: "2px solid black",
     height: "50px",
     width: "100px",
@@ -38,4 +38,4 @@ const style = {
     backgroundColor: "#FFFFFF",
     color: "black",
     borderRadius: "10px"
-};
+})

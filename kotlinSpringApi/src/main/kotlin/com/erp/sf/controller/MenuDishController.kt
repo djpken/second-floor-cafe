@@ -15,16 +15,8 @@ import java.util.Base64
 class MenuDishController {
     @Autowired
     private lateinit var menuDishTextService: MenuDishTextService
-
     @Autowired
     private lateinit var menuDishPhotoService: MenuDishPhotoService
-
-//    @GetMapping("{season}")
-//    fun selectMenuDishBySeason(@PathVariable season: Int): ResponseEntity<List<MenuDishText>> {
-//        val selectMenuDishText = menuDishTextService.selectMenuDishTextBySeason(season);
-//        return ResponseEntity.ok(selectMenuDishText)
-//    }
-
     @GetMapping("{season}")
     fun selectMenuDishPhotoById(@PathVariable season: Int): ResponseEntity<List<MenuDishModel>> {
         val selectMenuDishText = menuDishTextService.selectMenuDishTextBySeason(season);
@@ -41,9 +33,14 @@ class MenuDishController {
     ): ResponseEntity<String> {
         val fileList = files.filter { it.originalFilename != null }
             .map {
+                val stringList = it.originalFilename?.split('.')
+                val fileName = stringList?.get(0)
+                val fileExtension = stringList?.get(1)
+                val fileId = stringList?.get(2)
                 MenuDishPhoto(
                     0,
-                    it.originalFilename!!.substring(0, it.originalFilename!!.length - 4).toLong(),
+                    fileId?.toLong(),
+                    fileName,
                     it.bytes
                 )
             }

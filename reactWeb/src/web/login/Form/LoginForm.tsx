@@ -3,7 +3,7 @@ import {useNavigate} from "react-router-dom";
 import {useForm} from "react-hook-form";
 import {yupResolver} from "@hookform/resolvers/yup";
 import {useMutation} from "@tanstack/react-query";
-import {Button, FormHelperText, InputAdornment, Stack} from "@mui/material";
+import {Button, FormHelperText, InputAdornment, Stack, useTheme} from "@mui/material";
 import IconButton from "@mui/material/IconButton";
 import {Visibility, VisibilityOff} from "@mui/icons-material";
 import * as yup from "yup";
@@ -22,11 +22,12 @@ const user = yup.object().shape({
 
 const securityLogin = async (sysUser: SysUser) => {
     const response = await apiSecurityLogin(sysUser);
-    return response.data
+    return response.data.data
 }
 
 
 const LoginForm = ({display, path}: FormProps) => {
+    const theme = useTheme();
     const navigate = useNavigate();
     const [showPassword, setShowPassword] = useState(false);
     const {
@@ -66,8 +67,8 @@ const LoginForm = ({display, path}: FormProps) => {
             display={display ? "block" : "none"}
             component={"form"}
             onSubmit={handleSubmit(onSubmit)}
-            padding={3}
-            spacing={2}
+            padding={0.8}
+            spacing={0.8}
         >
             <ControllerFullWidthField
                 control={control}
@@ -90,7 +91,8 @@ const LoginForm = ({display, path}: FormProps) => {
                                     onMouseDown={handleMouseDownPassword}
                                     edge="end"
                                 >
-                                    {showPassword ? <VisibilityOff/> : <Visibility/>}
+                                    {showPassword ? <VisibilityOff fontSize={'small'} htmlColor={'black'}/> :
+                                        <Visibility htmlColor={'black'} fontSize={'small'}/>}
                                 </IconButton>
                             </InputAdornment>
                         ),
@@ -103,10 +105,10 @@ const LoginForm = ({display, path}: FormProps) => {
                         errors.root?.message
                     }
                     error
-                    sx={{height: 20, paddingLeft: 2}}
+                    sx={{height: theme.spacing(1.2), paddingLeft: 0.2}}
                 ></FormHelperText>
             </Stack>
-            <Stack paddingX={16} justifyContent={"center"}>
+            <Stack paddingX={9} justifyContent={"center"}>
                 <Button type={"submit"}>登入</Button>
             </Stack>
         </Stack>

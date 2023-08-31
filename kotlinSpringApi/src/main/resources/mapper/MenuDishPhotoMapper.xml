@@ -6,16 +6,18 @@
     <resultMap id="BaseResultMap" type="com.erp.sf.entity.MenuDishPhoto">
         <id property="id" column="id" jdbcType="BIGINT"/>
         <result property="menuDishId" column="menu_dish_id" jdbcType="BIGINT"/>
+        <result property="filename" column="filename" jdbcType="VARCHAR"/>
         <result property="data" column="data" jdbcType="BLOB"/>
     </resultMap>
 
     <sql id="Base_Column_List">
         mdp.`id`,
         mdp.`menu_dish_id`,
+        mdp.`filename`,
         mdp.`data`
     </sql>
 
-    <select id="selectMenuDishPhotoBySeason" resultMap="BaseResultMap" >
+    <select id="selectMenuDishPhotoBySeason" resultMap="BaseResultMap">
         SELECT
         <include refid="Base_Column_List"/>
         From

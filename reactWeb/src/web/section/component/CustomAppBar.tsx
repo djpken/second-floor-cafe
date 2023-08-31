@@ -13,11 +13,10 @@ export default function CustomAppBar({openNav, handleDrawerOpen}: AppProps) {
                alignItems="center" sx={{position: 'absolute', backgroundColor: 'secondary.main'}} margin={1}
                borderRadius={2}>
             <IconButton
-                color="inherit"
                 onClick={handleDrawerOpen}
                 sx={{opacity: 1, ...(openNav && {display: "none"})}}
             >
-                <MenuTwoToneIcon fontSize={"inherit"}/>
+                <MenuTwoToneIcon htmlColor={'black'}/>
             </IconButton>
         </Stack>
     )

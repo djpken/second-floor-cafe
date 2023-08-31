@@ -38,10 +38,10 @@ export default function CustomDrawer({
                     component={Link}
                     to={"home"}
                     sx={{
-                        margin: "20px",
+                        margin: 1,
                         textDecoration: "none",
-                        color: "info.main",
-                        "&:hover": {color: "info.main"},
+                        color: theme.palette.info.main,
+                        "&:hover": {color: theme.palette.info.main},
                     }}
                 >
                     SecondFloor
@@ -53,18 +53,12 @@ export default function CustomDrawer({
                 </IconButton>
             </DrawerHeader>
             <Stack height={"83vh"}>
-                {/*{menus.map((menu) => {*/}
-                {/*  if (auth?.includes(menu.title.toLowerCase())) {*/}
-                {/*    return <CustomNavBar key={menu.title} text={menu} />;*/}
-                {/*  }*/}
-                {/*  return null;*/}
-                {/*})}*/}
                 {menus.map((menu) => {
                     return <CustomNavBar key={menu.title} text={menu}/>
                 })}
             </Stack>
             <Button
-                sx={{color: "info.main"}}
+                sx={{color: theme.palette.info.main}}
                 onClick={handleLogout}
                 variant={"outlined"}
             >

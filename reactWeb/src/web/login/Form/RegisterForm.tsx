@@ -3,7 +3,7 @@ import {useNavigate} from "react-router-dom";
 import {useForm} from "react-hook-form";
 import {yupResolver} from "@hookform/resolvers/yup";
 import {useMutation} from "@tanstack/react-query";
-import {Button, FormHelperText, Stack} from "@mui/material";
+import {Button, FormHelperText, Stack, useTheme} from "@mui/material";
 import React from "react";
 import ControllerFullWidthField from "../component/ControllerFullWidthField";
 import {FormProps} from "../Login";
@@ -22,9 +22,10 @@ const register = yup.object().shape({
 
 const securityRegister = async (sysUser: SysUser) => {
     const response = await apiSecurityRegister(sysUser);
-    return response.data
+    return response.data.data
 }
 const RegisterForm = ({display, path}: FormProps) => {
+    const theme = useTheme();
     const navigate = useNavigate();
     const {
         handleSubmit,
@@ -55,8 +56,8 @@ const RegisterForm = ({display, path}: FormProps) => {
         <Stack
             display={display ? "block" : "none"}
             component={"form"}
-            padding={3}
-            spacing={2}
+            padding={0.8}
+            spacing={0.8}
             onSubmit={handleSubmit(onSubmit)}
         >
             <ControllerFullWidthField
@@ -92,7 +93,7 @@ const RegisterForm = ({display, path}: FormProps) => {
                         errors.root?.message
                     }
                     error
-                    sx={{height: 20, paddingLeft: 2}}
+                    sx={{height: theme.spacing(1.2), paddingLeft: 0.2}}
                 />
             </Stack>
         </Stack>

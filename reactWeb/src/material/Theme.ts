@@ -18,7 +18,7 @@ const Theme =
                 main: "#6C757D",
             },
             secondary: {
-                main: "#cea583",
+                main: "#c29e7a",
             },
             info: {
                 main: "#FFFFFF",
@@ -50,10 +50,20 @@ const Theme =
                     fontSize: '1.2rem'
                 },
             },
+            body2: {
+                fontSize: '0.8rem',
+                '@media (min-width:1200px)': {
+                    fontSize: '0.9rem'
+                },
+                '@media (min-width:1536px)': {
+                    fontSize: '1rem'
+                },
+            },
+
             button: {
                 fontSize: '1rem'
             },
-            fontFamily: "Alibaba,Arial",
+            fontFamily: "AlibabaPuHuiTi-3,Arial",
         },
         components: {
             MuiTextField: {
@@ -93,8 +103,7 @@ const Theme =
             ,
             MuiSvgIcon: {
                 styleOverrides: {
-                    root: ({theme}) => ({
-                        color: 'black',
+                    fontSizeMedium: ({theme}) => ({
                         [theme.breakpoints.up('xs')]: {
                             fontSize: '1.5rem'
                         },
@@ -102,11 +111,21 @@ const Theme =
                             fontSize: '1.9rem'
                         },
                         [theme.breakpoints.up('lg')]: {
-                            fontSize: '2.4rem'
+                            fontSize: '2.3rem'
                         },
                     }),
-                }
-                ,
+                    fontSizeSmall: ({theme}) => ({
+                        [theme.breakpoints.up('xs')]: {
+                            fontSize: '1.2rem'
+                        },
+                        [theme.breakpoints.up('lg')]: {
+                            fontSize: '1.5rem'
+                        },
+                        [theme.breakpoints.up('lg')]: {
+                            fontSize: '1.8rem'
+                        },
+                    }),
+                },
             }
             ,
             MuiListItem: {
@@ -137,6 +156,14 @@ const Theme =
                 ,
             }
             ,
+            MuiAlert: {
+                styleOverrides: {
+                    standard: ({theme}) => ({
+                        backgroundColor: theme.palette.secondary.main,
+                        fontSize: theme.typography.body2.fontSize,
+                    })
+                }
+            }
         },
     })
 ;

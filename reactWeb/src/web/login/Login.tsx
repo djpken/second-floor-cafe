@@ -27,14 +27,14 @@ const Login = () => {
             <Box
                 width={"448px"}
                 bgcolor={"white"}
-                padding={1.5}
+                padding={1}
                 borderRadius={5}
                 sx={{opacity: 0.75}}
             >
                 <Box sx={{borderBottom: 1, borderColor: "divider"}}>
                     <Tabs value={value} onChange={handleChange}>
                         {form.map((item, index) =>
-                            <Tab key={index} label={t(item.name)} sx={{width: 1 / 2}} value={item.name}/>
+                            <Tab key={index} label={t(item.name)} sx={{width: 0.5}} value={item.name}/>
                         )}
                     </Tabs>
                 </Box>

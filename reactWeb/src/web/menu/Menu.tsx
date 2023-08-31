@@ -1,30 +1,31 @@
 import React, {useState} from "react";
-import Card from "./component/Card";
-import ReturnPage from "./component/ReturnPage";
 import {useQuery} from "@tanstack/react-query";
-import {Button, Skeleton, Stack} from "@mui/material";
-import styled from "@emotion/styled";
+import {Box, Button, Stack, styled, useTheme} from "@mui/material";
 import {apiGetDish} from "../../api";
-import {MenuDishText} from "../../entity";
+import {MenuDishModel} from "../../model/MenuDishModel";
+import Grid2 from "@mui/material/Unstable_Grid2"
+import Swal from 'sweetalert2'
+import ReturnPage from "./component/ReturnPage";
+import MenuCard from './component/MenuCard'
+import SkeletonComponent from "./component/SkeletonComponent";
 
 export interface CardProps {
     id: number;
     chineseName: string;
     hint: string;
     check: boolean;
-    handleResult: (result: boolean, id: number) => void
+    handleResult?: (result: boolean, id: number) => void
+    image: string
 }
 
 
 const getDish = async (season: number) => {
     const response = await apiGetDish(season);
-    const menuDishTextList = response.data.map((it) => {
-        return it.menuDishText
-    })
-    return menuDishTextList
+    return response.data.data
 }
 
 const Menu = () => {
+    const theme = useTheme()
     const [season] = useState<number>(2023);
     const [check, setCheck] = useState<boolean>(false);
     const [homePageDisplay, setHomePageDisplay] = useState<boolean>(false);
@@ -35,27 +36,23 @@ const Menu = () => {
         isLoading,
         isError,
         error,
-    } = useQuery<MenuDishText[], Error>({
+    } = useQuery<MenuDishModel[], Error>({
         queryKey: ["menuDishQuery"],
         queryFn: () => getDish(season)
     });
-    if (isLoading) {
+    if (isLoading || isError) {
+        if (isError) {
+            Swal.fire({
+                icon: 'error',
+                title: 'Error',
+                text: error.message,
+            })
+        }
         return (
-            <BackGround padding={1} spacing={1.5} useFlexGap>
-                {[...Array(100)].map((_, i) => (
-                    <Skeleton
-                        key={i}
-                        sx={{borderRadius: "15px"}}
-                        variant="rounded"
-                        width={"19vw"}
-                        height={"36vh"}
-                    />
-                ))}
-            </BackGround>
+            <Box sx={{backgroundColor: theme.palette.secondary.main}}>
+                <SkeletonComponent animation={isError ? false : 'pulse'}/>
+            </Box>
         );
-    }
-    if (isError) {
-        return <span>Error{error?.message}</span>;
     }
     const resultButtonFunc = () => {
         setCheck(true);
@@ -75,33 +72,28 @@ const Menu = () => {
         setCheck(false);
     };
     return (
-        <BackGround
-            justifyContent={"center"}
-            spacing={{xs: 0.5, md: 1, lg: 1.5}}
-            useFlexGap
-        >
-            {menuDishQuery.map((card) => (
-                <Card
-                    key={card.id}
-                    check={check}
-                    id={card.id}
-                    chineseName={card.chineseName}
-                    hint={""}
-                    handleResult={handleResult}
-                />
-            ))}
-            <ResultDiv>
-                <ResultButton onClick={() => resultButtonFunc()}>{resultButtonText}</ResultButton>
-                {homePageDisplay ? <ReturnPage score={trueIdArray.length}>返回</ReturnPage> : <></>}
-            </ResultDiv>
-        </BackGround>
+        <Box sx={{backgroundColor: theme.palette.secondary.main}}>
+            <Grid2 container spacing={1}>
+                {menuDishQuery.map((card, i) => (
+                    <Grid2 xs={4} md={3} lg={2.4} key={i}>
+                        <MenuCard
+                            check={check}
+                            id={card.menuDishText.id}
+                            chineseName={card.menuDishText.chineseName}
+                            hint={""}
+                            handleResult={handleResult}
+                            image={card.image}
+                        />
+                    </Grid2>
+                ))}
+                <ResultDiv>
+                    <ResultButton onClick={() => resultButtonFunc()}>{resultButtonText}</ResultButton>
+                    {homePageDisplay ? <ReturnPage score={trueIdArray.length}>返回</ReturnPage> : <></>}
+                </ResultDiv>
+            </Grid2>
+        </Box>
     );
 }
-const BackGround = styled(Stack)({
-    backgroundColor: "#c29e7a",
-    flexDirection: "row",
-    flexWrap: "wrap",
-});
 
 const ResultButton = styled(Button)({
     border: "2px solid black",

@@ -28,7 +28,7 @@ export default function CustomNavBar({text}: props) {
             }}
         >
             <ListItem button onClick={handleClick}>
-                <ListItemText sx={{pl: 3}} primary={text.title}/>
+                <ListItemText sx={{pl: 3}} primaryTypographyProps={{fontWeight: 600}} primary={text.title}/>
                 {open ? <ExpandLess/> : <ExpandMore/>}
             </ListItem>
             <Collapse in={open} timeout="auto" unmountOnExit>
