@@ -7,4 +7,5 @@ interface MenuDishTextService : IService<MenuDishText> {
     fun selectAllMenuDishText(): List<MenuDishText>
     fun selectMenuDishTextBySeason(season: Int): List<MenuDishText>
     fun insertListMenuDishText(list: List<MenuDishText>): List<MenuDishText>
+    fun updateMenuDishText(menuDishText: MenuDishText): MenuDishText
 }

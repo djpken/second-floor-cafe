@@ -6,14 +6,16 @@ import {useMutation} from "@tanstack/react-query";
 import React, {useState} from "react";
 import {apiSecurityLogout} from "../../api";
 import TestManager from "./page/testManager/TestManager";
-import {initPath} from "../../BrowserRouter";
+import {initPath} from "../../WebRouter";
 import {CustomAppBar, CustomDrawer} from "./component";
+import {TitleRouter} from "../../router";
 
 
 const securityLogout = async () => {
     const response = await apiSecurityLogout();
     return response.data
 }
+
 
 const Section = () => {
     const location = useLocation();
@@ -48,9 +50,10 @@ const Section = () => {
             <Stack direction={'row'}>
                 <Main open={openNav}>
                     <Routes location={location}>
-                        <Route path={"home"} element={<Home/>}/>
-                        <Route path={"authority"} element={<Authority/>}/>
-                        <Route path={"testManager"} element={<TestManager openNav={openNav}/>}/>
+                        <Route path={"home"} element={<TitleRouter name={"Home"} element={<Home/>}/>}/>
+                        <Route path={"authority"} element={<TitleRouter name={"Authority"} element={<Authority/>}/>}/>
+                        <Route path={"testManager"} element={<TitleRouter name={"TestManager"} element={<TestManager
+                            openNav={openNav}/>}/>}/>
                     </Routes>
                 </Main>
             </Stack>

@@ -4,7 +4,7 @@ import React, {useState} from "react";
 import {useTranslation} from "react-i18next";
 import LoginForm from "./Form/LoginForm";
 import RegisterForm from "./Form/RegisterForm";
-import {routesPathMap} from "../../BrowserRouter";
+import {routesPathMap} from "../../WebRouter";
 
 export interface FormProps {
     display: boolean,

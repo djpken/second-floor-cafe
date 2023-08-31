@@ -1,21 +1,13 @@
 import React, {createRef} from "react";
 import {createBrowserRouter, Outlet, useLocation} from "react-router-dom";
 import {Init, RoutesItem, TitleRouter} from "./router";
-import {Menu, Section, Login} from "./web";
+import {Login, Menu, Section} from "./web";
 
 export const initPath: string = "/web/login"
-export const routes: RoutesItem[] = [
+export const webRoutes: RoutesItem[] = [
     {
         name: "Init",
         path: "/",
-        transition: false,
-        extended: false,
-        element: <Init path={initPath}/>,
-        nodeRef: createRef()
-    },
-    {
-        name: "Init",
-        path: "/web",
         transition: false,
         extended: false,
         element: <Init path={initPath}/>,
@@ -46,30 +38,20 @@ export const routes: RoutesItem[] = [
         nodeRef: createRef()
     },
 ];
-export const routesPathMap: (name: string) => string = (name: string) => (routes.find(route => route.name === name)?.path) ?? ""
-const Root = () => {
+export const routesPathMap: (name: string) => string = (name: string) => (webRoutes.find(route => route.name === name)?.path) ?? ""
+export const Root = () => {
     const location = useLocation();
-    const {nodeRef, name, transition} = routes.find((route) => route.path === location.pathname) ?? routes[0];
+    const {nodeRef, name, transition} = webRoutes.find((route) => route.path === location.pathname) ?? webRoutes[0];
     return (
-        // <SwitchTransition>
-        //     <CSSTransition
-        //         key={transition ? location.pathname : initPath}
-        //         nodeRef={nodeRef}
-        //         timeout={1000}
-        //         classNames={"fade"}
-        //         unmountOnExit
-        //     >
         <TitleRouter nodeRef={nodeRef} name={name} element={<Outlet/>}/>
-        //     </CSSTransition>
-        // </SwitchTransition>
     )
 }
 
-const BrowserRouter = createBrowserRouter([
+const WebRouter = createBrowserRouter([
     {
         path: "/",
         element: <Root/>,
-        children: routes.map((route) => ({
+        children: webRoutes.map((route) => ({
             index: route.path === '/',
             path: (route.extended ? route.path + "/*" : route.path),
             element: route.element
@@ -78,4 +60,4 @@ const BrowserRouter = createBrowserRouter([
     }
 ])
 
-export default BrowserRouter
+export default WebRouter

@@ -1,6 +1,7 @@
 package com.erp.sf.controller
 
 import com.erp.sf.entity.MenuDishPhoto
+import com.erp.sf.entity.MenuDishText
 import com.erp.sf.model.ResponseEntity
 import com.erp.sf.model.responseEntity.apiResposne.MenuDishModel
 import com.erp.sf.service.MenuDishPhotoService
@@ -8,15 +9,17 @@ import com.erp.sf.service.MenuDishTextService
 import org.springframework.beans.factory.annotation.Autowired
 import org.springframework.web.bind.annotation.*
 import org.springframework.web.multipart.MultipartFile
-import java.util.Base64
+import java.util.*
 
 @RestController
 @RequestMapping("/menuDish")
 class MenuDishController {
     @Autowired
     private lateinit var menuDishTextService: MenuDishTextService
+
     @Autowired
     private lateinit var menuDishPhotoService: MenuDishPhotoService
+
     @GetMapping("{season}")
     fun selectMenuDishPhotoById(@PathVariable season: Int): ResponseEntity<List<MenuDishModel>> {
         val selectMenuDishText = menuDishTextService.selectMenuDishTextBySeason(season);
@@ -46,5 +49,11 @@ class MenuDishController {
             }
         menuDishPhotoService.saveBatch(fileList)
         return ResponseEntity.ok("ok")
+    }
+
+    @PutMapping
+    fun updateMenuDishText(@RequestBody menuDishText: MenuDishText): ResponseEntity<MenuDishText> {
+        val response = menuDishTextService.updateMenuDishText(menuDishText)
+        return ResponseEntity.ok(response)
     }
 }

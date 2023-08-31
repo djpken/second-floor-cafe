@@ -18,6 +18,11 @@ class MenuDishTextServiceImpl : ServiceImpl<MenuDishTextMapper, MenuDishText>(),
         return menuDishTextMapper.selectList(eq) ?: emptyList()
     }
 
+    override fun updateMenuDishText(menuDishText: MenuDishText): MenuDishText {
+        menuDishTextMapper.updateById(menuDishText)
+        return menuDishText
+    }
+
     override fun insertListMenuDishText(list: List<MenuDishText>): List<MenuDishText> {
         menuDishTextMapper.insertBatch(list)
         list.drop(1).forEachIndexed { index, score ->

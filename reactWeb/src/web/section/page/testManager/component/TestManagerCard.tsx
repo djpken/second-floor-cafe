@@ -1,21 +1,20 @@
 import React, {FocusEventHandler} from "react";
-import {Box, InputBase, styled, useTheme} from "@mui/material";
+import {Box, InputBase, styled} from "@mui/material";
 import useInput from "./useInput/useInput";
 import {TestManagerCardProps} from "../TestManager";
 
 const TestManagerCard = ({
-                             chineseName,
-                             id,
+                             menuDishText,
                              handleUpdateText,
-                             hint,
                              image,
                          }: TestManagerCardProps) => {
-    const {value, onChange} = useInput<string>(chineseName);
+    const {value, onChange} = useInput<string>(menuDishText.chineseName);
     const handleOnBlur: FocusEventHandler<HTMLInputElement> = (e) => {
-        if (value === chineseName) {
+        if (value === menuDishText.chineseName) {
             return
         }
-        handleUpdateText({id, chineseName: value, hint})
+        const updater = {...menuDishText, chineseName: value}
+        handleUpdateText(updater)
     }
     return (
         <CardBody>
@@ -29,10 +28,13 @@ const CardBody = styled(Box)(({theme}) => (
         border: "2px solid black",
         borderRadius: "15px",
         boxShadow: "0px 0px 10px rgba(10, 10, 0.8)",
-        height: "32vh",
+        height: "30vh",
         transition: "1s all ease",
         backgroundImage: `url(${process.env.PUBLIC_URL}/background/card_background.jpg)`,
-        padding: theme.spacing(1)
+        paddingTop: theme.spacing(0.8),
+        paddingLeft: theme.spacing(0.4),
+        paddingRight: theme.spacing(0.4),
+        paddingBottom: theme.spacing(0.8)
     }
 ));
 const Picture = styled('img')({

@@ -1,4 +1,4 @@
-import {createTheme, responsiveFontSizes} from "@mui/material";
+import {createTheme} from "@mui/material";
 
 const Theme =
     createTheme({
@@ -81,13 +81,13 @@ const Theme =
                     paper: ({theme}) => ({
                         backgroundColor: theme.palette.primary.main,
                         [theme.breakpoints.up('xs')]: {
-                            width: 140
+                            width: theme.spacing(11)
                         },
                         [theme.breakpoints.up('lg')]: {
-                            width: 220
+                            width: theme.spacing(15)
                         },
-                        [theme.breakpoints.up('lg')]: {
-                            width: 300
+                        [theme.breakpoints.up('xl')]: {
+                            width: theme.spacing(19)
                         },
                     }),
                 },
