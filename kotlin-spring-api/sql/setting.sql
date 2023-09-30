@@ -1,0 +1,16 @@
+USE
+    SECOND_FLOOR_CAFE;
+DROP TABLE IF EXISTS SETTING;
+CREATE TABLE SETTING
+(
+    ID      BIGINT PRIMARY KEY NOT NULL AUTO_INCREMENT,
+    `KEY`   VARCHAR(50) UNIQUE NOT NULL,
+    `VALUE` VARCHAR(255)        NOT NULL
+) CHARACTER SET = UTF8MB4
+  COLLATE = UTF8MB4_GENERAL_CI COMMENT 'SETTING';
+INSERT INTO SETTING (`KEY`, `VALUE`)
+VALUES ('inviteCode', 'SF'),
+       ('test', 'hello World'),
+       ('initSeason', '2023'),
+       ('initRole', 'visitor'),
+       ('seasonOptional', '0,2022,2023');

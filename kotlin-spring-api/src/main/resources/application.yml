@@ -1,0 +1,61 @@
+spring:
+  data:
+    redis:
+      port: 6379
+      host: localhost
+      password: root
+  main:
+    banner-mode: off
+    lazy-initialization: true
+  devtools:
+    livereload:
+      enabled: true
+    restart:
+      enabled: true
+  datasource:
+    url: jdbc:mariadb://localhost:3306/second_floor_cafe?serverTimezone=GMT%2B8&useSSL=false&useUnicode=true&characterEncoding=utf8
+    username: root
+    password: root
+    driver-class-name: org.mariadb.jdbc.Driver
+
+mybatis-plus:
+  global-config:
+    banner: false
+    db-config:
+      logic-delete-field: deleteAt
+  check-config-location: true
+  mapper-locations: classpath:/mapper/*.xml
+springdoc:
+  swagger-ui:
+    path: /swagger-ui.html
+    tags-sorter: alpha
+    operations-sorter: alpha
+  api-docs:
+    path: /v3/api-docs
+  group-configs:
+    - group: 'default'
+      paths-to-match: '/**'
+      packages-to-scan: com.erp.sf.controller
+knife4j:
+  enable: true
+  setting:
+    language: EN
+    footerCustomContent: Copyright © 2020-2021 <a href="" target="_blank">Second Floor Cafe</a>
+    enable-footer-custom: true
+server:
+  port: 8082
+  servlet:
+    context-path: /api
+logging:
+  pattern:
+    console: "%d{hh:mm:ss} [%thread] %-5level %logger{50} - %msg%n"
+    file: "%d{yyyy-MM-dd hh:mm:ss} [%thread] %-5level  %logger{50} - %msg%n"
+  file:
+    path: logs/apiLog
+    net:
+      biancheng:
+        www: trace
+  level:
+    com.erp.sf.mapper": debug
+
+
