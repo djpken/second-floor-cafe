@@ -69,7 +69,7 @@ const MenuCard = ({
     );
 }
 
-const CardBody = styled(Box)({
+const CardBody = styled(Stack)({
     borderRadius: "15px",
     boxShadow: "0px 0px 10px rgba(10, 10, 0.8)",
     height: "36vh",

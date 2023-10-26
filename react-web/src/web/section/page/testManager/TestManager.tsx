@@ -60,7 +60,6 @@ const TestManager = ({openNav}: TestManageProps) => {
             , queryKey: [SettingKey.INIT_SEASON]
         }],
     })
-    console.log()
     const handleUpdateText = (menuDishText: MenuDishText) => {
         setIsUpdateLoading(true)
         const finder = menuDishQuery.data?.find((it) => it.menuDishText.id === menuDishText.id)?.menuDishText
@@ -128,11 +127,6 @@ const TestManager = ({openNav}: TestManageProps) => {
             </Stack>
         );
     }
-    useEffect(() => {
-        return () => {
-            effect
-        };
-    }, [input]);
 
     return (
         <Stack spacing={0.5}>
