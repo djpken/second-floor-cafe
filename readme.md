@@ -5,18 +5,18 @@ What I use?
 --- 
 
 + KotlinSpringBootApi
-    + Java -> Kotlin
+    + Kotlin
     + Spring Boot
     + Spring Security
     + MyBatis-plus
     + MariaDB
-    + Maven -> Gradle
+    + Gradle
     + Redis
-    + Swagger -> Knife4j
+    + Knife4j
     + JUnit
 + ReactWeb
     + React
-    + JavaScript -> TypeScript
+    + TypeScript
     + React Hook Form
     + React Query
     + Material-UI
